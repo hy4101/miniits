@@ -4,7 +4,6 @@ import com.miniits.commons.query.BaseJpaService;
 import com.miniits.web.user.dao.IUserRepository;
 import com.miniits.web.user.model.User;
 import org.springframework.stereotype.Service;
-import org.springframework.test.context.transaction.AfterTransaction;
 import org.springframework.transaction.annotation.Transactional;
 
 /**

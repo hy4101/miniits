@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.miniits.commons.utils.Envelop;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -15,6 +17,13 @@ public class BaseUiUtil {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Autowired
+    private HttpServletRequest httpServletRequest;
+
+    private String projectReal;
+
+    String separator = File.separator;
 
     public <T> T toModel(String jsonData,Class<T> cls){
 
@@ -54,5 +63,14 @@ public class BaseUiUtil {
         }
 
         return envelop;
+    }
+
+
+    public String getProjectReal(String userDefined) {
+        return projectReal = httpServletRequest.getSession().getServletContext().getRealPath(separator)+separator+"WEB-INF"+separator+"jsp"+separator+userDefined+separator;
+    }
+
+    public void setProjectReal(String projectReal) {
+        this.projectReal = projectReal;
     }
 }
