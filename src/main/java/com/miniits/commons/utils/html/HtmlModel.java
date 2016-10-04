@@ -8,6 +8,7 @@ public class HtmlModel {
     private String templatePath;
     private String saveFilePath;
     private String saveFileName;
+    private String fileReadPath;
     private boolean isNewFile;
     private boolean isNewDirectory;
     private boolean isSuccess;
@@ -76,5 +77,13 @@ public class HtmlModel {
 
     public void setEntity(Object entity) {
         this.entity = entity;
+    }
+
+    public String getFileReadPath() {
+        return fileReadPath;
+    }
+
+    public void setFileReadPath(String fileReadPath) {
+        this.fileReadPath = fileReadPath;
     }
 }

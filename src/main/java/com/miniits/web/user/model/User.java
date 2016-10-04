@@ -1,6 +1,7 @@
 package com.miniits.web.user.model;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.usertype.UserType;
 
 import javax.persistence.*;
 
@@ -32,6 +33,9 @@ public class User {
 
     @Column(name = "qq",nullable = true)
     private String qq;
+
+    @Column(name = "user_type",nullable = true)
+    private String UserType;
 
     public String getId() {
         return id;
@@ -79,5 +83,13 @@ public class User {
 
     public void setQq(String qq) {
         this.qq = qq;
+    }
+
+    public String getUserType() {
+        return UserType;
+    }
+
+    public void setUserType(String userType) {
+        UserType = userType;
     }
 }

@@ -1,5 +1,7 @@
 package com.miniits.commons.utils.MD5;
 
+import org.springframework.stereotype.Service;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -7,6 +9,8 @@ import java.security.NoSuchAlgorithmException;
 /**
  * Created by wq on 2016/10/4.
  */
+
+@Service
 public class MD5Util {
 
     public static String hashStr(String str){

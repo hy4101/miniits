@@ -37,7 +37,10 @@ public class HtmlService {
         //生成静态文件名
         File file = new File(projectPath, htmlModel.getSaveFileName());
         if (file.exists()) {
-            System.out.print("文件已存在");
+            htmlModel.setMessage("静态文件已存在");
+            htmlModel.setSuccess(true);
+            htmlModel.setFileReadPath(projectPath+htmlModel.getSaveFileName());
+            return htmlModel;
         } else
             file.getParentFile().mkdir();//先创建目录
 
@@ -61,7 +64,7 @@ public class HtmlService {
             htmlModel.setMessage("静态文件生成成功");
             htmlModel.setSuccess(true);
         }else {
-            htmlModel.setMessage("生成静态文件程序一执行，未找到生成文件");
+            htmlModel.setMessage("生成静态文件程序已执行，未找到文件");
             htmlModel.setSuccess(false);
         }
 

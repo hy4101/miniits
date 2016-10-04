@@ -18,13 +18,6 @@ public class BaseUiUtil {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @Autowired
-    private HttpServletRequest httpServletRequest;
-
-    private String projectReal;
-
-    String separator = File.separator;
-
     public <T> T toModel(String jsonData,Class<T> cls){
 
         T model = null;
@@ -65,12 +58,17 @@ public class BaseUiUtil {
         return envelop;
     }
 
-
-    public String getProjectReal(String userDefined) {
-        return projectReal = httpServletRequest.getSession().getServletContext().getRealPath(separator)+separator+"WEB-INF"+separator+"jsp"+separator+userDefined+separator;
+    public Envelop success(){
+        Envelop envelop = new Envelop();
+        envelop.setSuccessFlg(true);
+        return envelop;
     }
 
-    public void setProjectReal(String projectReal) {
-        this.projectReal = projectReal;
+    public Envelop error(String error){
+        Envelop envelop = new Envelop();
+        envelop.setSuccessFlg(false);
+        envelop.setErrorMsg(error);
+        return envelop;
     }
+
 }

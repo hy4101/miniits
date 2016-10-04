@@ -33,11 +33,9 @@ public class UserUiController extends BaseUiUtil {
     @Autowired
     private HtmlService htmlService;
 
-
     @RequestMapping("/searchUsers")
     @ResponseBody
     public ModelAndView searchUsers(HttpServletRequest request,ModelMap modelMap) throws Exception {
-
         HtmlModel htmlModel = new HtmlModel();
 
         htmlModel.setTemplatePath("/user/ftl/file.ftl");
@@ -54,4 +52,5 @@ public class UserUiController extends BaseUiUtil {
         modelMap.put("userMsg",userMsg);
         return new ModelAndView("/user/html/user",modelMap);
     }
+
 }
