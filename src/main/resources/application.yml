@@ -35,6 +35,6 @@ spring:
 spring:
   profiles: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/purl5?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/miniits?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123
