@@ -1,7 +1,7 @@
 package com.miniits.commons.config;
 
-import com.miniits.web.image.model.Image;
-import com.miniits.web.user.model.User;
+import com.miniits.web.webapp.image.model.Image;
+import com.miniits.web.webapp.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

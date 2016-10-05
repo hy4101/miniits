@@ -21,7 +21,7 @@ public class IndexUiController extends BaseUiUtil {
     @Autowired
     private HtmlService htmlService;
 
-    @RequestMapping("/index")
+    @RequestMapping("/index.html")
     public String index() throws Exception {
 
         HtmlModel htmlModel = new HtmlModel();

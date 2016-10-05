@@ -58,8 +58,9 @@ public class BaseUiUtil {
         return envelop;
     }
 
-    public Envelop success(){
+    public Envelop success(Object o){
         Envelop envelop = new Envelop();
+        envelop.setObj(o);
         envelop.setSuccessFlg(true);
         return envelop;
     }

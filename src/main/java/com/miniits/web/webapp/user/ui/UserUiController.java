@@ -1,11 +1,10 @@
-package com.miniits.web.user.ui;
+package com.miniits.web.webapp.user.ui;
 
 import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.html.HtmlModel;
 import com.miniits.commons.utils.html.HtmlService;
 import com.miniits.commons.utils.web.BaseUiUtil;
-import com.miniits.web.user.controller.UserController;
-import freemarker.template.TemplateException;
+import com.miniits.web.webapp.user.controller.UserController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,10 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.text.html.HTML;
 import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
 
 /**
  * Created by wq on 2016/9/29.

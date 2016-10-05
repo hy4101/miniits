@@ -1,6 +1,6 @@
-package com.miniits.web.user.dao;
+package com.miniits.web.webapp.user.dao;
 
-import com.miniits.web.user.model.User;
+import com.miniits.web.webapp.user.model.User;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**

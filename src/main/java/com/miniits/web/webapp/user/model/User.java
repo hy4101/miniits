@@ -1,7 +1,6 @@
-package com.miniits.web.user.model;
+package com.miniits.web.webapp.user.model;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.usertype.UserType;
 
 import javax.persistence.*;
 

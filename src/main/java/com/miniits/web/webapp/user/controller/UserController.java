@@ -1,10 +1,10 @@
-package com.miniits.web.user.controller;
+package com.miniits.web.webapp.user.controller;
 
 import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.MD5.MD5Util;
 import com.miniits.commons.utils.web.BaseUiUtil;
-import com.miniits.web.user.model.User;
-import com.miniits.web.user.service.UserService;
+import com.miniits.web.webapp.user.model.User;
+import com.miniits.web.webapp.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -41,7 +41,7 @@ public class UserController extends BaseUiUtil {
         if (StringUtils.isEmpty(user))
             return error("密码或用户名错误");
         else if (user.getPassword().equals(MD5Password)) {
-            return success();
+            return success(user);
         } else
             return error("密码或用户名错误");
     }

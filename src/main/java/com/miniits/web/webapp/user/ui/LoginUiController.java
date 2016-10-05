@@ -1,9 +1,9 @@
-package com.miniits.web.user.ui;
+package com.miniits.web.webapp.user.ui;
 
 import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.web.BaseUiUtil;
-import com.miniits.web.user.controller.UserController;
-import com.miniits.web.user.model.User;
+import com.miniits.web.webapp.user.controller.UserController;
+import com.miniits.web.webapp.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

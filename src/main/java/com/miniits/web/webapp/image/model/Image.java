@@ -1,4 +1,4 @@
-package com.miniits.web.image.model;
+package com.miniits.web.webapp.image.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
