@@ -33,11 +33,18 @@ public class UserController extends BaseUiUtil {
         return envelop;
     }
 
+    public Envelop getUser(User user) {
+        user = getUserById(user.getId());
+        if (StringUtils.isEmpty(user))
+            return error("无此用户");
+        return success(user);
+    }
+
     public Envelop login(User user) {
         String password = user.getPassword();
         String MD5Password = md5Util.hashStr(password);
 
-        user = getUserById(user.getId());
+        user = userService.findByUserName(user.getUserName());
         if (StringUtils.isEmpty(user))
             return error("密码或用户名错误");
         else if (user.getPassword().equals(MD5Password)) {

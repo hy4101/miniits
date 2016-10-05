@@ -1,9 +1,13 @@
 package com.miniits.commons.filter;
 
+import com.miniits.web.webapp.user.model.User;
 import org.apache.catalina.connector.RequestFacade;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -19,6 +23,7 @@ public class miniitsFilter implements Filter {
 
     /**
      * 执行过滤器
+     *
      * @param request
      * @param response
      * @param chain
@@ -27,14 +32,19 @@ public class miniitsFilter implements Filter {
      */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-//        System.out.println("");
         String url = ((RequestFacade) request).getRequestURI();
-        if (url.indexOf("login") == -1){
-            chain.doFilter(request,response);
+        if (url.indexOf("/admin/login") != -1) {
+            chain.doFilter(request, response);
             return;
+        } else if (url.indexOf("/admin") != -1) {
+            User user = (User) ((RequestFacade) request).getSession().getAttribute("admin");
+            if (StringUtils.isEmpty(user)||StringUtils.isEmpty(user.getId())) {
+                HttpServletResponse ro = (HttpServletResponse) response;
+                ro.sendRedirect(((RequestFacade) request).getContextPath()+"/admin/login");
+                return;
+            }
         }
-        chain.doFilter(request,response);
-
+        chain.doFilter(request, response);
     }
 
     @Override

@@ -18,12 +18,12 @@ public class LoginUiController extends BaseUiUtil {
     @Autowired
     private UserController controller;
 
-    @RequestMapping("/login")
-    public String login(User user) {
-        Envelop envelop = controller.login(user);
-        if (envelop.isSuccessFlg())
-            return "/user/login";
-         else
-             return "index";
-    }
+//    @RequestMapping("/login")
+//    public String login(User user) {
+//        Envelop envelop = controller.login(user);
+//        if (envelop.isSuccessFlg())
+//            return "/user/login";
+//         else
+//             return "index";
+//    }
 }
