@@ -10,17 +10,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
-<body>
-<h2>${model}</h2>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<body class="home-template">
+<div class="site-notice"><a href="http://blog.bootcdn.cn/bootcdn-support-https/" target="_blank"><em>BootCDN 已经支持 HTTPS
+    协议啦！</em></a></div>
+<header class="site-header jumbotron">
+    <div class="site-nav"><a href="http://blog.bootcdn.cn/" target="_blank"
+                             onclick="_hmt.push(['_trackEvent', 'site-nav', 'click', 'blog'])">博客</a> <span>/</span> <a
+            href="#about">关于</a></div>
 
-<hr/>
-<pre>
-  </pre>
+</header>
 </body>
 </html>

@@ -39,11 +39,6 @@
         </dd>
     </dl>
 </form>
-
-<%--<script type="text/javascript">--%>
-    <%--debugger--%>
-    <%--var bo = ${boo}--%>
-<%--</script>--%>
 <link rel="stylesheet" type="text/css" href="${rootPath}/resources/login/login.css"/>
 <script src="${rootPath}/resources/login/Particleground.js"></script>
 <script src="${rootPath}/resources/login/login.js"></script>

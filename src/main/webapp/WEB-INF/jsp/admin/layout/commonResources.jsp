@@ -15,7 +15,7 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <c:set var="rootPath" value="<%=request.getContextPath()%>" scope="page"/>
-<html>
+
 <head>
     <%--ligerUI基础库--%>
     <link href="${rootPath}/resources/commons/ligerUI/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet"
@@ -43,7 +43,5 @@
     <link href="${rootPath}/resources/commons/css/commons.css" rel="stylesheet"
           type="text/css"/>
 </head>
-<body>
+
 <div id="com_root_path" style="display: none">${rootPath}</div>
-</body>
-</html>

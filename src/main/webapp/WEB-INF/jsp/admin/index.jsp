@@ -3,9 +3,9 @@
 <%@include file="/WEB-INF/jsp/admin/layout/commonFootData.jsp" %>
 <html>
 <head>
-    <title>联盟速运后台管理系统</title>
+    <title>迷你科技-MiniIts.com</title>
 
-    <link rel="icon" href="${rootPath}/webresource/images/logo.ico" type="image/x-icon">
+    <%--<link rel="icon" href="${rootPath}/webresource/images/logo.ico" type="image/x-icon">--%>
 
     <script type="text/javascript">
         (function ($, win) {
@@ -92,7 +92,7 @@
                                 tabid = new Date().getTime();
                                 $(node.target).attr("tabid", tabid)
                             }
-                            f_addTab(tabid, node.data.text, node.data.url);
+//                            f_addTab(tabid, node.data.text, node.data.url);
                         }
                     });
 //
@@ -112,10 +112,10 @@
                     tab = liger.get("framecenter");
                     accordion = liger.get("accordion1");
                     tree = liger.get("tree1");
-                    $("#pageloading").hide();
+//                    $("#pageloading").hide();
 //
                     css_init();
-                    pages_init();
+//                    pages_init();
                 });
                 function f_heightChanged(options) {
                     if (tab)
@@ -124,18 +124,19 @@
                         accordion.setHeight(options.middleHeight - 24);
                 }
 
-                function f_addTab(tabid, text, url) {
-                    tab.addTabItem({
-                        tabid: tabid,
-                        text: text,
-                        url: url,
-                        callback: function () {
-                            //a
-//                    addShowCodeBtn(tabid);
-                            addFrameSkinLink(tabid);
-                        }
-                    });
-                }
+//菜单导航栏功能
+//                function f_addTab(tabid, text, url) {
+//                    tab.addTabItem({
+//                        tabid: tabid,
+//                        text: text,
+//                        url: url,
+//                        callback: function () {
+//                            //a
+////                    addShowCodeBtn(tabid);
+//                            addFrameSkinLink(tabid);
+//                        }
+//                    });
+//                }
 
 //        function addShowCodeBtn(tabid) {
 //            var viewSourceBtn = $('<a class="viewsourcelink" href="javascript:void(0)">查看源码</a>');
@@ -172,15 +173,15 @@
                     "gray2014": "lib/ligerUI/skins/gray2014/css/all.css"
                 };
 
-                function pages_init() {
-                    var tabJson = $.cookie('liger-home-tab');
-                    if (tabJson) {
-                        var tabitems = JSON2.parse(tabJson);
-                        for (var i = 0; tabitems && tabitems[i]; i++) {
-                            f_addTab(tabitems[i].tabid, tabitems[i].text, tabitems[i].url);
-                        }
-                    }
-                }
+//                function pages_init() {
+//                    var tabJson = $.cookie('liger-home-tab');
+//                    if (tabJson) {
+//                        var tabitems = JSON2.parse(tabJson);
+//                        for (var i = 0; tabitems && tabitems[i]; i++) {
+//                            f_addTab(tabitems[i].tabid, tabitems[i].text, tabitems[i].url);
+//                        }
+//                    }
+//                }
 
                 function saveTabStatus() {
                     $.cookie('liger-home-tab', JSON2.stringify(tabItems));
@@ -283,15 +284,15 @@
         }
 
         /**/
-        #pageloading {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            background: white url('${rootPath}/webresource/commons/lib/images/loading.gif') no-repeat center;
-            width: 100%;
-            height: 100%;
-            z-index: 99999;
-        }
+        <%--#pageloading {--%>
+            <%--position: absolute;--%>
+            <%--left: 0px;--%>
+            <%--top: 0px;--%>
+            <%--background: white url('${rootPath}/webresource/commons/lib/images/loading.gif') no-repeat center;--%>
+            <%--width: 100%;--%>
+            <%--height: 100%;--%>
+            <%--z-index: 99999;--%>
+        <%--}--%>
 
         /**/
         .l-link {
@@ -331,7 +332,7 @@
             height: 100px;
             margin: 0;
             padding: 0;
-            background-color: #2a99d1;
+            background-color: #16a085;
             /*height: 31px;*/
             line-height: 31px;
         <%--background: url('${rootPath}/webresource/lib/images/top.jpg') repeat-x bottom;--%> position: relative;
@@ -395,29 +396,29 @@
         }
     </style>
 </head>
-<body style="padding:0px;background:#EAEEF5;">
-<div id="pageloading"></div>
+<body style="padding:0px;background:#ffffff;">
+<%--<div id="pageloading"></div>--%>
 
 <div id="topmenu" class="l-topmenu">
-    <div class="l-topmenu-logo"><h2>联盟速运后台管理系统</h2></div>
+    <div class="l-topmenu-logo"><h2>迷你科技-MiniIts.com</h2></div>
 </div>
-<div id="layout1" style="width:99.2%; margin:0 auto; margin-top:4px; ">
-    <div position="left" title="主要菜单" id="accordion1">
-        <div title="模块列表1" class="l-scroll">
+<div id="layout1" style="width:99.2%; ">
+    <div position="left" title="Mini-Muen" id="accordion1">
+        <%--<div title="模块列表1" class="l-scroll">--%>
             <ul id="tree1" style="margin-top:3px;"></ul>
-        </div>
-        <div title="模块列表2">
-            <ul id="tree2" style="margin-top:3px;"></ul>
-        </div>
+        <%--</div>--%>
+        <%--<div title="模块列表2">--%>
+            <%--<ul id="tree2" style="margin-top:3px;"></ul>--%>
+        <%--</div>--%>
     </div>
     <div position="center" id="framecenter">
-        <div tabid="home" title="联盟速运" style="height:300px">
-            <iframe frameborder="0" name="home" id="home" src="welcome.htm"></iframe>
-        </div>
+        <%--<div tabid="home" title="联盟速运" style="height:300px">--%>
+            <%--<iframe frameborder="0" name="home" id="home" src="index.jsp"></iframe>--%>
+        <%--</div>--%>
     </div>
 </div>
 <div style="height:32px; line-height:32px; text-align:center;">
-    Copyright © 2011-2014 www.lmsy.com
+    Copyright © 2011-2014 www.miniits.com
 </div>
 <div style="display:none"></div>
 </body>

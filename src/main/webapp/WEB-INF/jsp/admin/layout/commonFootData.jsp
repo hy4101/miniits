@@ -11,9 +11,10 @@
         $(function () {
 
             var menuData = null;
-            var comUrl = '${rootPath}';
+            var comUrl = '${rootPath}'+"/admin";
             function initData() {
                 menuData = [
+                    {text:'用户',url:comUrl+"/user/getUser"},
                     {
                         text: '会员管理', isexpand: false, children: [
                         <%--<shiro:hasPermission name="user:query">{url: comUrl + "/user/initial", text: "用户"},</shiro:hasPermission>--%>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.File;
 
 /**
+ * 网站首页，展示静态文件
  * Created by wq on 2016/10/4.
  */
 
@@ -26,16 +27,16 @@ public class IndexUiController extends BaseUiUtil {
 
         HtmlModel htmlModel = new HtmlModel();
 
-        htmlModel.setTemplatePath("/index/ftl/index.ftl");
+        htmlModel.setTemplatePath("/webapp/index/ftl/index.ftl");
         htmlModel.setSaveFileName("index.html");
         htmlModel.setSaveFilePath("index" + File.separator + "html");
         htmlModel.setEntity("hello miniits");
 
         htmlModel = htmlService.process(htmlModel);
-        if (htmlModel.isSuccess())
-            return "/index/html/index";
-        else
-            return "/index/index";
+//        if (htmlModel.isSuccess())
+//            return "/webapp/index/html/index";
+//        else
+            return "/webapp/index/index";
     }
 
 }

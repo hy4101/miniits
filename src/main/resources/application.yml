@@ -38,3 +38,6 @@ spring:
     url: jdbc:mysql://localhost:3306/miniits?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123
+
+service-api:
+  url: http://localhost:8021/api/v1.0/

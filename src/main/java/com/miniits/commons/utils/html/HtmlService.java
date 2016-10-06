@@ -32,7 +32,7 @@ public class HtmlService {
         Map<String, Object> rootMap = new HashMap<>();
         Configuration configuration = freeMarkerConfigurer.getConfiguration();
 
-        String projectPath = httpServletRequest.getSession().getServletContext().getRealPath(separator) + separator + "WEB-INF" + separator + "jsp" + separator + htmlModel.getSaveFilePath() + separator;
+        String projectPath = httpServletRequest.getSession().getServletContext().getRealPath(separator) + separator + "WEB-INF" + separator + "jsp" + separator+ "webapp" + separator + htmlModel.getSaveFilePath() + separator;
 
         //生成静态文件名
         File file = new File(projectPath, htmlModel.getSaveFileName());

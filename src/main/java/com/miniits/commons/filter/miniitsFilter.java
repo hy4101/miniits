@@ -33,9 +33,11 @@ public class miniitsFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         String url = ((RequestFacade) request).getRequestURI();
+        //登入放行
         if (url.indexOf("/admin/login") != -1) {
             chain.doFilter(request, response);
             return;
+            //后台管理拦截
         } else if (url.indexOf("/admin") != -1) {
             User user = (User) ((RequestFacade) request).getSession().getAttribute("admin");
             if (StringUtils.isEmpty(user)||StringUtils.isEmpty(user.getId())) {
