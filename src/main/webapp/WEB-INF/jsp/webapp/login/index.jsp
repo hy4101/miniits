@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: wq
-  Date: 2016/10/5
-  Time: 11:09
+  Date: 2016/10/7
+  Time: 21:35
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,10 +12,10 @@
     <title>迷你科技后台登入系统</title>
 </head>
 <body>
-<form id="login_form" action="${rootPath}/login" method="post">
+<form id="login_form" action="${rootPath}/web/login" method="post">
     <dl class="admin_login">
         <dt>
-            <strong>MiniIts后台管理系统</strong>
+            <strong>MiniIts-迷你科技</strong>
         </dt>
         <dd class="user_icon">
             <input type="text" placeholder="账号" class="login_txtbx" name="userName" id="inp_user_name" />
@@ -44,4 +44,3 @@
 <script src="${rootPath}/resources/admin/login/login.js"></script>
 </body>
 </html>
-

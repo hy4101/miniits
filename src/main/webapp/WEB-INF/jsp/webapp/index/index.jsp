@@ -11,16 +11,33 @@
     <meta name="author" content="Bootstrap中文网">
 </head>
 <body class="home-template">
-<div class="site-notice"><a href="http://blog.bootcdn.cn/bootcdn-support-https/" target="_blank"><em>BootCDN 已经支持 HTTPS
-    协议啦！</em></a></div>
+<div class="site-notice">
+    <em>MiniIts.com-迷你科技</em>
+</div>
 <header class="site-header jumbotron">
-    <div class="site-nav"><a href="http://blog.bootcdn.cn/" target="_blank"
-                             onclick="_hmt.push(['_trackEvent', 'site-nav', 'click', 'blog'])">博客</a> <span>/</span> <a
-            href="#about">关于</a></div>
-
+    <div class="site-nav">
+        <a href="${rootPath}/web/login" target="_blank">博客</a>
+        <span>/</span>
+        <a href="${rootPath}/user/login" target="_blank">登入</a>
+        <span>/</span>
+        <a href="${rootPath}/web/login">注册</a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12"><h1>MiniIts</h1>
+                <p>MINIITS.COM-迷你科技<br><span class="package-amount">迷你科技网是中文IT社区，提供专业互联网IT技术服务</span></p>
+                <form class="" role="search">
+                    <div class="input-group input-group-lg">
+                        <input type="text" class="form-control search clearable" placeholder="搜索MiniIts,如：Spring Boot,Spring MVC,MyBatis Jar,jquery">
+                        <span class="input-group-addon search clearable f-csp">GO!</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </header>
 
-<link rel="stylesheet" type="text/css" href="${rootPath}/resources/webapp/index/index.css"/>
+<link href="${rootPath}/resources/webapp/index/index.css" rel="stylesheet" type="text/css" />
 <script src="${rootPath}/resources/webapp/index/index.js"></script>
 </body>
 </html>

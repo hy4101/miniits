@@ -22,3 +22,6 @@
 <%--引入bootstrap资源文件--%>
 <link href="${rootPath}/resources/commons/bootstrap-v330/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="${rootPath}/resources/commons/bootstrap-v330/dist/js/bootstrap.min.js"></script>
+

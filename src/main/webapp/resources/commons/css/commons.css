@@ -148,9 +148,11 @@
 .f-dr1c8 { border:1px solid #c8c8c8 }
 
 /* 其它 */
+/*鼠标指针*/
 .f-csp{cursor:pointer;}
 .f-csd{cursor:default;}
 .f-csh{cursor:help;}
 .f-csm{cursor:move;}
 .f-usn{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}
+
 
