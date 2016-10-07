@@ -44,6 +44,7 @@
         <!--<version.swagger-ui>2.4.0</version.swagger-ui>-->
         <!--<shiro.version>1.2.2</shiro.version>-->
         <standard.version>1.1.2</standard.version>
+        <shiro.version>1.2.2</shiro.version>
 
         <!--<spring-security-oauth2.version>2.0.3.RELEASE</spring-security-oauth2.version>-->
     </properties>
@@ -84,12 +85,12 @@
 
         <!--安全包 出现登入界面-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-security</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-security</artifactId>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-amqp</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-amqp</artifactId>-->
         <!--</dependency>-->
 
 
@@ -183,9 +184,9 @@
 
         <!--其他-->
         <!--<dependency>-->
-            <!--<groupId>org.quartz-scheduler</groupId>-->
-            <!--<artifactId>quartz</artifactId>-->
-            <!--<version>${version.quartz}</version>-->
+        <!--<groupId>org.quartz-scheduler</groupId>-->
+        <!--<artifactId>quartz</artifactId>-->
+        <!--<version>${version.quartz}</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -208,14 +209,14 @@
             <version>${version.junit}</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>io.springfox</groupId>-->
-            <!--<artifactId>springfox-swagger2</artifactId>-->
-            <!--<version>${version.swagger}</version>-->
+        <!--<groupId>io.springfox</groupId>-->
+        <!--<artifactId>springfox-swagger2</artifactId>-->
+        <!--<version>${version.swagger}</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>io.springfox</groupId>-->
-            <!--<artifactId>springfox-swagger-ui</artifactId>-->
-            <!--<version>${version.swagger-ui}</version>-->
+        <!--<groupId>io.springfox</groupId>-->
+        <!--<artifactId>springfox-swagger-ui</artifactId>-->
+        <!--<version>${version.swagger-ui}</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>net.iharder</groupId>
@@ -234,6 +235,43 @@
             <artifactId>freemarker</artifactId>
             <version>2.3.20</version>
         </dependency>
+
+        <!--jstl-->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-extras</artifactId>
+            <version>3.0.5</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--shiro-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
 
     </dependencies>
 
