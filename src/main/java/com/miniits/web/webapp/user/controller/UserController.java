@@ -2,7 +2,7 @@ package com.miniits.web.webapp.user.controller;
 
 import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.MD5.MD5Util;
-import com.miniits.commons.utils.web.BaseUiUtil;
+import com.miniits.commons.utils.web.BaseUtil;
 import com.miniits.web.webapp.user.model.User;
 import com.miniits.web.webapp.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.List;
  */
 
 @Service
-public class UserController extends BaseUiUtil {
+public class UserController extends BaseUtil {
 
     @Autowired
     private UserService userService;
@@ -51,6 +51,10 @@ public class UserController extends BaseUiUtil {
             return success(user);
         } else
             return error("密码或用户名错误");
+    }
+
+    public Envelop save(User user){
+        return success(userService.save(user));
     }
 
     public User getUserById(String id) {

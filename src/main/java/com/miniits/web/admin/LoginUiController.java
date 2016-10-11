@@ -1,7 +1,7 @@
 package com.miniits.web.admin;
 
 import com.miniits.commons.utils.Envelop;
-import com.miniits.commons.utils.web.BaseUiUtil;
+import com.miniits.commons.utils.web.BaseUtil;
 import com.miniits.web.webapp.user.controller.UserController;
 import com.miniits.web.webapp.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import javax.swing.tree.FixedHeightLayoutCache;
 
 @Controller
 @RequestMapping("/")
-public class LoginUiController extends BaseUiUtil {
+public class LoginUiController extends BaseUtil {
 
     @Autowired
     private UserController controller;

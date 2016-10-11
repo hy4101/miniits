@@ -1,7 +1,7 @@
-package com.miniits.web.webapp;
+package com.miniits.web.webapp.user.ui;
 
 import com.miniits.commons.utils.Envelop;
-import com.miniits.commons.utils.web.BaseUiUtil;
+import com.miniits.commons.utils.web.BaseUtil;
 import com.miniits.web.webapp.user.controller.UserController;
 import com.miniits.web.webapp.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/")
-public class WebLoginUiController extends BaseUiUtil {
+public class WebLoginController extends BaseUtil {
 
     @Autowired
     private UserController controller;
@@ -32,7 +32,7 @@ public class WebLoginUiController extends BaseUiUtil {
      * @param model
      * @return
      */
-    @RequestMapping("/user/login")
+    @RequestMapping("/user/login.html")
     public String adminLogin(Model model,HttpServletRequest request) {
         model.addAttribute("boo", true);
         return "/webapp/login/index";
@@ -66,7 +66,8 @@ public class WebLoginUiController extends BaseUiUtil {
      * @return
      */
     @RequestMapping("/")
-    public String admin(HttpServletRequest request) {
+    public String admin(HttpServletRequest request,Model model) {
+        model.addAttribute("user",request.getSession().getAttribute("user"));
 //        String historyUrl = (String) request.getSession().getAttribute("historyUrl");
 //        if (StringUtils.isEmpty(historyUrl))
             return "/webapp/index/index";

@@ -2,7 +2,7 @@ package com.miniits.web;
 
 import com.miniits.commons.utils.html.HtmlModel;
 import com.miniits.commons.utils.html.HtmlService;
-import com.miniits.commons.utils.web.BaseUiUtil;
+import com.miniits.commons.utils.web.BaseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ import java.io.File;
 
 @Controller
 @RequestMapping("/")
-public class IndexUiController extends BaseUiUtil {
+public class IndexUiController extends BaseUtil {
 
     @Autowired
     private HtmlService htmlService;

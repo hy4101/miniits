@@ -1,5 +1,6 @@
 package com.miniits.commons.config;
 
+import com.miniits.web.webapp.emailvalidate.model.EMailValidate;
 import com.miniits.web.webapp.image.model.Image;
 import com.miniits.web.webapp.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,8 @@ public class AutoCreateTable {
         localSessionFactoryBean.setDataSource(dataSource);
         localSessionFactoryBean.setHibernateProperties(properties);
 
-        localSessionFactoryBean.setAnnotatedClasses(User.class, Image.class);
+        localSessionFactoryBean.setAnnotatedClasses(User.class, Image.class, EMailValidate.class,
+                EMailValidate.class);
         return localSessionFactoryBean;
     }
 }

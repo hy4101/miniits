@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Bootstrap中文网开源项目免费 CDN 服务</title>
+    <title>MiniIts.com-迷你科技</title>
     <script async="" src="http://c.cnzz.com/core.php"></script>
     <meta name="description" content="Bootstrap中文网开源项目免费 CDN 服务 - 我们致力于为Bootstrap一样优秀的开源项目提供稳定、快速的免费 CDN 服务">
     <meta name="keywords" content="">
@@ -18,9 +18,9 @@
     <div class="site-nav">
         <a href="${rootPath}/web/login" target="_blank">博客</a>
         <span>/</span>
-        <a href="${rootPath}/user/login" target="_blank">登入</a>
+        <a href="${rootPath}/user/login.html" target="_blank">登入</a>
         <span>/</span>
-        <a href="${rootPath}/web/login">注册</a>
+        <a href="${rootPath}/user/register.html">注册</a>
     </div>
     <div class="container">
         <div class="row">

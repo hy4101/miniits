@@ -1,6 +1,6 @@
 package com.miniits.web.admin.user.ui;
 
-import com.miniits.commons.utils.web.BaseUiUtil;
+import com.miniits.commons.utils.web.BaseUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("admin/user")
-public class AdminUserUiController extends BaseUiUtil {
+public class AdminUserUiController extends BaseUtil {
 
     @Value("${service-api.url}")
     private String comUrl;
