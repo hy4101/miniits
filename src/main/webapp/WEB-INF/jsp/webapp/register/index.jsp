@@ -9,13 +9,13 @@
 <%@include file="/WEB-INF/jsp/admin/layout/minResources.jsp" %>
 <html>
 <head>
-    <title>迷你科技后台登入系统</title>
+    <title>注册--迷你科技</title>
 </head>
 <body>
 <form id="login_form" action="${rootPath}/user/register?action=register" method="post">
     <dl class="admin_login">
         <dt>
-            <strong>MiniIts-迷你科技</strong>
+            <strong>注册--迷你科技</strong>
         </dt>
         <dd class="user_icon">
             <input type="text" placeholder="账号" class="login_txtbx" name="userName" id="inp_user_name" />
