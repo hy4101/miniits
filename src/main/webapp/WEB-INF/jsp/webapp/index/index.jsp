@@ -16,7 +16,7 @@
 </div>
 <header class="site-header jumbotron">
     <div class="site-nav">
-        <a href="${rootPath}/web/login" target="_blank">博客</a>
+        <a href="${rootPath}/user/userAdmin" target="_blank" class="a-saveRequestUrl" >博客</a>
         <span>/</span>
         <a href="${rootPath}/user/login.html" target="_blank">登入</a>
         <span>/</span>

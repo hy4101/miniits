@@ -9,9 +9,16 @@
  */
 
 (function ($, win) {
+
+    $(function () {
+        $(".a-saveRequestUrl").click(function () {
+            debugger
+            sessionStorage.setItem("redirectUrl",window.location.origin+$(this).attr("href"));
+        })
+    })
+
     $.extend({
         Util: {
-
             // 获取项目路径
             getUrl: function () {
                 return $("#com_root_path").html();

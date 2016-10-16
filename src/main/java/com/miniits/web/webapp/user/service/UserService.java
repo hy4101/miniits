@@ -1,6 +1,7 @@
 package com.miniits.web.webapp.user.service;
 
 import com.miniits.commons.query.BaseJpaService;
+import com.miniits.web.webapp.demo.model.TUser;
 import com.miniits.web.webapp.user.dao.IUserRepository;
 import com.miniits.web.webapp.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +22,13 @@ public class UserService extends BaseJpaService<User,IUserRepository> {
     public User findByUserName(String userName){
         return iUserRepository.findByUserName(userName);
     }
+
+//    TEST
+public TUser findByName(String a){
+    return null;
+}
+//test
+public TUser getList(){
+    return null;
+}
 }

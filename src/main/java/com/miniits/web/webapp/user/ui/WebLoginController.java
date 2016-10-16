@@ -38,7 +38,6 @@ public class WebLoginController extends BaseUtil {
         return "/webapp/login/index";
     }
 
-
     /**
      * 管理员登入
      * 登入成功后使用redirect重定向功能（防止刷新后重新调用该方法，避免重新查询数据库），进去系统主页，
@@ -61,17 +60,13 @@ public class WebLoginController extends BaseUtil {
     }
 
     /**
-     * 登入成功后进去管理系统后台主页
+     * 登入成功后跳转到目标页
      *
      * @return
      */
     @RequestMapping("/")
     public String admin(HttpServletRequest request,Model model) {
         model.addAttribute("user",request.getSession().getAttribute("user"));
-//        String historyUrl = (String) request.getSession().getAttribute("historyUrl");
-//        if (StringUtils.isEmpty(historyUrl))
-            return "/webapp/index/index";
-//        else
-//            return "redicrect:" + historyUrl;
+            return "/redirect";
     }
 }

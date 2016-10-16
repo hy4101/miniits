@@ -1,5 +1,9 @@
 package com.miniits.commons.config;
 
+import com.miniits.web.webapp.demo.model.TPermission;
+import com.miniits.web.webapp.demo.model.TRole;
+import com.miniits.web.webapp.demo.model.TUser;
+import com.miniits.web.webapp.demo.model.TUserRole;
 import com.miniits.web.webapp.emailvalidate.model.EMailValidate;
 import com.miniits.web.webapp.image.model.Image;
 import com.miniits.web.webapp.user.model.User;
@@ -33,7 +37,7 @@ public class AutoCreateTable {
         localSessionFactoryBean.setHibernateProperties(properties);
 
         localSessionFactoryBean.setAnnotatedClasses(User.class, Image.class, EMailValidate.class,
-                EMailValidate.class);
+                EMailValidate.class, TPermission.class, TRole.class, TUser.class, TUserRole.class);
         return localSessionFactoryBean;
     }
 }

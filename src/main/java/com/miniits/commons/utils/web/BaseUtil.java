@@ -64,7 +64,7 @@ public class BaseUtil {
 
     public Envelop success(Object o) {
         Envelop envelop = new Envelop();
-        if (StringUtils.isNotEmpty(null))
+        if (null != o)
             envelop.setObj(o);
         envelop.setSuccessFlg(true);
         return envelop;
