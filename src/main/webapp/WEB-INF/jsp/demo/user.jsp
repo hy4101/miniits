@@ -10,6 +10,7 @@
 <h1>${message }</h1>
 <h1>用户列表--<a href="${pageContext.request.contextPath }/logout">退出登录</a></h1>
 <h2>权限列表</h2>
+<shiro:guest>为登入</shiro:guest>
 <shiro:authenticated>用户已经登录显示此内容<br/></shiro:authenticated><br/>
 <shiro:hasRole name="manager">manager角色登录显示此内容<br/></shiro:hasRole>
 <shiro:hasRole name="admin">admin角色登录显示此内容<br/></shiro:hasRole>

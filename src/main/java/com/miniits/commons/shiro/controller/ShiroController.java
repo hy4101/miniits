@@ -1,56 +1,50 @@
-//package com.miniits.web.webapp.demo.controller;
-//
-//import java.util.Map;
-//
-//import javax.validation.Valid;
-//
-//import com.miniits.commons.utils.MD5.MD5Util;
-//import com.miniits.web.webapp.demo.model.TUser;
-//import com.miniits.web.webapp.user.service.UserService;
-//import org.apache.shiro.SecurityUtils;
-//import org.apache.shiro.authc.AuthenticationException;
-//import org.apache.shiro.authc.ExcessiveAttemptsException;
-//import org.apache.shiro.authc.IncorrectCredentialsException;
-//import org.apache.shiro.authc.LockedAccountException;
-//import org.apache.shiro.authc.UnknownAccountException;
-//import org.apache.shiro.authc.UsernamePasswordToken;
-//import org.apache.shiro.subject.Subject;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
-//import org.springframework.validation.BindingResult;
-//import org.springframework.web.bind.annotation.PathVariable;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestMethod;
-//import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-//
-///**
-// * Shiro测试Controller
-// *
-// * @author   单红宇(365384722)
-// * @myblog  http://blog.csdn.net/catoop/
-// * @create    2016年1月13日
-// */
-//@Controller
-//public class ShiroController {
-//
-//    private static final Logger logger = LoggerFactory.getLogger(ShiroController.class);
-//
-//    @Autowired
-//    private UserService userDao;
-//
-//
-//    @Autowired
-//    private MD5Util md5Util;
-//
-//    @RequestMapping(value="/login",method=RequestMethod.GET)
-//    public String loginForm(Model model){
-//        model.addAttribute("user", new TUser());
-//        return "/demo/login";
-//    }
-//
+package com.miniits.commons.shiro.controller;
+
+import com.miniits.commons.utils.MD5.MD5Util;
+import com.miniits.web.webapp.demo.model.TUser;
+import com.miniits.web.webapp.user.service.UserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.validation.Valid;
+import java.util.Map;
+
+/**
+ * Shiro测试Controller
+ *
+ * @author   单红宇(365384722)
+ * @myblog  http://blog.csdn.net/catoop/
+ * @create    2016年1月13日
+ */
+@Controller
+public class ShiroController {
+
+    private static final Logger logger = LoggerFactory.getLogger(ShiroController.class);
+
+    @Autowired
+    private UserService userDao;
+
+
+    @Autowired
+    private MD5Util md5Util;
+
+    @RequestMapping(value="/login",method=RequestMethod.GET)
+    public String loginForm(Model model){
+        model.addAttribute("user", new TUser());
+        return "/demo/login";
+    }
+
 //    @RequestMapping(value="/login",method=RequestMethod.POST)
 //    public String login(@Valid TUser user,BindingResult bindingResult,RedirectAttributes redirectAttributes){
 //        if(bindingResult.hasErrors()){
@@ -105,22 +99,22 @@
 //        redirectAttributes.addFlashAttribute("message", "您已安全退出");
 //        return "redirect:/demo/login";
 //    }
-//
-//    @RequestMapping("/403")
-//    public String unauthorizedRole(){
-//        logger.info("------没有权限-------");
-//        return "/demo/403";
-//    }
-//
-//    @RequestMapping("/user")
-//    public String getUserList(Map<String, Object> model){
-//        model.put("userList", userDao.getList());
-//        return "/demo/user";
-//    }
-//
-//    @RequestMapping("/user/edit/{userid}")
-//    public String getUserList(@PathVariable int userid){
-//        logger.info("------进入用户信息修改-------");
-//        return "/demo/user_edit";
-//    }
-//}
+
+    @RequestMapping("/403")
+    public String unauthorizedRole(){
+        logger.info("------没有权限-------");
+        return "/demo/403";
+    }
+
+    @RequestMapping("/user")
+    public String getUserList(Map<String, Object> model){
+        model.put("userList", userDao.getList());
+        return "/demo/user";
+    }
+
+    @RequestMapping("/user/edit/{userid}")
+    public String getUserList(@PathVariable int userid){
+        logger.info("------进入用户信息修改-------");
+        return "/demo/user_edit";
+    }
+}
