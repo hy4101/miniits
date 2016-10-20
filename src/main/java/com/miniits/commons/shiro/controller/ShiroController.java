@@ -1,23 +1,17 @@
 package com.miniits.commons.shiro.controller;
 
 import com.miniits.commons.utils.MD5.MD5Util;
-import com.miniits.web.webapp.demo.model.TUser;
+import com.miniits.web.webapp.demo.shiro.model.TUser;
 import com.miniits.web.webapp.user.service.UserService;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.*;
-import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.Valid;
 import java.util.Map;
 
 /**

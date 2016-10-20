@@ -1,7 +1,7 @@
 package com.miniits.web.webapp.user.service;
 
 import com.miniits.commons.query.BaseJpaService;
-import com.miniits.web.webapp.demo.model.TUser;
+import com.miniits.web.webapp.demo.shiro.model.TUser;
 import com.miniits.web.webapp.user.dao.IUserRepository;
 import com.miniits.web.webapp.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;

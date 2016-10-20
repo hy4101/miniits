@@ -12,7 +12,6 @@
 
     $(function () {
         $(".a-saveRequestUrl").click(function () {
-            debugger
             sessionStorage.setItem("redirectUrl",window.location.origin+$(this).attr("href"));
         })
     })

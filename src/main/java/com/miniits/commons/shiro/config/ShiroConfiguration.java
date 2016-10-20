@@ -91,15 +91,15 @@ public class ShiroConfiguration {
         return aasa;
     }
 
-//    @Bean
-//    public SimpleMappingExceptionResolver getSimpleMappingExceptionResolver(){
-//        SimpleMappingExceptionResolver simpleMappingExceptionResolver = new SimpleMappingExceptionResolver();
-//        Properties properties = new Properties();
-//        properties.setProperty("org.apache.shiro.authz.UnauthorizedException","/unauthorized");
-//        properties.setProperty("org.apache.shiro.authz.UnauthenticatedException","/unauthenticated");
-//        simpleMappingExceptionResolver.setExceptionMappings(properties);
-//        return simpleMappingExceptionResolver;
-//    }
+    @Bean
+    public SimpleMappingExceptionResolver getSimpleMappingExceptionResolver(){
+        SimpleMappingExceptionResolver simpleMappingExceptionResolver = new SimpleMappingExceptionResolver();
+        Properties properties = new Properties();
+        properties.setProperty("org.apache.shiro.authz.UnauthorizedException","/unauthorized");
+        properties.setProperty("org.apache.shiro.authz.UnauthenticatedException","/unauthenticated");
+        simpleMappingExceptionResolver.setExceptionMappings(properties);
+        return simpleMappingExceptionResolver;
+    }
 
     /**
      * 加载shiroFilter权限控制规则（从数据库读取然后配置）

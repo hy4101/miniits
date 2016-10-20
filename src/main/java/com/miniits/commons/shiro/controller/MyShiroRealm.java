@@ -1,7 +1,7 @@
 package com.miniits.commons.shiro.controller;
 
-import com.miniits.web.webapp.demo.model.TRole;
-import com.miniits.web.webapp.demo.model.TUser;
+import com.miniits.web.webapp.demo.shiro.model.TRole;
+import com.miniits.web.webapp.demo.shiro.model.TUser;
 import com.miniits.web.webapp.user.model.User;
 import com.miniits.web.webapp.user.service.UserService;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;

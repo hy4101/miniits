@@ -18,6 +18,7 @@
     var url = sessionStorage.getItem("redirectUrl");
     if (url == "" || null == url)
         url = "http://localhost:8080/miniits/index.html";
+//    sessionStorage.removeItem("redirectUrl");
     window.location.href = url;
 </script>
 

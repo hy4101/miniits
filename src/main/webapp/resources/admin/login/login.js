@@ -82,10 +82,10 @@
                         return self.$errorMessage.html("用户名不能为空");
                     else if (util.isStrEmpty(password))
                         return self.$errorMessage.html("密码不能为空");
-                    else if (util.isStrEmpty(iCode))
-                        return self.$errorMessage.html("验证码不能为空");
-                    else if (!util.isStrEqualsIgnorecase(iCode, code))
-                        return self.$errorMessage.html("验证码有误");
+                    else if (util.isStrEmpty(iCode)){
+                        // return self.$errorMessage.html("验证码不能为空");
+                    } else if (!util.isStrEqualsIgnorecase(iCode, code))
+                        // return self.$errorMessage.html("验证码有误");
 
                     self.$errorMessage.html("");
                     self.$loginForm.submit();

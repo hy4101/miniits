@@ -1,31 +1,22 @@
 package com.miniits.web.webapp.user.ui;
 
 import com.miniits.commons.shiro.controller.ShiroController;
-import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.MD5.MD5Util;
 import com.miniits.commons.utils.web.BaseUtil;
-import com.miniits.web.webapp.demo.model.TUser;
 import com.miniits.web.webapp.user.controller.UserController;
 import com.miniits.web.webapp.user.model.User;
+import com.miniits.web.webapp.user.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
-import org.apache.shiro.authz.UnauthorizedException;
-import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.context.request.NativeWebRequest;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
@@ -48,6 +39,9 @@ public class WebLoginController extends BaseUtil {
     private UserController controller;
 
     @Autowired
+    private UserService userDao;
+
+    @Autowired
     private MD5Util md5Util;
 
     /**
@@ -57,10 +51,42 @@ public class WebLoginController extends BaseUtil {
      * @return
      */
     @RequestMapping("/user/login.html")
-    public String adminLogin(Model model,HttpServletRequest request) {
-        model.addAttribute("boo", true);
-        return "/webapp/login/index";
+    public String adminLogin(Model model, HttpServletRequest request) {
+        Subject currentUser = SecurityUtils.getSubject();
+        boolean bo = currentUser.isAuthenticated();
+        if (currentUser.isAuthenticated()) {
+            return "redirect:/";
+        } else {
+            model.addAttribute("boo", true);
+            return "/web/login/index";
+        }
     }
+
+
+//    @RequestMapping("/web/login")
+//    public String userLogin(User user, HttpServletRequest request, Model model) {
+//
+//        Envelop envelop = controller.login(user);
+//        if (envelop.isSuccessFlg()) {
+//            request.getSession().setAttribute("user", envelop.getObj());
+//            return "redirect:/";
+//        } else {
+//            model.addAttribute("boo", false);
+//            return "/webapp/login/index";
+//        }
+//    }
+
+    /**
+     * 登入成功后跳转到目标页
+     *
+     * @return
+     */
+    @RequestMapping("/")
+    public String admin(HttpServletRequest request, Model model) {
+        model.addAttribute("user", request.getSession().getAttribute("user"));
+        return "/redirect";
+    }
+
 
     /**
      * 用户登入
@@ -70,41 +96,9 @@ public class WebLoginController extends BaseUtil {
      * @param request
      * @return
      */
-    @RequestMapping("/web/login")
-    public String userLogin(User user, HttpServletRequest request, Model model) {
-
-        Envelop envelop = controller.login(user);
-        if (envelop.isSuccessFlg()) {
-            request.getSession().setAttribute("user", envelop.getObj());
-            return "redirect:/";
-        } else {
-            model.addAttribute("boo", false);
-            return "/webapp/login/index";
-        }
-    }
-
-    /**
-     * 登入成功后跳转到目标页
-     *
-     * @return
-     */
-    @RequestMapping("/")
-    public String admin(HttpServletRequest request,Model model) {
-        model.addAttribute("user",request.getSession().getAttribute("user"));
-            return "/redirect";
-    }
-
-
-
-
-
-
-
-
-
-    @RequestMapping(value="/web/login",method= RequestMethod.POST)
-    public String login(@Valid User user, BindingResult bindingResult, RedirectAttributes redirectAttributes,Model model){
-        if(bindingResult.hasErrors()){
+    @RequestMapping(value = "/web/login", method = RequestMethod.POST)
+    public String login(@Valid User user, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model, HttpServletRequest request) {
+        if (bindingResult.hasErrors()) {
             return "login";
         }
 
@@ -120,56 +114,57 @@ public class WebLoginController extends BaseUtil {
             logger.info("对用户[" + username + "]进行登录验证..验证开始");
             currentUser.login(token);
             logger.info("对用户[" + username + "]进行登录验证..验证通过");
-        }catch(UnknownAccountException uae){
+        } catch (UnknownAccountException uae) {
             logger.info("对用户[" + username + "]进行登录验证..验证未通过,未知账户");
             redirectAttributes.addFlashAttribute("message", "未知账户");
-        }catch(IncorrectCredentialsException ice){
+        } catch (IncorrectCredentialsException ice) {
             logger.info("对用户[" + username + "]进行登录验证..验证未通过,错误的凭证");
             redirectAttributes.addFlashAttribute("message", "密码不正确");
-        }catch(LockedAccountException lae){
+        } catch (LockedAccountException lae) {
             logger.info("对用户[" + username + "]进行登录验证..验证未通过,账户已锁定");
             redirectAttributes.addFlashAttribute("message", "账户已锁定");
-        }catch(ExcessiveAttemptsException eae){
+        } catch (ExcessiveAttemptsException eae) {
             logger.info("对用户[" + username + "]进行登录验证..验证未通过,错误次数过多");
             redirectAttributes.addFlashAttribute("message", "用户名或密码错误次数过多");
-        }catch(AuthenticationException ae){
+        } catch (AuthenticationException ae) {
             //通过处理Shiro的运行时AuthenticationException就可以控制用户登录失败或密码错误时的情景
             logger.info("对用户[" + username + "]进行登录验证..验证未通过,堆栈轨迹如下");
             ae.printStackTrace();
             redirectAttributes.addFlashAttribute("message", "用户名或密码不正确");
         }
         //验证是否登录成功
-        if(currentUser.isAuthenticated()){
+        if (currentUser.isAuthenticated()) {
+            User newUser =userDao.findByUserName(token.getUsername());
+            request.getSession().setAttribute("user", newUser);
             logger.info("用户[" + username + "]登录认证通过(这里可以进行一些认证通过后的一些系统参数初始化操作)");
             return "redirect:/";
-        }else{
+        } else {
             token.clear();
             model.addAttribute("boo", false);
-            return "/webapp/login/index";
+            return "/web/login/index";
         }
     }
 
-    @RequestMapping(value="/logout",method=RequestMethod.GET)
-    public String logout(RedirectAttributes redirectAttributes ){
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(RedirectAttributes redirectAttributes) {
         //使用权限管理工具进行用户的退出，跳出登录，给出提示信息
         SecurityUtils.getSubject().logout();
-        redirectAttributes.addFlashAttribute("message", "您已安全退出");
-        return "redirect:/demo/login";
+        return "redirect:/";
     }
 
-    @RequiresAuthentication
-    @RequestMapping("/tests")
-    public void stat() {
-        logger.info("sdf");
-    }
+//    @RequiresAuthentication
+//    @RequestMapping("/tests")
+//    public void stat() {
+//        logger.info("sdf");
+//    }
 
-    @ExceptionHandler({Exception.class})
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public ModelAndView processUnauthenticatedException(NativeWebRequest request, UnauthorizedException ex) {
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("ex", ex);
-        // 为了区分，跳转掉另一个视图
-        mv.setViewName("error/unauthorized");
-        return mv;
-    }
+//    @ExceptionHandler({AuthorizationException.class})
+//    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+//    public ModelAndView processUnauthenticatedException(NativeWebRequest request, UnauthorizedException ex) {
+//        ModelAndView mv = new ModelAndView();
+//        mv.addObject("ex", ex);
+//        // 为了区分，跳转掉另一个视图
+//        mv.setViewName("error/unauthorized");
+//        return mv;
+//    }
 }

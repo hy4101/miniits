@@ -4,8 +4,10 @@ package com.miniits.commons.shiro.config;
  * Created by wq on 2016/10/15.
  */
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.mgt.FilterChainManager;
 import org.apache.shiro.web.filter.mgt.FilterChainResolver;
 import org.apache.shiro.web.filter.mgt.PathMatchingFilterChainResolver;
@@ -28,8 +30,8 @@ import java.util.Set;
  */
 public class MShiroFilterFactoryBean extends ShiroFilterFactoryBean {
 
-    @Autowired
-    private SecurityManager securityManager;
+//    @Autowired
+//    private SecurityManager securityManager;
 
     // 对ShiroFilter来说，需要直接忽略的请求
     private Set<String> ignoreExt;
@@ -48,7 +50,7 @@ public class MShiroFilterFactoryBean extends ShiroFilterFactoryBean {
     @Override
     protected AbstractShiroFilter createInstance() throws Exception {
 
-//        SecurityManager securityManager = System.getSecurityManager();
+        SecurityManager securityManager = getSecurityManager();
         if (securityManager == null) {
             String msg = "SecurityManager property must be set.";
             throw new BeanInitializationException(msg);
@@ -88,6 +90,7 @@ public class MShiroFilterFactoryBean extends ShiroFilterFactoryBean {
             // 因为ShiroFilter 拦截所有请求（在上面我们配置了urlPattern 为 * ，当然你也可以在那里精确的添加要处理的路径，这样就不需要这个类了），而在每次请求里面都做了session的读取和更新访问时间等操作，这样在集群部署session共享的情况下，数量级的加大了处理量负载。
             // 所以我们这里将一些能忽略的请求忽略掉。
             // 当然如果你的集群系统使用了动静分离处理，静态资料的请求不会到Filter这个层面，便可以忽略。
+
             boolean flag = true;
             int idx = 0;
             if(( idx = str.indexOf(".")) > 0){

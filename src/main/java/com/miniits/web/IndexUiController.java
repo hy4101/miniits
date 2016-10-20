@@ -27,7 +27,7 @@ public class IndexUiController extends BaseUtil {
 
         HtmlModel htmlModel = new HtmlModel();
 
-        htmlModel.setTemplatePath("/webapp/index/ftl/index.ftl");
+        htmlModel.setTemplatePath("/web/index/ftl/index.ftl");
         htmlModel.setSaveFileName("index.html");
         htmlModel.setSaveFilePath("index" + File.separator + "html");
         htmlModel.setEntity("hello miniits");
@@ -36,7 +36,7 @@ public class IndexUiController extends BaseUtil {
 //        if (htmlModel.isSuccess())
 //            return "/webapp/index/html/index";
 //        else
-            return "/webapp/index/index";
+            return "/web/index/index";
     }
 
 }

@@ -2,6 +2,8 @@ package com.miniits.commons.filter;
 
 import com.miniits.web.webapp.user.model.User;
 import org.apache.catalina.connector.RequestFacade;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.*;
@@ -33,12 +35,29 @@ public class miniitsFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         String url = ((RequestFacade) request).getRequestURI();
+
         //登入放行
-        if (url.indexOf("/admin/login") != -1||url.indexOf("/user/login.html") != -1||url.indexOf("/user") != -1) {
+        if (url.indexOf("/admin/login") != -1||url.indexOf("/user/login.html") != -1) {
             chain.doFilter(request, response);
             return;
-            //后台管理拦截
-        } else if (url.indexOf("/admin") != -1||url.indexOf("/user") != -1) {
+            /**
+             * 后台管理拦截
+             * 路径带有admin或user  拦截
+             * 其他不拦截
+             */
+        }
+
+
+
+
+
+
+
+
+
+
+
+        if (url.indexOf("/admin") != -1||url.indexOf("/user") != -1) {
             String requestUrl = url.indexOf("/user") != -1?"/user/login.html":"/admin/login";
             User userAdmin = (User) ((RequestFacade) request).getSession().getAttribute("admin");
             User user = (User) ((RequestFacade) request).getSession().getAttribute("user");
