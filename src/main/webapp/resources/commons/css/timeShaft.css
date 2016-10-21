@@ -63,8 +63,8 @@ Main components
   top: 0;
   left: 18px;
   height: 100%;
-  width: 4px;
-  background: #05B168;
+  width: 2px;
+  /*background: #05B168;*/
 }
 @media only screen and (min-width: 1170px) {
   #cd-timeline {
@@ -160,14 +160,14 @@ Main components
   margin-left: 60px;
   background: white;
   border-radius: 0.25em;
-  padding: 1em;
-  box-shadow: 0 3px 0 #d7e4ed;
+  /*padding: 1em;*/
+  /*box-shadow: 0 1px 0 #d7e4ed;*/
 }
-.cd-timeline-content:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+/*.cd-timeline-content:after {*/
+  /*content: "";*/
+  /*display: table;*/
+  /*clear: both;*/
+/*}*/
 .cd-timeline-content h2 {
   color: #303e49;
 }
@@ -198,16 +198,16 @@ a.cd-read-more:hover{text-decoration:none; background-color: #424242;  }
   padding: .8em 0;
   opacity: .7;
 }
-.cd-timeline-content::before {
-  content: '';
-  position: absolute;
-  top: 16px;
-  right: 100%;
-  height: 0;
-  width: 0;
-  border: 7px solid transparent;
-  border-right: 7px solid white;
-}
+/*.cd-timeline-content::before {*/
+  /*content: '';*/
+  /*position: absolute;*/
+  /*top: 16px;*/
+  /*right: 100%;*/
+  /*height: 0;*/
+  /*width: 0;*/
+  /*border: 7px solid transparent;*/
+  /*border-right: 7px solid white;*/
+/*}*/
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
     font-size: 20px;
@@ -225,8 +225,8 @@ a.cd-read-more:hover{text-decoration:none; background-color: #424242;  }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
     margin-left: 0;
-    padding: 1.6em;
-    width: 45%;
+    /*padding: 1.6em;*/
+    /*width: 45%;*/
   }
   .cd-timeline-content::before {
     top: 24px;
@@ -245,9 +245,9 @@ a.cd-read-more:hover{text-decoration:none; background-color: #424242;  }
     font-size: 16px;
     font-size: 1rem;
   }
-  .cd-timeline-block:nth-child(even) .cd-timeline-content {
-    float: right;
-  }
+  /*.cd-timeline-block:nth-child(even) .cd-timeline-content {*/
+    /*float: right;*/
+  /*}*/
   .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
     top: 24px;
     left: auto;

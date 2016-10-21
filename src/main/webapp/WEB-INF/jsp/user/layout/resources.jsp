@@ -13,9 +13,10 @@
 
 <head>
 
-    <%--<script src="${rootPath}/resources/commons/js/util/pubsub.js"></script>--%>
+    <script src="${rootPath}/resources/commons/js/util/pubsub.js"></script>
     <script src="${rootPath}/resources/commons/layui-v102/layui.js"></script>
     <link href="${rootPath}/resources/commons/layui-v102/layui.css" rel="stylesheet" type="text/css"/>
+    <script src="${rootPath}/resources/commons/js/util/timeUtil.js"></script>
 
 </head>
 
