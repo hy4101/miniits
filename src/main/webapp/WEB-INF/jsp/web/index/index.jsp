@@ -29,6 +29,8 @@
             <span>/</span>
             <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">博客</a>
             <span>/</span>
+            <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">主页</a>
+            <span>/</span>
             <a href="${rootPath}/logout" target="_blank">退出:</a><shiro:principal/>
         </shiro:authenticated>
     </div>

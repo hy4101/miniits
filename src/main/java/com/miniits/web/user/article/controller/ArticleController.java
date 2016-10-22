@@ -27,4 +27,9 @@ public class ArticleController extends BaseUtil {
         Envelop envelop = getResult(articleList, articleService.getCount(filters), page, size);
         return envelop;
     }
+
+    public Envelop deleteArticle(String id) throws ParseException {
+        articleService.delete(id);
+        return success("");
+    }
 }

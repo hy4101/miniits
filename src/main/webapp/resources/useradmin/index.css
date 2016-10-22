@@ -178,6 +178,8 @@ h1, .h1, h2, .h2, h3, .h3{
     -ms-filter: alpha(opacity=20);
     background: rgba(255,255,255,.2);
 }
-
+.clearfix{
+    margin-top:5px;
+}
 
 

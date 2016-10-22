@@ -31,4 +31,15 @@ public class UIArticleController extends BaseUtil {
             return error("帖子查询失败");
         }
     }
+
+    @RequestMapping("/delete")
+    @ResponseBody
+    public Envelop deleteArticle(String id){
+        try {
+            Envelop envelop = articleController.deleteArticle(id);
+            return envelop;
+        } catch (ParseException e) {
+            return error("帖子查询删除");
+        }
+    }
 }

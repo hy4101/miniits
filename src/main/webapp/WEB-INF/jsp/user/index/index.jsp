@@ -12,6 +12,10 @@
 <section id="intro" class="page -intro">
     <div class="container">
         <div class="site-nav">
+            <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">设置</a>
+            <span>/</span>
+            <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">博客</a>
+            <span>/</span>
             <a href="${rootPath}/index.html">首页</a>
             <span>/</span>
             <a href="${rootPath}/logout">退出</a>
@@ -21,9 +25,9 @@
                 <p>MINIITS.COM-迷你科技<br><span class="package-amount">迷你科技网是中文IT社区，提供专业互联网IT技术服务</span></p>
                 <form class="" role="search">
                     <div class="input-group input-group-lg">
-                        <input type="text" class="form-control search clearable"
+                        <input type="text" class="form-control search clearable" id="div_params"
                                placeholder="搜索MiniIts,如：Spring Boot,Spring MVC,MyBatis Jar,jquery">
-                        <span class="input-group-addon search clearable f-csp">GO!</span>
+                        <span class="input-group-addon search clearable f-csp" id="sp_search_article_btn">GO!</span>
                     </div>
                 </form>
             </div>
@@ -33,11 +37,11 @@
 <div>
     <div class="container-main">
         <ul class="clearfix">
-            <li><a class="item">动态</a></li>
-            <li><a class="item">收藏</a></li>
-            <li><a class="item">订阅</a></li>
-            <li><a class="item">粉丝</a></li>
-            <li><a class="item">博客</a></li>
+            <li><a class="item" onclick="javascript:articleSelect('dynamic')">动态</a></li>
+            <li><a class="item" onclick="javascript:articleSelect('collects')">收藏</a></li>
+            <li><a class="item" onclick="javascript:articleSelect('subscibes')">订阅</a></li>
+            <li><a class="item" onclick="javascript:articleSelect('fans')">粉丝</a></li>
+            <li><a class="item" onclick="javascript:articleSelect('blog')">博客</a></li>
         </ul>
     </div>
 
@@ -69,7 +73,7 @@
     <%--</div>--%>
 
 </div>
-<div class="">
+<div>
     <div id="div_user_articles">
         <section id="cd-timeline" class="cd-container"></section>
     </div>
