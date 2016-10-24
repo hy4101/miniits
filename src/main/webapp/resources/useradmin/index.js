@@ -32,6 +32,7 @@
             getDataList: function (curr) {
                 var self = this;
                 $(self.$containerMain.find("li")[0]).css("border-bottom", "3px solid #ff5f63");
+                self.$params.val(sessionStorage.getItem("params"));
 
                 curr = Util.isStrEmpty(curr) ? 1 : curr;
                 var filters = Util.isStrEmpty(self.$params.val()) ? "" : "name?" + self.$params.val();
@@ -58,13 +59,14 @@
                     //模拟渲染
                     var render = function (curr) {
                         self.getDataList(curr);
+                        sessionStorage.removeItem("params");
                         var str = "";
                         for (var i = 0; i < dataList.length; i++) {
                             var date = TimeObjectUtil.longMsTimeConvertToDateTime(dataList[i].time);
                             str += '<div class="f-mt10 f-bb1"><ul class="cd-timeline-content clearfix">' +
                                 '<li class="f-fl f-mt2">' + date + '</li> ' +
                                 '<li class="f-fl f-ml50 f-fs20 f-mw60">' +
-                                '<a title="查看" class="f-dw" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "article:select", dataList[i].id) + '">' + dataList[i].name + '</a></li>' +
+                                '<a title="' + dataList[i].name + '" class="f-dw" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "article:select", dataList[i].id) + '">' + dataList[i].name + '</a></li>' +
                                 '<li class="f-fr f-mr50">' +
                                 '<img title="查看人数" src="' + Util.getUrl() + '/resources/commons/images/see.png" />' + dataList[i].see + ' -- ' +
                                 '<img title="回复人数" src="' + Util.getUrl() + '/resources/commons/images/revert.png" />' + dataList[i].revert + ' -- ' +
@@ -79,7 +81,7 @@
 
                     //调用分页
                     laypage({
-                        cont: 'demo8',
+                        cont: 'div_minits_pages',
                         pages: totalPage,
                         skip: true,
                         jump: function (obj) {
@@ -95,9 +97,20 @@
                 var self = this;
 
                 self.articlePage(1);
-                self.$searchArticleBtn.click(function () {
-                    self.getDataList(1);
+                self.$params.keypress(function (e) {
+                    var code = event.keyCode;
+                    if (13 == code){
+                        sessionStorage.setItem("params",self.$params.val());
+                        location.reload();
+                    }
                 })
+
+                self.$searchArticleBtn.click(function () {
+                    sessionStorage.setItem("params",self.$params.val());
+                    location.reload();
+                })
+
+
                 self.$item.click(function () {
                     var parents = $(this).parent("li").siblings();
                     $.each(parents, function (index, value) {

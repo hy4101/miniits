@@ -42,6 +42,7 @@
             <li><a class="item" onclick="javascript:articleSelect('subscibes')">订阅</a></li>
             <li><a class="item" onclick="javascript:articleSelect('fans')">粉丝</a></li>
             <li><a class="item" onclick="javascript:articleSelect('blog')">博客</a></li>
+            <li><a class="item" onclick="javascript:articleSelect('blog')">发表</a></li>
         </ul>
     </div>
 
@@ -80,7 +81,7 @@
 </div>
 
 <div>
-    <div id="demo8" class="f-mr-auto f-ml-auto f-mw60"></div>
+    <div id="div_minits_pages" class="f-mr-auto f-ml-auto f-mw60"></div>
 </div>
 
 <section id="intro" class="page -intro">

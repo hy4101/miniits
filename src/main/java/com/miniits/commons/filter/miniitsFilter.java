@@ -37,7 +37,11 @@ public class miniitsFilter implements Filter {
         String url = ((RequestFacade) request).getRequestURI();
 
         //登入放行
-        if (url.indexOf("/admin/login") != -1||url.indexOf("/user/login.html") != -1) {
+        if (url.indexOf("/admin/login") != -1
+                ||url.indexOf("/user/login.html") != -1
+                ||url.indexOf("/register") != -1
+                ||url.indexOf("/activate") != -1
+                ) {
             chain.doFilter(request, response);
             return;
             /**

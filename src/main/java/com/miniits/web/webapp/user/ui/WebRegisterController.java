@@ -43,7 +43,7 @@ public class WebRegisterController extends BaseUtil {
     @RequestMapping("/user/register.html")
     public String register(Model model, HttpServletRequest request) {
         model.addAttribute("boo", true);
-        return "/webapp/register/index";
+        return "/web/register/index";
     }
 
     /**
@@ -78,7 +78,7 @@ public class WebRegisterController extends BaseUtil {
             }
         }
         model.addAttribute("boo", true);
-        return "/webapp/register/index";
+        return "/web/register/index";
     }
 
     /**
