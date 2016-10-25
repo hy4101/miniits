@@ -134,7 +134,11 @@
                         case 'fans':
 
                             break;
+                        case 'redact':
+                            win.location = Util.getUrl() + "/user/editor.html";
+                            break;
                         default:
+                            //默认博客
                             break;
                     }
                 }

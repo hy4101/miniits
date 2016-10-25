@@ -1,4 +1,4 @@
-package com.miniits.web.user.miniitseditor.ui;
+package com.miniits.web.user.editor.ui;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +13,6 @@ public class UIMiniitsEditorController {
 
     @RequestMapping("/editor.html")
     public String miniitsEditor(){
-        return "/user/minitseditor/index";
+        return "/user/editor/index";
     }
 }

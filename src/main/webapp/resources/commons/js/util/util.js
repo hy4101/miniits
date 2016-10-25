@@ -5,7 +5,7 @@
  *
  * @author:      wq
  *
- * @copyright:   2016.8 www.lmsy.com
+ * @copyright:   2016.8 www.miniits.com
  */
 
 (function ($, win) {
