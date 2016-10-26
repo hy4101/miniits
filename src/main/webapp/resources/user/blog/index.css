@@ -1,14 +1,12 @@
 .div-editor-page{
-    /*width: 80%;*/
     height: auto;
-    /*margin-right: auto;*/
-    /*margin-left: auto;*/
 }
-.div-editor-msg{
-    /*width: 80%;*/
-    /*height: auto;*/
-    /*margin-right: auto;*/
-    /*margin-left: auto;*/
+.inp-user-title{
+    background-color: transparent;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    border-style: none;
 }
 
 /*-------------------------头部 starts--------------------------------*/

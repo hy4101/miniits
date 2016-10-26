@@ -138,7 +138,8 @@
                             win.location = Util.getUrl() + "/user/editor.html";
                             break;
                         default:
-                            //默认博客
+                            debugger
+                            win.location = Util.getUrl() + "/blog/"+$("#sp_user_name").html();
                             break;
                     }
                 }

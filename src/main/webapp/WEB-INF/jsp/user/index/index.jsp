@@ -14,14 +14,14 @@
         <div class="site-nav">
             <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">设置</a>
             <span>/</span>
-            <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">博客</a>
+            <a href="${rootPath}/blog/<shiro:principal/>" class="a-saveRequestUrl">博客</a>
             <span>/</span>
             <a href="${rootPath}/index.html">首页</a>
             <span>/</span>
             <a href="${rootPath}/logout">退出</a>
         </div>
         <div class="row">
-            <div class="col-xs-12 site-header "><h1 class="f-fs36">欢迎：<shiro:principal/></h1>
+            <div class="col-xs-12 site-header "><h1 class="f-fs36">欢迎：<span id=""><shiro:principal/></span></h1>
                 <p>MINIITS.COM-迷你科技<br><span class="package-amount">迷你科技网是中文IT社区，提供专业互联网IT技术服务</span></p>
                 <form class="" role="search">
                     <div class="input-group input-group-lg">
@@ -92,9 +92,9 @@
     </div>
 </section>
 
-<link rel="stylesheet" type="text/css" href="${rootPath}/resources/useradmin/index.css"/>
+<link rel="stylesheet" type="text/css" href="${rootPath}/resources/user/index.css"/>
 <%--引入时间轴css文件--%>
 <link rel="stylesheet" type="text/css" href="${rootPath}/resources/commons/css/timeShaft.css"/>
-<script src="${rootPath}/resources/useradmin/index.js"></script>
+<script src="${rootPath}/resources/user/index.js"></script>
 </body>
 </html>

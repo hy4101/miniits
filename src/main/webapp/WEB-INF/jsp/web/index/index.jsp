@@ -27,7 +27,7 @@
         <shiro:authenticated>
             <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">设置</a>
             <span>/</span>
-            <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">博客</a>
+            <a href="${rootPath}/blog/<shiro:principal/>" target="_blank" class="a-saveRequestUrl">博客</a>
             <span>/</span>
             <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">主页</a>
             <span>/</span>

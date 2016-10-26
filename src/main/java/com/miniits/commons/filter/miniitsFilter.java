@@ -60,8 +60,11 @@ public class miniitsFilter implements Filter {
 
 
 
-
-        if (url.indexOf("/admin") != -1||url.indexOf("/user") != -1) {
+//拦截
+        if (url.indexOf("/admin") != -1
+                ||url.indexOf("/user") != -1
+                ||url.indexOf("/blog") != -1
+                ) {
             String requestUrl = url.indexOf("/user") != -1?"/user/login.html":"/admin/login";
             User userAdmin = (User) ((RequestFacade) request).getSession().getAttribute("admin");
             User user = (User) ((RequestFacade) request).getSession().getAttribute("user");

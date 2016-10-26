@@ -10,7 +10,7 @@
 <%@include file="/WEB-INF/jsp/web/layout/resources.jsp" %>
 <html>
 <head>
-    <title>Title</title>
+    <title><shiro:principal/>正在创作...</title>
     <!-- 配置文件 -->
     <script type="text/javascript" src="${rootPath}/resources/commons/ueditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
@@ -21,7 +21,7 @@
     <section id="s-intro" class="page -intro">
         <div class="container">
             <div class="site-nav">
-                <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">博客</a>
+                <a href="${rootPath}/blog/<shiro:principal/>" target="_blank" class="a-saveRequestUrl">博客</a>
                 <span>/</span>
                 <a href="${rootPath}/index.html">首页</a>
             </div>
@@ -31,7 +31,7 @@
                     <form class="" role="search">
                         <div class="input-group input-group-lg">
                             <input type="text" class="form-control search clearable" id="div_params"
-                                   placeholder="搜索MiniIts,如：Spring Boot,Spring MVC,MyBatis Jar,jquery">
+                                   placeholder="标题">
                             <span class="input-group-addon search clearable f-csp" id="sp_search_article_btn">GO!</span>
                         </div>
                         <div class="div-editor-msg" id="div_editor_msg">
@@ -40,15 +40,22 @@
                             <script type="text/javascript">
                                 var ue = UE.getEditor('sc_miniits_editor');
                             </script>
+                            <div class="f-fr f-mt10 f-mb50">
+                                <button type="button" class="btn btn-default f-mr10">存草稿</button>
+                                <button type="button" class="btn btn-default" id="issue_btn">发布</button>
+                            </div>
                         </div>
+
                     </form>
+
                 </div>
+
             </div>
         </div>
 
     </section>
 
-<link rel="stylesheet" type="text/css" href="${rootPath}/resources/useradmin/editor/index.css"/>
-<script src="${rootPath}/resources/useradmin/editor/index.js"></script>
+<link rel="stylesheet" type="text/css" href="${rootPath}/resources/user/editor/index.css"/>
+<script src="${rootPath}/resources/user/editor/index.js"></script>
 </body>
 </html>
