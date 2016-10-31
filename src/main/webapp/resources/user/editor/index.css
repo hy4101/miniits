@@ -56,3 +56,15 @@
 #issue_btn{
     background: #ff746e;
 }
+.inp-title-sty{
+    width: 100%;
+}
+.div-type{
+    width: 20%;
+}
+.input-group .form-control{
+    width: 80%;
+}
+#div_type{
+    width: 100%;
+}

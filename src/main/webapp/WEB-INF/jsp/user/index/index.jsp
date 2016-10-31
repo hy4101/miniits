@@ -91,7 +91,7 @@
         </div>
     </div>
 </section>
-
+<div style="display: none" id="sp_user_name"><shiro:principal/></div>
 <link rel="stylesheet" type="text/css" href="${rootPath}/resources/user/index.css"/>
 <%--引入时间轴css文件--%>
 <link rel="stylesheet" type="text/css" href="${rootPath}/resources/commons/css/timeShaft.css"/>

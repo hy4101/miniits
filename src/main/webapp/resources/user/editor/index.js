@@ -15,6 +15,9 @@
         editorMaster = {
 
             $editorMsg: $("#div_editor_msg"),
+            $type: $("#div_type"),
+            $title: $("#div_title"),
+            $issueBtn: $("#issue_btn"),
 
             init: function () {
                 var self = this;
@@ -31,6 +34,25 @@
 
             cilcks: function () {
                 var self = this;
+
+                self.$issueBtn.click(function () {
+                    var model = {
+                        name:self.$title.val(),
+                        text:UE.getEditor('sc_miniits_editor').getContent(),
+                        type:self.$type.val()
+                    };
+                    $.ajax({
+                        url:url+"save",
+                        data:{jsonModel:JSON.stringify(model)},
+                        dataType:"json",
+                        success:function (data) {
+                            debugger
+                        },
+                        error:function (data) {
+
+                        }
+                    })
+                })
 
             }
 

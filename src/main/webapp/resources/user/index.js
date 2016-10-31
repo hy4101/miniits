@@ -138,7 +138,6 @@
                             win.location = Util.getUrl() + "/user/editor.html";
                             break;
                         default:
-                            debugger
                             win.location = Util.getUrl() + "/blog/"+$("#sp_user_name").html();
                             break;
                     }

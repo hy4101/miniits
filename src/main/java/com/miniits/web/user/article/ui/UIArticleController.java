@@ -42,4 +42,16 @@ public class UIArticleController extends BaseUtil {
             return error("帖子查询删除");
         }
     }
+
+    @RequestMapping("/save")
+    @ResponseBody
+    public Envelop save(String jsonModel){
+        Envelop envelop = null;
+        try {
+            envelop = articleController.saveArticle(jsonModel);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return envelop;
+    }
 }

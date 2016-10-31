@@ -25,4 +25,6 @@
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="${rootPath}/resources/commons/bootstrap-v330/dist/js/bootstrap.min.js"></script>
+<div id="com_root_path" style="display: none">${rootPath}</div>
+
 
