@@ -59,3 +59,8 @@
     text-align: center;
 }
 /*-------------------------头部 end-1--------------------------------*/
+.div-tree-all{
+    height: auto;
+    border-right: 1px solid red;
+    width: 20%;
+}
