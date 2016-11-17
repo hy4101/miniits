@@ -26959,9 +26959,9 @@ a.submenu_wenda .new-invite-num {
     background-image: url(https://mp.toutiao.com/static/resource/pgc_web/static/pkg/common_z.3d5afc2.png)
 }
 
-#pagelet-feedback .fb-sidebar .fb-back2top, #pagelet-feedback .fb-sidebar .fb-back2top:hover, #pagelet-feedback .fb-sidebar .j-fb-feedback:hover .fb-feedback, #pagelet-feedback .fb-sidebar .fb-feedback, #pagelet-header .shead_logo, #pagelet-selfservice .qa-nav-signup .qa-nav-icon, #pagelet-selfservice .qa-nav-data .qa-nav-icon {
-    background-image: url(https://mp.toutiao.com/static/resource/pgc_web/static/pkg/common_z.3d5afc2.png)
-}
+/*#pagelet-feedback .fb-sidebar .fb-back2top, #pagelet-feedback .fb-sidebar .fb-back2top:hover, #pagelet-feedback .fb-sidebar .j-fb-feedback:hover .fb-feedback, #pagelet-feedback .fb-sidebar .fb-feedback, #pagelet-header .shead_logo, #pagelet-selfservice .qa-nav-signup .qa-nav-icon, #pagelet-selfservice .qa-nav-data .qa-nav-icon {*/
+    /*background-image: url('../resources/commons/images/LOGO.png')*/
+/*}*/
 
 .signstep_item, .signstep_item_bg, .signstep_item_bg.current, #pagelet-selfservice .qa-nav-usage.cur .qa-nav-icon, #pagelet-verify-website .step-icon.step2, #pagelet-verify-website .step-icon.step3, #pagelet-selfservice .qa-nav-usage .qa-nav-icon {
     background-image: url(https://mp.toutiao.com/static/resource/pgc_web/static/pkg/common_z.3d5afc2.png)

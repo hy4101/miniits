@@ -9,7 +9,7 @@
 <%@include file="/WEB-INF/jsp/web/layout/resources.jsp" %>
 <html>
 <head>
-    <title>setting</title>
+    <title>设置-MINIITS.COM</title>
 </head>
 <body gap="^手动更新 - 头条号" class="">
 <style type="text/css">
@@ -35,9 +35,8 @@
 <div id="pagelet-header" gap="^用户profile">
     <div class="shead">
         <div class="shead_wrap">
-            <a class="shead_logo" href="/">头条号</a>
+            <a href="/"><img src="${rootPath}/resources/commons/images/logo.png"></a>
             <div class="shead_status">
-
 
             </div>
             <div class="shead_right">
@@ -138,7 +137,8 @@
                 <a href="/" class="menu_h1  menu_main alone"><i></i>主页</a>
             </div>
             <div class="menu_block">
-                <a href="/new_article/" class="menu_h1  new_article alone" ga="发表文章统计"><i></i>发表</a>
+                <a onclick="javascript:settingFun('typeManages');" class="menu_h1  new_article alone" ga="发表文章统计">
+                    <i></i>分类管理</a>
             </div>
 
             <div class="menu_block">
@@ -194,20 +194,24 @@
             </div>
         </div>
 
-        <div class="stage">
+        <div class="stage" id="div_count_msg">
             <div id="pagelet-list">
                 <div class="page_tabs sclearfix">
                     <a href="javascript:;" class="page_tab selected">手动更新</a>
-
                     <ul class="sort-type">
-                        <li><a href="javascript:;" class="sort-type-list list-all selected" data-node="list_all">全部</a>
+                        <li>
+                            <a href="javascript:;" class="sort-type-list list-all selected" data-node="list_all">全部</a>
                         </li>
-                        <li><a href="javascript:;" class="sort-type-list list-published" data-node="list_passed">已发表</a>
+                        <li>
+                            <a href="javascript:;" class="sort-type-list list-published" data-node="list_passed">已发表</a>
                         </li>
-                        <li><a href="javascript:;" class="sort-type-list list-failed" data-node="list_unpassed">未通过</a>
+                        <li>
+                            <a href="javascript:;" class="sort-type-list list-failed" data-node="list_unpassed">未通过</a>
                         </li>
-                        <li><a href="javascript:;" class="sort-type-list list-draft" data-node="list_draft">草稿</a></li>
-                        <li><a href="javascript:;" class="sort-type-list list-draft" data-node="list_hide">已撤回</a></li>
+                        <li>
+                            <a href="javascript:;" class="sort-type-list list-draft" data-node="list_draft">草稿</a></li>
+                        <li>
+                            <a href="javascript:;" class="sort-type-list list-draft" data-node="list_hide">已撤回</a></li>
                     </ul>
 
                 </div>
@@ -658,70 +662,13 @@
     ba('create', 'b48de7ed65110e');
     ba('send', 'pageview');
 </script>
-<script type="text/javascript" charset="utf-8"
-        src="https://mp.toutiao.com/static/resource/pgc_web/static/pkg/lib.680525f.js"></script>
 
-
-<script type="text/javascript"
-        src="https://mp.toutiao.com/static/resource/pgc_web/static/pkg/common.808a7f2.js"></script>
-
-<script type="text/javascript" charset="utf-8"
-        src="https://mp.toutiao.com/static/resource/pgc_web/static/js/lib/jquery.uploadify.dfb89a3.js"></script>
-<script type="text/javascript" charset="utf-8"
-        src="https://mp.toutiao.com/static/resource/pgc_web/static/js/lib/meitu.5a865c5.js"></script>
-<script>
-    require('pagelet/list/list.js').create({
-        'source_type': "0",
-        'from_time': 0,
-        'count': 10,
-        'status': 'all',
-        'media_type': "2",
-        'can_urgent_push': "",
-        'urgent_push_remain_times': "",
-        'top_group_id': "0"
-    });
-    require('pagelet/menu/menu.js');
-</script>
 <div class="bodymask_loading">
     <div class="bodymask_loading_bg"></div>
     <div class="bodymask_loading_img"></div>
 </div>
 <div class="bodymask"></div>
 
-<script type="text/javascript">
-    var _require = window['require'];
-    _require('pagelet/feedback/feedback.js').create();
-    _require('pagelet/questionnaire/questionnaire.js').create({
-        test: '11'
-    });
-    _require('pagelet/header/header.js').create({
-        '_sys_time': '2016-11-1-22-33-21',
-        '_local_time': (new Date()).getTime()
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        $('[placeholder]').placeholder();
-        setTimeout(function () {
-            $('#scontent').css('visibility', 'visible');
-        }, 10);
-        $('body').hoverTitle2();
-    });
-
-    $(function () {
-        /*如果日志打印的存在*/
-        if ($.Logger) {
-            window.layoutLogger = new $.Logger();
-            /*@des 当有错误信息发生时，及时上报信息*/
-            window.onerror = function (err, url, line) {
-                window.layoutLogger.error('错误信息：' + encodeURIComponent(err) + ',错误行数：' + line + '错误的静态资源url:' + encodeURIComponent(url));
-            };
-        }
-
-    });
-
-
-</script>
 <!--[if lt IE 10 ]>
 <script type="text/javascript">
     $(function () {

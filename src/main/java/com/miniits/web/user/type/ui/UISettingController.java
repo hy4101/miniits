@@ -1,4 +1,4 @@
-package com.miniits.web.user.setting.ui;
+package com.miniits.web.user.type.ui;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
