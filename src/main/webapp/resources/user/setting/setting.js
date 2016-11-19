@@ -58,7 +58,7 @@
             getTypeManageList:function () {
                 var self = this;
                 self.$countMsg.empty('');
-                self.$countMsg.load(url+"initialTypeManage",'');
+                self.$countMsg.load(Util.getUrl() + "/type/"+"initialTypeManage",'');
             }
 
         };

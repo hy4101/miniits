@@ -16,13 +16,4 @@ public class UISettingController {
         return "/user/setting/index";
     }
 
-    @RequestMapping("/initialTypeManage")
-    public String initialTypeManage(){
-        return "/user/setting/typeManage";
-    }
-
-    @RequestMapping("/getTypes")
-    public String getTypes(){
-        return "/user/setting/typeManage";
-    }
 }

@@ -64,3 +64,14 @@
     border-right: 1px solid red;
     width: 20%;
 }
+
+.f-dw {
+    display: block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.f-mw60 {
+    width: 60%;
+}

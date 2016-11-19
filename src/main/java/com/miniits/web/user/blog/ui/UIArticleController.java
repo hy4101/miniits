@@ -1,8 +1,8 @@
-package com.miniits.web.user.article.ui;
+package com.miniits.web.user.blog.ui;
 
 import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.web.BaseUtil;
-import com.miniits.web.user.article.controller.ArticleController;
+import com.miniits.web.user.blog.controller.BlogController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ import java.text.ParseException;
 public class UIArticleController extends BaseUtil {
 
     @Autowired
-    private ArticleController articleController;
+    private BlogController articleController;
 
     @RequestMapping("/getArticles")
     @ResponseBody

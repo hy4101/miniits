@@ -1,10 +1,7 @@
 package com.miniits.commons.config;
 
-import com.miniits.web.user.article.model.Article;
-import com.miniits.web.webapp.demo.shiro.model.TPermission;
-import com.miniits.web.webapp.demo.shiro.model.TRole;
-import com.miniits.web.webapp.demo.shiro.model.TUser;
-import com.miniits.web.webapp.demo.shiro.model.TUserRole;
+import com.miniits.web.user.blog.model.Blog;
+import com.miniits.web.user.type.model.BlogType;
 import com.miniits.web.webapp.emailvalidate.model.EMailValidate;
 import com.miniits.web.webapp.image.model.Image;
 import com.miniits.web.webapp.user.model.User;
@@ -38,7 +35,7 @@ public class AutoCreateTable {
         localSessionFactoryBean.setHibernateProperties(properties);
 
         localSessionFactoryBean.setAnnotatedClasses(User.class, Image.class, EMailValidate.class,
-                EMailValidate.class, Article.class);
+                EMailValidate.class, Blog.class, BlogType.class);
         return localSessionFactoryBean;
     }
 }

@@ -9,7 +9,7 @@
 <%@include file="/WEB-INF/jsp/admin/layout/minResources.jsp" %>
 <html>
 <head>
-    <title>迷你科技后台登入系统</title>
+    <title>登入-迷你科技</title>
 </head>
 <body>
 <form id="login_form" action="${rootPath}/web/login" method="post">

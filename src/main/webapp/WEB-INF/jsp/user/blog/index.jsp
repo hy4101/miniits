@@ -8,6 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/WEB-INF/jsp/web/layout/resources.jsp" %>
+<%@include file="/WEB-INF/jsp/user/layout/resources.jsp" %>
 
 <html>
 <head>
@@ -51,11 +52,28 @@
         </div>
     </div>
 </section>
-<div style="width: 100%">
-    <div class="f-ml20 f-mt20 div-tree-all">
+<div style="width: 100%;">
+    <div class="f-ml20 f-mt20 div-tree-all f-fl">
         <ul id="ul_tree"></ul>
     </div>
+
+    <div style="width: 70%" class="f-ml20 f-fl">
+        <div id="div_user_articles">
+            <section id="cd-timeline" class="cd-container"></section>
+        </div>
+    </div>
 </div>
+
+
+<div>
+    <div id="div_minits_pages" class="f-mr-auto f-ml-auto f-mw60"></div>
+</div>
+
+
+
+
+
+
 <link rel="stylesheet" type="text/css" href="${rootPath}/resources/user/blog/index.css"/>
 <script src="${rootPath}/resources/user/blog/index.js"></script>
 </body>

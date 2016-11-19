@@ -35,7 +35,7 @@
 <div id="pagelet-header" gap="^用户profile">
     <div class="shead">
         <div class="shead_wrap">
-            <a href="/"><img src="${rootPath}/resources/commons/images/logo.png"></a>
+            <a href="${rootPath}/index.html"><img src="${rootPath}/resources/commons/images/logo.png"></a>
             <div class="shead_status">
 
             </div>

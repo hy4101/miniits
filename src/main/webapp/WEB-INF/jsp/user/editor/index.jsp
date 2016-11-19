@@ -16,6 +16,19 @@
     <!-- 编辑器源码文件 -->
     <script type="text/javascript" src="${rootPath}/resources/commons/ueditor/ueditor.all.js"></script>
     <!-- 实例化编辑器 -->
+
+    <link href="${rootPath}/resources/commons/ligerUI/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet"
+          type="text/css">
+    <script src="${rootPath}/resources/commons/ligerUI/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="${rootPath}/resources/commons/ligerUI/lib/ligerUI/js/plugins/ligerTree.js"
+            type="text/javascript"></script>
+    <script src="${rootPath}/resources/commons/ligerUI/lib/ligerUI/js/plugins/ligerCheckBox.js"
+            type="text/javascript"></script>
+    <script src="${rootPath}/resources/commons/ligerUI/lib/ligerUI/js/plugins/ligerComboBox.js"
+            type="text/javascript"></script>
+    <script src="${rootPath}/resources/commons/ligerUI/lib/ligerUI/js/plugins/ligerResizable.js"
+            type="text/javascript"></script>
+
 </head>
 <body>
 <section id="s-intro" class="page -intro">
@@ -32,12 +45,8 @@
                     <div class="input-group input-group-lg inp-title-sty">
                         <input type="text" class="form-control search clearable" id="div_title"
                                placeholder="标题">
-                        <div class="input-group input-group-lg div-type">
-                            <select class="form-control search " id="div_type">
-                                <option>分类</option>
-                                <option>1</option>
-                                <option>1</option>
-                            </select>
+                        <div class="input-group input-group-lg div-type" >
+                            <input type="text" id="inp_blog_type" class="" style="height: 47px; width: 100%;color: black;text-align: center;" placeholder="请选择类别">
                         </div>
                     </div>
 
@@ -56,9 +65,7 @@
             </div>
         </div>
     </div>
-
 </section>
-
 <link rel="stylesheet" type="text/css" href="${rootPath}/resources/user/editor/index.css"/>
 <script src="${rootPath}/resources/user/editor/index.js"></script>
 </body>

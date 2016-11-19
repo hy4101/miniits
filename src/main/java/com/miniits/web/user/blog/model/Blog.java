@@ -10,7 +10,7 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name = "article")
+@Table(name = "blog")
 public class Blog {
 
     @Id
@@ -31,7 +31,7 @@ public class Blog {
     @Column(name = "time",nullable = true)
     private Date time;
 
-    @Column(name = "type",nullable = true)
+    @Column(name = "blog_type_id",nullable = true)
     private int type;
 
     @Column(name = "see",nullable = true)

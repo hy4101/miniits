@@ -88,15 +88,14 @@
                             document.getElementById('cd-timeline').innerHTML = render(obj.curr);
                         }
                     });
-
                 });
-
             },
 
             cilcks: function () {
                 var self = this;
 
                 self.articlePage(1);
+                //快捷键检索
                 self.$params.keypress(function (e) {
                     var code = event.keyCode;
                     if (13 == code){
