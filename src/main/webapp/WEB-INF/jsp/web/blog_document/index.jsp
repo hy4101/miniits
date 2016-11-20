@@ -17,7 +17,7 @@
 <header class="site-header jumbotron">
     <div class="site-nav">
         <shiro:guest>
-            <a href="${rootPath}/user/userAdmin.html" class="a-saveRequestUrl">博客</a>
+            <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">博客</a>
             <span>/</span>
             <a href="${rootPath}/user/login.html" target="_blank">登入</a>
             <span>/</span>
@@ -37,20 +37,13 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12"><h1>MiniIts</h1>
-                <p>MINIITS.COM-迷你科技<br><span class="package-amount">迷你科技网是中文IT社区，提供专业互联网IT技术服务</span></p>
-                <form class="" role="search">
-                    <div class="input-group input-group-lg">
-                        <input type="text" class="form-control search clearable"
-                               placeholder="搜索MiniIts,如：Spring Boot,Spring MVC,MyBatis Jar,jquery">
-                        <span class="input-group-addon search clearable f-csp">GO!</span>
-                    </div>
-                </form>
+                <p><span class="package-amount">迷你科技网是中文IT社区，提供专业互联网IT技术服务</span></p>
             </div>
         </div>
     </div>
 </header>
 
-<link href="${rootPath}/resources/webapp/index/index.css" rel="stylesheet" type="text/css"/>
-<script src="${rootPath}/resources/webapp/index/index.js"></script>
+<link href="${rootPath}/resources/webapp/blog_document/index.css" rel="stylesheet" type="text/css"/>
+<script src="${rootPath}/resources/webapp/blog_document/index.js"></script>
 </body>
 </html>

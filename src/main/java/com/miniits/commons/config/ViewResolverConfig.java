@@ -1,5 +1,6 @@
 package com.miniits.commons.config;
 
+import com.miniits.commons.shiro.config.ShiroTagFreeMarkerConfigurer;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
@@ -29,9 +30,28 @@ public class ViewResolverConfig {
      * java配置bean   bean 的默认id为方法名
      * @return
      */
+//    @Bean
+//    public FreeMarkerConfigurer freeMarkerConfigurer(){
+//        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
+//        Properties property = new Properties();
+//
+//        property.setProperty("template_update_delay","10");
+//        property.setProperty("defaultEncoding","UTF-8");
+//        property.setProperty("number_format","0.##########");
+//        property.setProperty("datetime_format","yyyy-MM-dd HH:mm:ss");
+//        property.setProperty("classic_compatible","true");
+//        property.setProperty("template_exception_handler","ignore");
+//        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/jsp/");
+//        freeMarkerConfigurer.setFreemarkerSettings(property);
+//
+//        return freeMarkerConfigurer;
+//    }
+
+
     @Bean
-    public FreeMarkerConfigurer freeMarkerConfigurer(){
-        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
+    public ShiroTagFreeMarkerConfigurer freemarkerConfig(){
+        ShiroTagFreeMarkerConfigurer shiroTagFreeMarkerConfigurer = new ShiroTagFreeMarkerConfigurer();
+
         Properties property = new Properties();
 
         property.setProperty("template_update_delay","10");
@@ -40,12 +60,26 @@ public class ViewResolverConfig {
         property.setProperty("datetime_format","yyyy-MM-dd HH:mm:ss");
         property.setProperty("classic_compatible","true");
         property.setProperty("template_exception_handler","ignore");
-//        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/html/");
-        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/jsp/");
-        freeMarkerConfigurer.setFreemarkerSettings(property);
+        shiroTagFreeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/jsp/");
+        shiroTagFreeMarkerConfigurer.setFreemarkerSettings(property);
 
-        return freeMarkerConfigurer;
+        return shiroTagFreeMarkerConfigurer;
+
+
+//        Properties properties = new Properties();
+//        Properties properties1 = new Properties();
+//
+//        properties.setProperty("template_update_delay","5");
+////        properties.setProperty("xml_escape","fmXmlEscape");
+//        shiroTagFreeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/jsp/");
+////        shiroTagFreeMarkerConfigurer.freemarkerVariables(properties);
+//        shiroTagFreeMarkerConfigurer.setFreemarkerSettings(properties);
+//        shiroTagFreeMarkerConfigurer.setDefaultEncoding("utf-8");
+//        return shiroTagFreeMarkerConfigurer;
     }
+
+
+
 
     @Bean
     public FreeMarkerViewResolver viewResolver(){

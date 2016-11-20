@@ -1,14 +1,11 @@
 package com.miniits.commons.filter;
 
-import com.miniits.web.webapp.user.model.User;
+import com.miniits.web.web.user.model.User;
 import org.apache.catalina.connector.RequestFacade;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 

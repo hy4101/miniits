@@ -4,7 +4,7 @@ import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.web.BaseUtil;
 import com.miniits.web.user.blog.model.Blog;
 import com.miniits.web.user.blog.service.BlogService;
-import com.miniits.web.webapp.user.model.User;
+import com.miniits.web.web.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +37,11 @@ public class BlogController extends BaseUtil {
     public Envelop deleteArticle(String id) throws ParseException {
         articleService.delete(id);
         return success("");
+    }
+
+    public Envelop getArticle(String id) {
+        Blog blog = articleService.retrieve(id);
+        return success(blog);
     }
 
     public Envelop saveArticle(String jsonModel) throws ParseException {

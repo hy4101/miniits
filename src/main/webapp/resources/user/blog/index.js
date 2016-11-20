@@ -4,15 +4,16 @@
 
 (function ($, win) {
     $(function () {
-        var blogMaster = null;
+
         var Util = $.Util;
         var url = Util.getUrl() + "/blog/";
 
         var winHeight = $(window).height();
 
-
+        var blogMaster = null;
         var totalPage = "";
         var dataList = "";
+        var filter = "";
 
         function pageInit() {
             blogMaster.init();
@@ -21,9 +22,12 @@
         blogMaster = {
 
             $tree: $("#ul_tree"),
+            $blogParams: $("#div_blog_params"),
 
             init: function () {
                 var self = this;
+
+                self.$blogParams.val(sessionStorage.getItem("blog_params"));
 
                 self.initTree();
                 self.getDataList();
@@ -41,13 +45,11 @@
                     textFieldName: 'name',
                     isExpand: true,
                     onSelect: function (data) {
-
+                        filter = "type=" + data.data.id
+                        self.getDataList();
                     }
                 });
             },
-
-
-
 
 
             getDataList: function (curr) {
@@ -59,7 +61,7 @@
                 // var filters = Util.isStrEmpty(self.$params.val()) ? "" : "name?" + self.$params.val();
                 $.ajax({
                     url: Util.getUrl() + "/user/article/getArticles",
-                    data: {filters: "", page: curr, rows: 30},
+                    data: {filters: filter, page: curr, rows: 30},
                     dataType: "json",
                     async: false,
                     success: function (data) {
@@ -89,7 +91,7 @@
                             str += '<div class="f-mt10 f-bb1"><ul class="cd-timeline-content clearfix">' +
                                 '<li class="f-fl f-mt2">' + date + '</li> ' +
                                 '<li class="f-fl f-ml50 f-fs20 f-mw60">' +
-                                '<a title="' + dataList[i].name + '" class="f-dw" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "article:select", dataList[i].id) + '">' + dataList[i].name + '</a></li>' +
+                                '<a title="' + dataList[i].name + '" class="f-dw" href="'+Util.getUrl()+'/document/'+dataList[i].id+'" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "article:select", dataList[i].id) + '">' + dataList[i].name + '</a></li>' +
                                 '<li class="f-fr f-mr50">' +
                                 '<img title="查看人数" src="' + Util.getUrl() + '/resources/commons/images/see.png" />' + dataList[i].see + ' -- ' +
                                 '<img title="回复人数" src="' + Util.getUrl() + '/resources/commons/images/revert.png" />' + dataList[i].revert + ' -- ' +
@@ -117,20 +119,19 @@
             },
 
 
-
             cilcks: function () {
                 var self = this;
 
-                // self.$params.keypress(function (e) {
-                //     var code = event.keyCode;
-                //     if (13 == code){
-                //         sessionStorage.setItem("params",self.$params.val());
-                //         location.reload();
-                //     }
-                // })
+                self.$blogParams.keypress(function (e) {
+                    var code = event.keyCode;
+                    if (13 == code){
+                        sessionStorage.setItem("blog_params",self.$blogParams.val());
+                        location.reload();
+                    }
+                });
 
                 // self.$searchArticleBtn.click(function () {
-                //     sessionStorage.setItem("params",self.$params.val());
+                //     sessionStorage.setItem("params",self.$blogParams.val());
                 //     location.reload();
                 // })
 
@@ -145,13 +146,14 @@
                 // });
 
                 $.subscribe('article:delete', function (event, id, name) {
+
                     var deleteDialog = layer.confirm('<div style="text-align: center"><img title="删除" src="' + Util.getUrl() + '/resources/commons/images/delete_face.png" /></div><br>' +
                         '您确定要删除 [ ' + name + ' ] ？', {
                         btn: ['删除', '取消'],
                         offset: "200",
                     }, function () {
                         $.ajax({
-                            url: url + "delete",
+                            url: Util.getUrl() + "/user/article/delete",
                             data: {id: id},
                             dataType: "json",
                             success: function (data) {
@@ -161,8 +163,7 @@
                             error: function (data) {
                                 layer.msg('删除失败', {icon: 1});
                             }
-                        })
-                        layer.msg('删除成功', {icon: 1});
+                        });
                     });
                 });
             }

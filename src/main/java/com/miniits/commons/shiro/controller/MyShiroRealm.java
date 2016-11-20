@@ -1,9 +1,9 @@
 package com.miniits.commons.shiro.controller;
 
-import com.miniits.web.webapp.demo.shiro.model.TRole;
-import com.miniits.web.webapp.demo.shiro.model.TUser;
-import com.miniits.web.webapp.user.model.User;
-import com.miniits.web.webapp.user.service.UserService;
+import com.miniits.web.web.demo.shiro.model.TRole;
+import com.miniits.web.web.demo.shiro.model.TUser;
+import com.miniits.web.web.user.model.User;
+import com.miniits.web.web.user.service.UserService;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.shiro.authc.*;

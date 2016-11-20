@@ -1,7 +1,7 @@
 package com.miniits.web.demo;
 
 
-import com.miniits.web.webapp.user.model.User;
+import com.miniits.web.web.user.model.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

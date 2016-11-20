@@ -5,13 +5,36 @@ package com.miniits.commons.utils.html;
  */
 public class HtmlModel {
 
+    /**
+     * 静态文件模板地址
+     */
     private String templatePath;
+    /**
+     * 静态文件保存地址
+     */
     private String saveFilePath;
+    /**
+     * 静态文件名称
+     */
     private String saveFileName;
+    /**
+     * 静态文件读取地址（已经存在该文件）
+     */
     private String fileReadPath;
+    /**
+     * 是否重新生成静态文件
+     */
     private boolean isNewFile;
+    /**
+     * 是否重新生成静态文件夹（包括该文件夹下的文件）
+     */
     private boolean isNewDirectory;
+    /**
+     * 是否成功生成静态文件
+     */
     private boolean isSuccess;
+    private String basePath;
+
     private String message;
     private Object entity;
 
@@ -85,5 +108,13 @@ public class HtmlModel {
 
     public void setFileReadPath(String fileReadPath) {
         this.fileReadPath = fileReadPath;
+    }
+
+    public String getBasePath() {
+        return basePath;
+    }
+
+    public void setBasePath(String basePath) {
+        this.basePath = basePath;
     }
 }

@@ -2,15 +2,14 @@ package com.miniits.web.admin;
 
 import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.web.BaseUtil;
-import com.miniits.web.webapp.user.controller.UserController;
-import com.miniits.web.webapp.user.model.User;
+import com.miniits.web.web.user.controller.UserController;
+import com.miniits.web.web.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.tree.FixedHeightLayoutCache;
 
 /**
  * Created by wq on 2016/10/5.

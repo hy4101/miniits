@@ -2,9 +2,9 @@ package com.miniits.commons.config;
 
 import com.miniits.web.user.blog.model.Blog;
 import com.miniits.web.user.type.model.BlogType;
-import com.miniits.web.webapp.emailvalidate.model.EMailValidate;
-import com.miniits.web.webapp.image.model.Image;
-import com.miniits.web.webapp.user.model.User;
+import com.miniits.web.web.emailvalidate.model.EMailValidate;
+import com.miniits.web.web.image.model.Image;
+import com.miniits.web.web.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

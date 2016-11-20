@@ -1,8 +1,8 @@
 package com.miniits.commons.shiro.controller;
 
 import com.miniits.commons.utils.MD5.MD5Util;
-import com.miniits.web.webapp.demo.shiro.model.TUser;
-import com.miniits.web.webapp.user.service.UserService;
+import com.miniits.web.web.demo.shiro.model.TUser;
+import com.miniits.web.web.user.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

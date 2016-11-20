@@ -138,7 +138,7 @@
             </div>
             <div class="menu_block">
                 <a onclick="javascript:settingFun('typeManages');" class="menu_h1  new_article alone" ga="发表文章统计">
-                    <i></i>分类管理</a>
+                    <i></i>类别管理</a>
             </div>
 
             <div class="menu_block">

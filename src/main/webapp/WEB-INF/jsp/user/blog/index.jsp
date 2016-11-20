@@ -40,7 +40,7 @@
                        placeholder=<shiro:principal/>:"您可以点击该行，然后编辑该行做为你的座右铭">
                 <form class="" role="search">
                     <div class="input-group input-group-lg">
-                        <input type="text" class="form-control search clearable" id="div_params"
+                        <input type="text" class="form-control search clearable" id="div_blog_params"
                                placeholder="搜索我的博客">
                         <span class="input-group-addon search clearable f-csp" id="sp_search_article_btn">GO!</span>
                     </div>
