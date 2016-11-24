@@ -18,23 +18,26 @@ public class User {
     @Column(name = "id",nullable = false,length = 35)
     private String id;
 
-    @Column(name = "user_name",nullable = false)
+    @Column(name = "user_name",nullable = false,length = 20)
     private String userName;
 
-    @Column(name = "password",nullable = false)
+    @Column(name = "password",nullable = false,length = 50)
     private String password;
 
-    @Column(name = "e_mail",nullable = true)
+    @Column(name = "e_mail",nullable = true,length = 32)
     private String eMail;
 
-    @Column(name = "telephone",nullable = true)
+    @Column(name = "telephone",nullable = true,length = 11)
     private String telephone;
 
-    @Column(name = "qq",nullable = true)
+    @Column(name = "qq",nullable = true,length = 12)
     private String qq;
 
-    @Column(name = "user_type",nullable = true)
-    private String UserType;
+    @Column(name = "user_type",nullable = true,length = 5)
+    private String userType;
+
+    @Column(name = "signature",nullable = true,length = 50)
+    private String signature;
 
     public String getId() {
         return id;
@@ -85,10 +88,18 @@ public class User {
     }
 
     public String getUserType() {
-        return UserType;
+        return userType;
     }
 
     public void setUserType(String userType) {
-        UserType = userType;
+        this.userType = userType;
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
     }
 }

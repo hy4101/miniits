@@ -5,6 +5,7 @@ import com.miniits.commons.utils.web.BaseUtil;
 import com.miniits.web.user.blog.model.Blog;
 import com.miniits.web.user.blog.service.BlogService;
 import com.miniits.web.web.user.model.User;
+import com.miniits.web.web.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,9 @@ public class BlogController extends BaseUtil {
     private BlogService articleService;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private HttpServletRequest request;
 
     public Envelop searchArticles(String fields, String filters, String sotrs, int page, int size) throws ParseException {
@@ -41,7 +45,8 @@ public class BlogController extends BaseUtil {
 
     public Envelop getArticle(String id) {
         Blog blog = articleService.retrieve(id);
-        return success(blog);
+        User user = userService.retrieve(blog.getUserId());
+        return success(blog,user);
     }
 
     public Envelop saveArticle(String jsonModel) throws ParseException {

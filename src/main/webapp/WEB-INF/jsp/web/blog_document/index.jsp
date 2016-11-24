@@ -36,12 +36,79 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12"><h1>MiniIts</h1>
-                <p><span class="package-amount">迷你科技网是中文IT社区，提供专业互联网IT技术服务</span></p>
+            <div class="col-xs-12"><h2>${doc.uobj.userName}的博客</h2>
+                <p><span class="package-amount" style="font-size: 16px">${doc.uobj.signature}</span></p>
             </div>
         </div>
     </div>
+
+    <div class="container" style="width: 180px;float: right; position: relative;top: -50px;">
+        <div class="row">
+            <table class="f-tac" style="font-size: 12px;">
+                <tr>
+                    <td colspan="2">
+                        支持博主
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        支付宝
+                    </td>
+                    <td>
+                        微信
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="${rootPath}/resources/commons/images/123.png" style="width: 64px;height: 64px"
+                             class="f-mr10">
+                    </td>
+                    <td>
+                        <img src="${rootPath}/resources/commons/images/123.png" style="width: 64px;height: 64px"
+                             class="f-ml10">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
 </header>
+
+<div style="border-top: 3px solid red;width: 100%" class="f-tac">
+    <br>
+    <h4>${doc.obj.name}</h4>
+
+    <div style="margin-right: auto;margin-left: auto; width: 80%;">
+        <table class="f-fr">
+            <tr>
+                <td>
+                    &nbsp;&nbsp;&nbsp;<img src="${rootPath}/resources/commons/images/time.png">${doc.obj.time}
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;<img src="${rootPath}/resources/commons/images/see.png">${doc.obj.see}
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;<img src="${rootPath}/resources/commons/images/update.png">${doc.obj.revert}
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;<img src="${rootPath}/resources/commons/images/praise.png">${doc.obj.praise}
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;<img src="${rootPath}/resources/commons/images/collect.png">${doc.obj.collect}
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;<img
+                        src="${rootPath}/resources/commons/images/subscription.png">${doc.obj.collect}
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        ${doc.obj.text}
+    </div>
+</div>
+
+
+<div>adf</div>
 
 <link href="${rootPath}/resources/webapp/blog_document/index.css" rel="stylesheet" type="text/css"/>
 <script src="${rootPath}/resources/webapp/blog_document/index.js"></script>

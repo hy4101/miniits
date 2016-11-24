@@ -10,6 +10,7 @@ body {
     color: #fff;
     margin-bottom: 0;
 }
+
 .site-nav {
     position: absolute;
     top: 15px;
@@ -20,18 +21,22 @@ body {
 .site-nav a {
     color: #eee;
 }
+
 .site-notice {
     /*height: 30px;*/
     padding: 5px 30px;
     text-align: right;
     background-color: #208d4e;
 }
+
 .site-notice a {
     color: #eee;
 }
+
 .site-notice em {
     font-style: normal;
 }
+
 .site-header .search {
     border: 2px solid #27AE60;
     -webkit-box-shadow: none;
@@ -43,3 +48,6 @@ body {
     text-align: center;
 }
 
+.jumbotron {
+    padding: 60px 0;
+}

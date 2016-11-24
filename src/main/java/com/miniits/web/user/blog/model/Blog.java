@@ -40,6 +40,15 @@ public class Blog {
     @Column(name = "revert",nullable = true)
     private int revert;
 
+    @Column(name = "praise",nullable = true)
+    private int praise;
+
+    @Column(name = "collect",nullable = true)
+    private int collect;
+
+    @Column(name = "subscription",nullable = true)
+    private int subscription;
+
     public String getId() {
         return id;
     }
@@ -102,5 +111,29 @@ public class Blog {
 
     public void setRevert(int revert) {
         this.revert = revert;
+    }
+
+    public int getPraise() {
+        return praise;
+    }
+
+    public void setPraise(int praise) {
+        this.praise = praise;
+    }
+
+    public int getCollect() {
+        return collect;
+    }
+
+    public void setCollect(int collect) {
+        this.collect = collect;
+    }
+
+    public int getSubscription() {
+        return subscription;
+    }
+
+    public void setSubscription(int subscription) {
+        this.subscription = subscription;
     }
 }

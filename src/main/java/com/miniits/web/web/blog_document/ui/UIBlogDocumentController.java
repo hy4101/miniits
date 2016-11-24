@@ -8,8 +8,11 @@ import com.miniits.web.user.blog.controller.BlogController;
 import com.miniits.web.user.blog.model.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.File;
 
@@ -28,23 +31,11 @@ public class UIBlogDocumentController extends BaseUtil {
     private BlogController articleController;
 
     @RequestMapping("{id}")
-    public String blog(@PathVariable(value = "id")String id) throws Exception {
+    public ModelAndView blog(@PathVariable(value = "id")String id, ModelMap modelMap) throws Exception {
 
         Envelop envelop = articleController.getArticle(id);
+        modelMap.addAttribute("doc",envelop);
 
-        HtmlModel htmlModel = new HtmlModel();
-
-        htmlModel.setTemplatePath("/web/blog_document/ftl/index.ftl");
-        htmlModel.setSaveFileName("index.html");
-        htmlModel.setSaveFilePath("blog_document" + File.separator + "html");
-        htmlModel.setEntity((Blog)envelop.getObj());
-
-        htmlModel = htmlService.process(htmlModel);
-//        if (htmlModel.isSuccess())
-//            return "/webapp/index/html/index";
-//        else
-
-//        return "/web/blog_document/index";
-        return "G:/develop/miniits/src/main/webapp/WEB-INF/jsp/web/blog_document/html";
+        return new ModelAndView("/web/blog_document/index",modelMap);
     }
 }

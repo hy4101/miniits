@@ -24,6 +24,8 @@ public class Envelop implements Serializable{
 
     private Object obj;
 
+    private Object uobj;
+
     private String errorMsg;
 
     private int errorCode;
@@ -112,5 +114,13 @@ public class Envelop implements Serializable{
     public Envelop setTotalPage(int totalPage) {
         this.totalPage = totalPage;
         return this;
+    }
+
+    public Object getUobj() {
+        return uobj;
+    }
+
+    public void setUobj(Object uobj) {
+        this.uobj = uobj;
     }
 }

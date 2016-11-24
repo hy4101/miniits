@@ -91,7 +91,7 @@
                             str += '<div class="f-mt10 f-bb1"><ul class="cd-timeline-content clearfix">' +
                                 '<li class="f-fl f-mt2">' + date + '</li> ' +
                                 '<li class="f-fl f-ml50 f-fs20 f-mw60">' +
-                                '<a title="' + dataList[i].name + '" class="f-dw" href="'+Util.getUrl()+'/document/'+dataList[i].id+'" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "article:select", dataList[i].id) + '">' + dataList[i].name + '</a></li>' +
+                                '<a title="' + dataList[i].name + '" class="f-dw" href="'+Util.getUrl()+'/document/'+dataList[i].id+'">' + dataList[i].name + '</a></li>' +
                                 '<li class="f-fr f-mr50">' +
                                 '<img title="查看人数" src="' + Util.getUrl() + '/resources/commons/images/see.png" />' + dataList[i].see + ' -- ' +
                                 '<img title="回复人数" src="' + Util.getUrl() + '/resources/commons/images/revert.png" />' + dataList[i].revert + ' -- ' +

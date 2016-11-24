@@ -70,6 +70,17 @@ public class BaseUtil {
         return envelop;
     }
 
+    public Envelop success(Object o,Object o1) {
+        Envelop envelop = new Envelop();
+        if (null != o)
+            envelop.setObj(o);
+        if (null != o1)
+            envelop.setUobj(o1);
+
+        envelop.setSuccessFlg(true);
+        return envelop;
+    }
+
     public Envelop error(String error) {
         Envelop envelop = new Envelop();
         envelop.setSuccessFlg(false);

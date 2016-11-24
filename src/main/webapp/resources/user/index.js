@@ -71,9 +71,9 @@
                                 '<img title="查看人数" src="' + Util.getUrl() + '/resources/commons/images/see.png" />' + dataList[i].see + ' -- ' +
                                 '<img title="回复人数" src="' + Util.getUrl() + '/resources/commons/images/revert.png" />' + dataList[i].revert + ' -- ' +
                                 '<a title="修改" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "article:update", dataList[i].id) + '">' +
-                                '<img src="' + Util.getUrl() + '/resources/commons/images/update.png" /></a> -- ' +
-                                '<a title="删除" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}','{2}'])", "article:delete", dataList[i].id, dataList[i].name) + '">' +
-                                '<img src="' + Util.getUrl() + '/resources/commons/images/delete.png" /></a>' +
+                                '<img src="' + Util.getUrl() + '/resources/commons/images/update.png" /></a> ' +
+                                // '<a title="删除" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}','{2}'])", "article:delete", dataList[i].id, dataList[i].name) + '">' +
+                                // '<img src="' + Util.getUrl() + '/resources/commons/images/delete.png" /></a>' +
                                 '</li></ul></div>';
                         }
                         return str;
@@ -155,27 +155,27 @@
                     })
                 });
 
-                $.subscribe('article:delete', function (event, id, name) {
-                    var deleteDialog = layer.confirm('<div style="text-align: center"><img title="删除" src="' + Util.getUrl() + '/resources/commons/images/delete_face.png" /></div><br>' +
-                        '您确定要删除 [ ' + name + ' ] ？', {
-                        btn: ['删除', '取消'],
-                        offset: "200",
-                    }, function () {
-                        $.ajax({
-                            url: url + "delete",
-                            data: {id: id},
-                            dataType: "json",
-                            success: function (data) {
-                                self.articlePage();
-                                layer.msg('删除成功', {icon: 1});
-                            },
-                            error: function (data) {
-                                layer.msg('删除失败', {icon: 1});
-                            }
-                        })
-                        layer.msg('删除成功', {icon: 1});
-                    });
-                });
+                // $.subscribe('article:delete', function (event, id, name) {
+                //     var deleteDialog = layer.confirm('<div style="text-align: center"><img title="删除" src="' + Util.getUrl() + '/resources/commons/images/delete_face.png" /></div><br>' +
+                //         '您确定要删除 [ ' + name + ' ] ？', {
+                //         btn: ['删除', '取消'],
+                //         offset: "200",
+                //     }, function () {
+                //         $.ajax({
+                //             url: url + "delete",
+                //             data: {id: id},
+                //             dataType: "json",
+                //             success: function (data) {
+                //                 self.articlePage();
+                //                 layer.msg('删除成功', {icon: 1});
+                //             },
+                //             error: function (data) {
+                //                 layer.msg('删除失败', {icon: 1});
+                //             }
+                //         })
+                //         layer.msg('删除成功', {icon: 1});
+                //     });
+                // });
             }
 
         };
