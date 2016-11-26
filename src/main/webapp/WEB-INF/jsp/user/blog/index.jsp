@@ -71,9 +71,6 @@
 
 
 
-
-
-
 <link rel="stylesheet" type="text/css" href="${rootPath}/resources/user/blog/index.css"/>
 <script src="${rootPath}/resources/user/blog/index.js"></script>
 </body>
