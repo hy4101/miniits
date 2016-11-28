@@ -62,6 +62,13 @@ public class BaseUtil {
         return envelop;
     }
 
+    public Envelop getResultList(List detaiModelList) {
+        Envelop envelop = new Envelop();
+        envelop.setSuccessFlg(true);
+        envelop.setDetailModelList(detaiModelList);
+        return envelop;
+    }
+
     public Envelop success(Object o) {
         Envelop envelop = new Envelop();
         if (null != o)

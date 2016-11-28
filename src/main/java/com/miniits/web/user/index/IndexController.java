@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller()
-@RequestMapping("/user")
+@RequestMapping("/")
 public class IndexController {
 
-    @RequestMapping("/userAdmin.html")
+    @RequestMapping("/dynamic.html")
     public String userAdminIndex(){
         return "/user/index/index";
     }

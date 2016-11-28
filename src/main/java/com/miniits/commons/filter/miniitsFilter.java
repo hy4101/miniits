@@ -33,11 +33,14 @@ public class miniitsFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         String url = ((RequestFacade) request).getRequestURI();
 
+
         //登入放行
         if (url.indexOf("/admin/login") != -1
                 ||url.indexOf("/user/login.html") != -1
                 ||url.indexOf("/register") != -1
                 ||url.indexOf("/activate") != -1
+                ||url.indexOf("/resources") != -1
+                ||url.indexOf("/getArticles") != -1
                 ) {
             chain.doFilter(request, response);
             return;

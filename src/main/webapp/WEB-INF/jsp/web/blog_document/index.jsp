@@ -112,13 +112,14 @@
 
         <div class="f-tal f-mt30">
             <div style="border-top: 3px solid red;border-bottom: 3px solid #98c0ff;">
-                <span>注：博主头像</span>
-                <span>注：粉丝</span>
-                <span>注：关注</span>
-                <span>QQ：Spring Boot</span>
-                <span>博主分类：Spring Boot</span>
-                <span>值得收藏：Spring Boot</span>
-                <span>好文点赞：Spring Boot</span>
+
+                <span>注：博主头像</span><br>
+                <span>注：粉丝</span><br>
+                <span>注：关注</span><br>
+                <span>QQ：Spring Boot</span><br>
+                <span>博主分类：Spring Boot</span><br>
+                <span>值得收藏：Spring Boot</span><br>
+                <span>好文点赞：Spring Boot</span><br>
             </div>
             <div id="articleComment" class="f-mt30"></div>
         </div>
@@ -127,22 +128,23 @@
 
 <footer class="site-header jumbotron">
     <div class="site-nav">
-
     </div>
     <div class="container">
         <div class="row">
         </div>
     </div>
 </footer>
-
+<input id="inp_blog_id" value="${doc.obj.id}" style="display: none">
 <script type="text/javascript">
+
+    var Util = $.Util;
 
     var boxHtml = '';
     <shiro:guest>
     boxHtml += '<form id="replyBox" class="ui reply form" style="margin-bottom: 60px;">';
     boxHtml += '	<div class="ui  form ">';
     boxHtml += '		<div class="contentField field" >';
-    boxHtml += '			<textarea id="commentContent" disabled="disabled" placeholder="等先登入" style=" border: 1px solid #98c0ff;"></textarea>';
+    boxHtml += '			<textarea id="commentContent" disabled="disabled" style=" border: 1px solid #98c0ff; text-align: center;line-height: 150px;">请先登入</textarea>';
     boxHtml += '		</div>';
     boxHtml += '	</div>';
     boxHtml += '</form>';
@@ -161,33 +163,36 @@
     boxHtml += '</form>';
     </shiro:authenticated>
 
-    window.html=function () {
+    window.html = function () {
         return boxHtml;
+    };
+
+    getDiscuss();
+    function getDiscuss() {
+        $("#articleComment").empty();
+        $.ajax({
+            url: Util.getUrl() + "/discuss/getDiscuss",
+            data: {blogId: $("#inp_blog_id").val()},
+            dataType: "json",
+            success: function (data) {
+                initComment(data);
+            }
+        })
     }
-    var agoComment = [
-        {"id": 1, "userName": "游客1", "time": "2014-04-04", "sortID": 0, "content": "第一条评论"},
-        {"id": 2, "userName": "游客2", "time": "2014-04-04", "sortID": 0, "content": "第二条评论"},
-        {"id": 3, "userName": "站长", "time": "2014-04-04", "sortID": 1, "content": "第一条评论的回复"},
-        {"id": 4, "userName": "站长", "time": "2014-04-04", "sortID": 2, "content": "第二条评论的回复"},
-        {"id": 5, "userName": "游客3", "time": "2014-04-04", "sortID": 0, "content": "第三条评论"},
-        {"id": 6, "userName": "游客2", "time": "2014-04-04", "sortID": 4, "content": "第二条评论的回复的回复"},
-    ];
-    $("#articleComment").zyComment({
-        "width": "355",
-        "height": "33",
-        "agoComment": agoComment,
-        "callback": function (comment) {
-            console.info("填写内容返回值：");
-            console.info(comment);
-            // 添加新的评论
-            $("#articleComment").zyComment("setCommentAfter", {
-                "id": 123,
-                "name": "name",
-                "content": "content",
-                "time": "2014-04-14"
-            });
-        }
-    });
+
+    function initComment(data) {
+        $("#articleComment").zyComment({
+            "width": "355",
+            "height": "33",
+            "agoComment": data,
+            "callback": function (comment) {
+            }
+        });
+    }
+    window.comment = function () {
+        getDiscuss();
+    };
+
 </script>
 <link href="${rootPath}/resources/webapp/blog_document/index.css" rel="stylesheet" type="text/css"/>
 <script src="${rootPath}/resources/webapp/blog_document/index.js"></script>

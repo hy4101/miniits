@@ -17,7 +17,9 @@
 <header class="site-header jumbotron">
     <div class="site-nav">
         <shiro:guest>
-            <a href="${rootPath}/user/userAdmin.html" class="a-saveRequestUrl">博客</a>
+            <a href="${rootPath}/dynamic.html" class="a-saveRequestUrl">动态</a>
+            <span>/</span>
+            <a href="${rootPath}/blog/<shiro:principal/>" class="a-saveRequestUrl">博客</a>
             <span>/</span>
             <a href="${rootPath}/user/login.html" target="_blank">登入</a>
             <span>/</span>
@@ -27,7 +29,9 @@
         <shiro:authenticated>
             <a href="${rootPath}/user/setting.html" class="a-saveRequestUrl">设置</a>
             <span>/</span>
-            <a href="${rootPath}/blog/<shiro:principal/>" target="_blank" class="a-saveRequestUrl">博客</a>
+            <a href="${rootPath}/dynamic.html" class="a-saveRequestUrl">动态</a>
+            <span>/</span>
+            <a href="${rootPath}/blog/<shiro:principal/>" class="a-saveRequestUrl">博客</a>
             <span>/</span>
             <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">主页</a>
             <span>/</span>

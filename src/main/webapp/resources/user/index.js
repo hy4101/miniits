@@ -10,7 +10,6 @@
 
         var totalPage = "";
         var dataList = "";
-
         function pageInit() {
             userAdminMaster.init();
         }
@@ -66,7 +65,7 @@
                             str += '<div class="f-mt10 f-bb1"><ul class="cd-timeline-content clearfix">' +
                                 '<li class="f-fl f-mt2">' + date + '</li> ' +
                                 '<li class="f-fl f-ml50 f-fs20 f-mw60">' +
-                                '<a title="' + dataList[i].name + '" class="f-dw" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "article:select", dataList[i].id) + '">' + dataList[i].name + '</a></li>' +
+                                '<a title="' + dataList[i].name + '" class="f-dw" href="'+Util.getUrl()+'/document/'+dataList[i].id+'">' + dataList[i].name + '</a></li>' +
                                 '<li class="f-fr f-mr50">' +
                                 '<img title="查看人数" src="' + Util.getUrl() + '/resources/commons/images/see.png" />' + dataList[i].see + ' -- ' +
                                 '<img title="回复人数" src="' + Util.getUrl() + '/resources/commons/images/revert.png" />' + dataList[i].revert + ' -- ' +
@@ -142,18 +141,19 @@
                     }
                 }
 
-                $.subscribe('article:select', function (event, id) {
-                    var jsonData = {id: id, pid: pid};
-                    orgDialog = $.ligerDialog.open({
-                        height: 620,
-                        width: 600,
-                        title: '修改机构',
-                        url: url + 'initialSaveDialog',
-                        urlParms: {
-                            jsonData: JSON.stringify(jsonData)
-                        }
-                    })
-                });
+                // $.subscribe('article:select', function (event, id) {
+                //     debugger
+                //     var jsonData = {id: id, pid: pid};
+                //     orgDialog = $.ligerDialog.open({
+                //         height: 620,
+                //         width: 600,
+                //         title: '修改机构',
+                //         url: url + 'initialSaveDialog',
+                //         urlParms: {
+                //             jsonData: JSON.stringify(jsonData)
+                //         }
+                //     })
+                // });
 
                 // $.subscribe('article:delete', function (event, id, name) {
                 //     var deleteDialog = layer.confirm('<div style="text-align: center"><img title="删除" src="' + Util.getUrl() + '/resources/commons/images/delete_face.png" /></div><br>' +
