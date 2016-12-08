@@ -10,6 +10,7 @@
 
         var totalPage = "";
         var dataList = "";
+        var collectList = "";
         function pageInit() {
             userAdminMaster.init();
         }
@@ -90,6 +91,73 @@
                 });
             },
 
+
+            /**
+             * 收藏页
+             */
+            getCollect: function (curr) {
+                var self = this;
+                $(self.$containerMain.find("li")[0]).css("border-bottom", "3px solid #ff5f63");
+                self.$params.val(sessionStorage.getItem("params"));
+
+                curr = Util.isStrEmpty(curr) ? 1 : curr;
+                var filters = Util.isStrEmpty(self.$params.val()) ? "" : "name?" + self.$params.val();
+                $.ajax({
+                    url:  Util.getUrl() + "/user/collect_blog/getCollectBlogs",
+                    data: {filters: filters, page: curr, rows: 30},
+                    dataType: "json",
+                    async: false,
+                    success: function (data) {
+                        totalPage = data.totalPage;
+                        collectList = data.detailModelList;
+
+                    },
+                    error: function (data) {
+                    }
+                })
+
+            },
+            collectArticlePage: function () {
+                var self = this;
+                layui.use(['laypage', 'layer'], function () {
+                    var laypage = layui.laypage;
+
+                    //模拟渲染
+                    var render = function (curr) {
+                        self.getCollect(curr);
+                        sessionStorage.removeItem("params");
+                        var str = "";
+                        for (var i = 0; i < collectList.length; i++) {
+                            debugger
+                            var date = TimeObjectUtil.longMsTimeConvertToDateTime(collectList[i].time);
+                            str += '<div class="f-mt10 f-bb1"><ul class="cd-timeline-content clearfix">' +
+                                '<li class="f-fl f-mt2">' + date + '</li> ' +
+                                '<li class="f-fl f-ml50 f-fs20 f-mw60">' +
+                                '<a title="' + collectList[i].name + '" class="f-dw" href="'+Util.getUrl()+'/document/'+collectList[i].id+'">' + collectList[i].name + '</a></li>' +
+                                '<li class="f-fr f-mr50">' +
+                                '<img title="查看人数" src="' + Util.getUrl() + '/resources/commons/images/see.png" />' + collectList[i].see + ' -- ' +
+                                '<img title="回复人数" src="' + Util.getUrl() + '/resources/commons/images/revert.png" />' + collectList[i].revert + ' -- ' +
+                                '<a title="修改" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "article:update", collectList[i].id) + '">' +
+                                '<img src="' + Util.getUrl() + '/resources/commons/images/update.png" /></a> ' +
+                                // '<a title="删除" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}','{2}'])", "article:delete", dataList[i].id, dataList[i].name) + '">' +
+                                // '<img src="' + Util.getUrl() + '/resources/commons/images/delete.png" /></a>' +
+                                '</li></ul></div>';
+                        }
+                        return str;
+                    };
+
+                    //调用分页
+                    laypage({
+                        cont: 'div_minits_pages',
+                        pages: totalPage,
+                        skip: true,
+                        jump: function (obj) {
+                            document.getElementById('cd-timeline').innerHTML = render(obj.curr);
+                        }
+                    });
+                });
+            },
+
             cilcks: function () {
                 var self = this;
 
@@ -124,7 +192,7 @@
                             self.getDataList(1);
                             break;
                         case 'collects':
-
+                            self.collectArticlePage(1);
                             break;
                         case 'subscibes':
 

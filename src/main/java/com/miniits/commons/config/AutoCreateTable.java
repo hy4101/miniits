@@ -2,6 +2,7 @@ package com.miniits.commons.config;
 
 import com.miniits.web.user.blog.model.Blog;
 import com.miniits.web.user.type.model.BlogType;
+import com.miniits.web.web.collect_blog.model.CollectBlog;
 import com.miniits.web.web.discuss.model.Discuss;
 import com.miniits.web.web.emailvalidate.model.EMailValidate;
 import com.miniits.web.web.image.model.Image;
@@ -36,7 +37,7 @@ public class AutoCreateTable {
         localSessionFactoryBean.setHibernateProperties(properties);
 
         localSessionFactoryBean.setAnnotatedClasses(User.class, Image.class, EMailValidate.class,
-                EMailValidate.class, Blog.class, BlogType.class,Discuss.class);
+                EMailValidate.class, Blog.class, BlogType.class,Discuss.class, CollectBlog.class);
         return localSessionFactoryBean;
     }
 }

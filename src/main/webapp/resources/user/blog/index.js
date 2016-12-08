@@ -51,7 +51,6 @@
                 });
             },
 
-
             getDataList: function (curr) {
                 var self = this;
                 // $(self.$containerMain.find("li")[0]).css("border-bottom", "3px solid #ff5f63");
