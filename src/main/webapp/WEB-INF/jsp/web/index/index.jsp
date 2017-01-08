@@ -59,7 +59,8 @@
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>
                 <a href="https://www.baidu.com">
-                    <img src="${rootPath}/resources/commons/images/index/spring_logo.png" width="100px" height="100px"><br>
+                    <img src="${rootPath}/resources/commons/images/index/spring_logo.png" width="100px"
+                         height="100px"><br>
                 </a>
                 <label>Spring</label>
             </span>
@@ -67,7 +68,8 @@
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>
                 <a href="https://www.baidu.com">
-                    <img src="${rootPath}/resources/commons/images/index/spring_boot_logo.jpg" width="100px" height="100px"><br>
+                    <img src="${rootPath}/resources/commons/images/index/spring_boot_logo.jpg" width="100px"
+                         height="100px"><br>
                 </a>
                 <label>Spring Boot</label>
             </span>
@@ -75,7 +77,8 @@
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>
                 <a href="https://www.baidu.com">
-                    <img src="${rootPath}/resources/commons/images/index/spring_boot_logo.jpg" width="100px" height="100px"><br>
+                    <img src="${rootPath}/resources/commons/images/index/spring_boot_logo.jpg" width="100px"
+                         height="100px"><br>
                 </a>
                 <label>Spring Cloud</label>
             </span>
@@ -122,7 +125,8 @@
                 <label>Mongodb</label>
             </span>
         </div>
-        <div style="width: 100%;border-bottom: 1px solid red;" class="f-fl f-mt10 f-mb10"><label>JavaScript</label></div>
+        <div style="width: 100%;border-bottom: 1px solid red;" class="f-fl f-mt10 f-mb10"><label>JavaScript</label>
+        </div>
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>
                 <a href="https://www.baidu.com">
@@ -184,7 +188,7 @@
             <span>
                 <a href="https://www.baidu.com">
                     <img src="${rootPath}/resources/commons/images/index/myeclipse_logo.png" width="100px"
-                     height="100px"><br>
+                         height="100px"><br>
                 </a>
                 <label>Myeclipse</label>
             </span>
@@ -214,6 +218,224 @@
                          height="100px"><br>
                 </a>
                 <label>Myeclipse</label>
+            </span>
+        </div>
+        <div style="width: 100%;border-bottom: 1px solid red;" class="f-fl f-mt10 f-mb10"><label>下载</label></div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/JDK_LOGO.jpg" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>JDK</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/JAR_LOGO.jpg" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>JAR</label>
+            </span>
+        </div>
+        <div style="width: 100%;border-bottom: 1px solid red;" class="f-fl f-mt10 f-mb10"><label>常用软件</label></div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/QQ_LOGO.jpg" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>QQ</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/WEIXIN_LOGO.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>微信</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/zhifubao_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>支付宝</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/360_logo.jpg" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>360</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/Chrome_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>Chrome</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/kugou_logo.jpg" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>酷狗</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/IDM_LOGO.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>IDM</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/yinxiangbiji_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>印象笔记</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/toutiao_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>今日头条</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/weibo_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>微博</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/UC_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>UC浏览器</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/toutiao_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>今日头条</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/taobao_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>淘宝</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/JD_LOGO.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>京东</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/sougou_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>搜狗输入法</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/gaodeditu_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>高德地图</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/douyu_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>斗鱼直播</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/bibi_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>B站</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/12306.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>12306</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/wandoujia_logo.jpg" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>豌豆荚</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/WIN10_LOGO.jpg" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>Windows 10</label>
+            </span>
+        </div>
+        <div class="f-fl f-ml10 f-mr10 f-tac">
+            <span>
+                <a href="https://www.baidu.com">
+                    <img src="${rootPath}/resources/commons/images/index/office_logo.png" width="100px"
+                         height="100px"><br>
+                </a>
+                <label>Office 2016</label>
             </span>
         </div>
     </div>
