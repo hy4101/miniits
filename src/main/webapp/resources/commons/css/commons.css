@@ -76,6 +76,7 @@
 .f-h100 { height:100px; }
 .f-h200 { height:200px; }
 .f-hh { height:100% }
+.f-ah { height:auto }
 .f-minh600 {min-height: 600px}
 
 .f-lh30 { line-height:30px; }

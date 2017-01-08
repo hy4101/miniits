@@ -10,6 +10,14 @@ body {
     color: #fff;
     margin-bottom: 0;
 }
+.site-footer {
+    text-align: center;
+    background-color: #27AE60;
+    color: #fff;
+    margin-bottom: 0;
+    width: 100%;
+    height: 200px;
+}
 .site-nav {
     position: absolute;
     top: 15px;
@@ -42,4 +50,7 @@ body {
     height: auto;
     text-align: center;
 }
-
+.div-body-product-logo{
+    width: 90%;
+    margin: auto;
+}
