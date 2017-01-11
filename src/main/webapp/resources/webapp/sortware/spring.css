@@ -1,0 +1,99 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif"; /**/
+}
+
+.site-header {
+    position: relative;
+    text-align: center;
+    background-color: #27AE60;
+    color: #fff;
+    margin-bottom: 0;
+}
+.site-footer {
+    text-align: center;
+    background-color: #27AE60;
+    color: #fff;
+    margin-bottom: 0;
+    width: 100%;
+    height: 200px;
+}
+.site-nav {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    z-index: 1100;
+}
+.site-nav a {
+    color: #eee;
+}
+.div-body-product-logo{
+    width: 90%;
+    margin: auto;
+}
+.site-notice {
+    padding: 5px 30px;
+    text-align: right;
+    background-color: #208d4e;
+}
+.site-header .search {
+    border: 2px solid #27AE60;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-size: 16px;
+    padding: 13px 30px;
+    border-radius: 0;
+    height: auto;
+    text-align: center;
+}
+
+/**
+--------------------界面模板只用上边css即可--------------------------
+ */
+
+.container-main {
+    text-align: center;
+    float: left;
+    width: 100%;
+    height: 50px;
+    /*border-top: 4px solid #ff5f63;*/
+    /*background-color: #03B169;*/
+}
+.container-main ul {
+    display: inline-block;
+}
+ul{
+    list-style: none;
+}
+.container-main li {
+    float: left;
+    margin-right: 44px;
+}
+.clearfix a{
+    color: #4e9372;
+}
+.clearfix{
+    margin-top:5px;
+}
+.item {
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+}
+.div-spring-menu{
+    padding: 1%;
+    width: 30%;
+}
+.inp-br-b{
+    border: 0px;
+    border-bottom: 1px solid #000000;
+}
+.div-spring-text{
+    text-align: center;
+    padding: 1%;
+    width: 69%;
+    float: right;
+}

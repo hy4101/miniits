@@ -58,7 +58,7 @@
         <div style="width: 100%;border-bottom: 1px solid red;" class="f-fl f-mb10"><label>框架</label></div>
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>
-                <a href="https://www.baidu.com">
+                <a href="${rootPath}/framework/spring.html">
                     <img src="${rootPath}/resources/commons/images/index/spring_logo.png" width="100px"
                          height="100px"><br>
                 </a>
@@ -67,7 +67,7 @@
         </div>
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>
-                <a href="https://www.baidu.com">
+                <a href="${rootPath}/framework/springboot.html">
                     <img src="${rootPath}/resources/commons/images/index/spring_boot_logo.jpg" width="100px"
                          height="100px"><br>
                 </a>
@@ -77,7 +77,7 @@
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>
                 <a href="https://www.baidu.com">
-                    <img src="${rootPath}/resources/commons/images/index/spring_boot_logo.jpg" width="100px"
+                    <img src="${rootPath}/resources/commons/images/index/spring_cloud_logo.png" width="100px"
                          height="100px"><br>
                 </a>
                 <label>Spring Cloud</label>
@@ -95,7 +95,7 @@
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>
                 <a href="https://www.baidu.com">
-                <img src="${rootPath}/resources/commons/images/index/mybatis-logo.png" width="100px" height="100px"><br>
+                <img src="${rootPath}/resources/commons/images/index/mybatis_logo.jpg" width="100px" height="100px"><br>
                 </a>
                 <label>Mybatis</label>
             </span>
@@ -243,7 +243,7 @@
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>
                 <a href="https://www.baidu.com">
-                    <img src="${rootPath}/resources/commons/images/index/QQ_LOGO.jpg" width="100px"
+                    <img src="${rootPath}/resources/commons/images/index/QQ_LOGO.png" width="100px"
                          height="100px"><br>
                 </a>
                 <label>QQ</label>
