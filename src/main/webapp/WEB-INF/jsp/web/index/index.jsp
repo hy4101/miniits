@@ -53,53 +53,98 @@
         </div>
     </div>
 </header>
-<div class="f-ww f-mt10 f-mb10">
-    <div class="div-body-product-logo f-ah">
-        <div style="width: 100%;border-bottom: 1px solid red;" class="f-fl f-mb10"><label>框架</label></div>
-        <div class="f-fl f-ml10 f-mr10 f-tac">
-            <span>
-                <a href="${rootPath}/framework/spring.html">
-                    <img src="${rootPath}/resources/commons/images/index/spring_logo.png" width="100px"
-                         height="100px"><br>
+
+<div class="row f-ww f-mb10" style="margin: auto;">
+    <div class="div-body-product-logo f-ah ">
+
+        <div class="col-sm-6 col-md-4 col-lg-3 f-mt20">
+            <div style="height: 358px" class="f-dr1c8 f-tac">
+                <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                    <img class="lazy" src="${rootPath}/resources/commons/images/index/spring_logo.png" width="150" height="150"
+                         data-src="img/spring-cloud-config.png" alt="Spring Cloud Config">
                 </a>
-                <label>Spring</label>
-            </span>
+                <div class="caption">
+                    <h3>
+                        <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                            Spring Cloud Config<br>
+                            <small>Spring</small>
+                        </a>
+                    </h3>
+                    <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
+                </div>
+            </div>
         </div>
-        <div class="f-fl f-ml10 f-mr10 f-tac">
-            <span>
-                <a href="${rootPath}/framework/springboot.html">
-                    <img src="${rootPath}/resources/commons/images/index/spring_boot_logo.jpg" width="100px"
-                         height="100px"><br>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 f-mt20">
+            <div style="height: 358px;" class="f-dr1c8 f-tac">
+                <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                    <img class="lazy" src="${rootPath}/resources/commons/images/index/spring_boot_logo.jpg" width="150" height="150"
+                         data-src="img/spring-cloud-config.png" alt="Spring Cloud Config">
                 </a>
-                <label>Spring Boot</label>
-            </span>
+                <div class="caption">
+                    <h3>
+                        <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                            Spring Cloud Config<br>
+                            <small>Spring</small>
+                        </a>
+                    </h3>
+                    <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
+                </div>
+            </div>
         </div>
-        <div class="f-fl f-ml10 f-mr10 f-tac">
-            <span>
-                <a href="https://www.baidu.com">
-                    <img src="${rootPath}/resources/commons/images/index/spring_cloud_logo.png" width="100px"
-                         height="100px"><br>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 f-mt20">
+            <div style="height: 358px;" class="f-dr1c8 f-tac">
+                <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                    <img class="lazy" src="${rootPath}/resources/commons/images/index/spring_cloud_logo.png" width="150" height="150"
+                         data-src="img/spring-cloud-config.png" alt="Spring Cloud Config">
                 </a>
-                <label>Spring Cloud</label>
-            </span>
+                <div class="caption">
+                    <h3>
+                        <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                            Spring Cloud Config<br>
+                            <small>Spring</small>
+                        </a>
+                    </h3>
+                    <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
+                </div>
+            </div>
         </div>
-        <div class="f-fl f-ml10 f-mr10 f-tac">
-            <span>
-                <a href="https://www.baidu.com">
-                <img src="${rootPath}/resources/commons/images/index/hibernate_logo.png" width="100px"
-                     height="100px"><br>
+        <div class="col-sm-6 col-md-4 col-lg-3 f-mt20">
+            <div style="height: 358px;" class="f-dr1c8 f-tac">
+                <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                    <img class="lazy" src="${rootPath}/resources/commons/images/index/hibernate_logo.png" width="250" height="150"
+                         data-src="img/spring-cloud-config.png" alt="Spring Cloud Config">
                 </a>
-                <label>Hibernate</label>
-            </span>
+                <div class="caption">
+                    <h3>
+                        <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                            Spring Cloud Config<br>
+                            <small>Spring</small>
+                        </a>
+                    </h3>
+                    <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
+                </div>
+            </div>
         </div>
-        <div class="f-fl f-ml10 f-mr10 f-tac">
-            <span>
-                <a href="https://www.baidu.com">
-                <img src="${rootPath}/resources/commons/images/index/mybatis_logo.jpg" width="100px" height="100px"><br>
+        <div class="col-sm-6 col-md-4 col-lg-3 f-mt20">
+            <div style="height: 358px;" class="f-dr1c8 f-tac">
+                <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                    <img class="lazy" src="${rootPath}/resources/commons/images/index/mybatis_logo.jpg" width="150" height="150"
+                         data-src="img/spring-cloud-config.png" alt="Spring Cloud Config">
                 </a>
-                <label>Mybatis</label>
-            </span>
+                <div class="caption">
+                    <h3>
+                        <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
+                            Spring Cloud Config<br>
+                            <small>Spring</small>
+                        </a>
+                    </h3>
+                    <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
+                </div>
+            </div>
         </div>
+
         <div style="width: 100%;border-bottom: 1px solid red;" class="f-fl f-mt10 f-mb10"><label>数据库</label></div>
         <div class="f-fl f-ml10 f-mr10 f-tac">
             <span>

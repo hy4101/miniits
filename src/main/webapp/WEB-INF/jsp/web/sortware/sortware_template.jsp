@@ -61,12 +61,12 @@
         </div>
 
         <div class="div-spring-menu f-dr1c8 f-fl f-mt20">
-            <label>Spring Boot DEMO</label>
+            <label>获取代码</label>
             <ul>
                 <li>GitHub :<input value="https://github.com" readonly="readonly" class="inp-br-b" /> &nbsp <img src="${rootPath}/resources/commons/images/copy.png" width="25px" height="25px" ></img></li>
-                <li class="f-mt10">码云 :&nbsp&nbsp&nbsp&nbsp<input value="https://git.oschina.net/haiyuan4101/spring-boot-www.miniits.com.git" readonly="readonly" class="inp-br-b" /> &nbsp <img src="${rootPath}/resources/commons/images/copy.png" width="25px" height="25px" ></li>
+                <li class="f-mt10">码云 :&nbsp&nbsp&nbsp&nbsp<input value="https://git.oschina.net" readonly="readonly" class="inp-br-b" /> &nbsp <img src="${rootPath}/resources/commons/images/copy.png" width="25px" height="25px" ></li>
             </ul>
-            <label>Spring Boot 技术交流</label>
+            <label>Spring技术交流</label>
             <ul>
                 <li>QQ群 :<input value="112773621" readonly="readonly" class="inp-br-b" /></li>
                 <li class="f-mt10">QQ群 :<input value="112968486" readonly="readonly" class="inp-br-b" /></li>
