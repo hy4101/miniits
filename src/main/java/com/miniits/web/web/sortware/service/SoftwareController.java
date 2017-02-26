@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-@RequestMapping("/framework")
+@RequestMapping("/")
 public class SoftwareController extends BaseUtil {
 
     @RequestMapping("/spring.html")
@@ -19,8 +19,8 @@ public class SoftwareController extends BaseUtil {
         return "/web/sortware/framework/spring_index";
     }
 
-    @RequestMapping("/springboot.html")
+    @RequestMapping("/spring_boot.html")
     public String springBoot(){
-        return "/web/sortware/framework/spring_boot_index";
+        return "/web/sortware/spring_boot_index";
     }
 }

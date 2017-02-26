@@ -108,7 +108,7 @@
             </tr>
         </table>
         <br><br>
-        ${doc.obj.text}
+        <div style="text-align: left">${doc.obj.text}</div>
 
         <div class="f-tal f-mt30">
             <div style="border-top: 3px solid red;border-bottom: 3px solid #98c0ff;">
