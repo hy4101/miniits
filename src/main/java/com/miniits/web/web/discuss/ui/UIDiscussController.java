@@ -5,16 +5,11 @@ import com.miniits.commons.utils.web.BaseUtil;
 import com.miniits.web.web.discuss.controller.DiscussController;
 import com.miniits.web.web.discuss.model.Discuss;
 import com.miniits.web.web.user.model.User;
-import org.apache.catalina.connector.RequestFacade;
-import org.apache.http.protocol.HTTP;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 

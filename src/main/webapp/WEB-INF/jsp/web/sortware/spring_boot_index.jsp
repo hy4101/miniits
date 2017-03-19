@@ -76,11 +76,19 @@
                 <li>QQ群 :<input value="112773621" readonly="readonly" class="inp-br-b"/></li>
                 <li class="f-mt10">QQ群 :<input value="112968486" readonly="readonly" class="inp-br-b"/></li>
             </ul>
-            <label>Spring 装配Bean</label><br>
-            <label>Spring 高级装配</label><br>
-            <label>Spring MVC</label><br>
-            <label>Spring AOP</label><br>
-            <label>Spring IOC</label><br>
+            <label><a>Spring Boot JPA 【整合Spring Data JPA】</a></label><br>
+            <label><a>Spring Boot Redis 【NoSql数据库Redis】</a></label><br>
+            <label><a>Spring Boot MongoDB</a> </label><br>
+            <label><a>Spring Boot MyBatis</a> </label><br>
+            <label><a>Spring Boot Session 【分布式Session管理】</a></label><br>
+            <label><a>Spring Boot Scheduled 【动态定时任务】</a></label><br>
+            <label><a>Spring Boot Asyn 【异步调用】</a></label><br>
+            <label><a>Spring Boot Log 【统一日志管理MongoDB】</a></label><br>
+            <label><a>Spring Boot Security 【安全管理】</a></label><br>
+            <label><a>Spring Boot RabbitMQ 【消息队列】</a></label><br>
+            <label><a>Spring Boot Hibernate Validation【后台表单验证】</a></label><br>
+            <label><a>Spring Boot elasticsearch</a></label><br>
+            <label><a>Spring Boot Thymeleaf</a></label><br>
         </div>
         <div class="div-spring-text f-dr1c8 f-fl f-mt20">
             <label><h2>Spring Boot</h2></label>
@@ -106,7 +114,7 @@
                     <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
                         <span style="font-size: 18px; line-height: 1.5em; text-indent: 1em;">&nbsp;&nbsp;&nbsp;&nbsp;...<br/></span>
                     </p>
-                    
+
                     <h2 style="margin: 1.5em 0px 0.5em; font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; font-size: 18px; text-indent: 1em; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
                         Spring Boot 快速入门
                     </h2>

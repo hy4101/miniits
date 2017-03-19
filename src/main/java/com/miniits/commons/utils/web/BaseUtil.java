@@ -3,13 +3,11 @@ package com.miniits.commons.utils.web;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.miniits.commons.utils.Envelop;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.servlet.http.HttpServletRequest;
 import java.beans.PropertyDescriptor;
-import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.*;
