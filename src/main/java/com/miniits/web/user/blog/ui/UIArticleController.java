@@ -23,12 +23,12 @@ public class UIArticleController extends BaseUtil {
 
     @RequestMapping("/getArticles")
     @ResponseBody
-    public Envelop getArticles(String filters,int page,int rows){
+    public String getArticles(String filters,int page,int rows){
         try {
             Envelop envelop = articleController.searchArticles("",filters,"",page,rows);
-            return envelop;
+            return toJson(envelop);
         } catch (ParseException e) {
-            return error("帖子查询失败");
+            return toJson(error("帖子查询失败"));
         }
     }
 

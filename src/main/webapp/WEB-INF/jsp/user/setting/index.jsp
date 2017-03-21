@@ -93,15 +93,8 @@
                             <div class="new_user_info">
                                 <div class="new_user_type">
 									<span class="user_type">
-
                                         个人
                                             - 新手
-
-
-
-
-
-
 									</span>
                                 </div>
                                 <div class="new_user_name"><span>mini科技</span></div>
@@ -131,19 +124,19 @@
 </div>
 <div id="scontent" style="visibility: visible;">
 
-    <div class="wrap1 sclearfix">
-        <div class="menu">
+    <div class="wrap1 sclearfix" style="width: 100%">
+        <div class="menu" style="margin-left: 50px">
             <div class="menu_block">
                 <a href="/" class="menu_h1  menu_main alone"><i></i>主页</a>
             </div>
             <div class="menu_block">
-                <a onclick="javascript:settingFun('typeManages');" class="menu_h1  new_article alone" ga="发表文章统计">
+                <a style="cursor: pointer;" onclick="javascript:settingFun('typeManages');" class="menu_h1  new_article alone" ga="发表文章统计">
                     <i></i>类别管理</a>
             </div>
 
             <div class="menu_block">
-                <a class="menu_h1 menu_article"><i></i>文章管理</a>
-                <a href="/articles/?source_type=0" class="menu_h2  selected  ">手动更新</a>
+                <a class="menu_h1 menu_article"><i></i>内容管理</a>
+                <a style="cursor: pointer;" onclick="javascript:settingFun('articleManages');" class="menu_h2  selected  ">文章管理</a>
 
 
                 <a href="/comment/" class="menu_h2 ">评论管理</a>
@@ -194,7 +187,7 @@
             </div>
         </div>
 
-        <div class="stage" id="div_count_msg">
+        <div class="stage" id="div_count_msg" style="width: 80%">
             <div id="pagelet-list">
                 <div class="page_tabs sclearfix">
                     <a href="javascript:;" class="page_tab selected">手动更新</a>
@@ -618,19 +611,7 @@
         </div>
     </div>
 
-    <div class="fb-sidebar">
 
-        <a href="/selfservice/" class="fb-selfservice" target="_blank">常见问题</a>
-        <div class="j-fb-feedback">
-            <div class="fb-icon fb-feedback">
-                <span class="fb-feedback-new-msg">0</span>
-            </div>
-            <div class="fb-feedback-texticon">意见反馈</div>
-            <div class="fb-feedback-text">意见反馈</div>
-        </div>
-
-        <div class="fb-icon fb-back2top"></div>
-    </div>
 </div>
 <!--  -->
 
@@ -639,10 +620,10 @@
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
         a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
+            m = s.getElementsByTagName(o)[0];
         a.async = 1;
         a.src = g;
         m.parentNode.insertBefore(a, m)
@@ -653,8 +634,8 @@
 <script type="text/javascript">
     !function (t, e, a, n, s, c) {
         t.ToutiaoAnalyticsObject = s, t[s] = t[s] || function () {
-                    (t[s].q = t[s].q || []).push(arguments)
-                }, t[s].t = 1 * new Date, t[s].s = c;
+                (t[s].q = t[s].q || []).push(arguments)
+            }, t[s].t = 1 * new Date, t[s].s = c;
         var i = e.createElement(a);
         i.async = 1, i.src = n, e.getElementsByTagName("head")[0].appendChild(i)
     }(window, document, "script", "//s3a.bytecdn.cn/ta/resource/v0/analytics.js", "ba");

@@ -2,7 +2,6 @@ package com.miniits.web.user.type.ui;
 
 import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.web.BaseUtil;
-import com.miniits.web.user.blog.model.Blog;
 import com.miniits.web.user.type.controller.BlogTypeController;
 import com.miniits.web.user.type.model.BlogType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +25,11 @@ public class UITypeController extends BaseUtil {
     @RequestMapping("/initialTypeManage")
     public String initialTypeManage() {
         return "/user/setting/typeManage";
+    }
+
+    @RequestMapping("/initialArticleManages")
+    public String initialArticleManages() {
+        return "/user/setting/articleManages";
     }
 
     @RequestMapping("/getTypes")

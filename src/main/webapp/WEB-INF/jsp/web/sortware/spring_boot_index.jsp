@@ -53,11 +53,8 @@
         <div class="container-main f-ww">
             <ul class="clearfix">
                 <li><a class="item" onclick="javascript:articleSelect('dynamic')">开始体验</a></li>
-                <li><a class="item" onclick="javascript:articleSelect('collects')">Manve引入</a></li>
-                <li><a class="item" href="#li_spring_framework">Spring注解</a></li>
-                <li><a class="item" onclick="javascript:articleSelect('subscibes')">API文档</a></li>
-                <li><a class="item" href="http://projects.spring.io/spring-boot/" target="_blank">官网</a></li>
-                <li><a class="item" onclick="javascript:articleSelect('fans')">论坛</a></li>
+                <li><a class="item" onclick="javascript:articleSelect('subscibes')">Spring Boot文档</a></li>
+                <li><a class="item" onclick="javascript:articleSelect('fans')">Spring Boot项目</a></li>
             </ul>
         </div>
 
@@ -98,7 +95,7 @@
                         Spring Boot简介
                     </h2>
                     <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;">Spring Boot是轻量级的Java EE框架，可快速、<span
+                        <span style="font-size: 18px;">如何轻松的搭建一个spring boot 应用Spring Boot是轻量级的Java EE框架，可快速、<span
                                 style="color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; line-height: 27.2px; text-indent: 16px; background-color: rgb(254, 254, 254);">独立的</span>进行<span
                                 style="color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; line-height: 27.2px; text-indent: 16px; background-color: rgb(254, 254, 254);">产品级别的Spring应用</span>开发，spring boot框架为我们提供了开箱即用的设置，你可以有条不紊的开始编程，省去繁琐的xml配置文件，让你有跟多的时间注重于功能和业务上。</span>
                     </p>

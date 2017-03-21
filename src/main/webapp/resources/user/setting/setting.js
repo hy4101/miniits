@@ -37,8 +37,8 @@
                         case 'typeManages':
                             self.getTypeManageList();
                             break;
-                        case 'collects':
-
+                        case 'articleManages':
+                            self.getArticleManages();
                             break;
                         case 'subscibes':
 
@@ -59,6 +59,12 @@
                 var self = this;
                 self.$countMsg.empty('');
                 self.$countMsg.load(Util.getUrl() + "/type/"+"initialTypeManage",'');
+            },
+
+            getArticleManages:function () {
+                var self = this;
+                self.$countMsg.empty('');
+                self.$countMsg.load(Util.getUrl() + "/type/"+"initialArticleManages",'');
             }
 
         };
