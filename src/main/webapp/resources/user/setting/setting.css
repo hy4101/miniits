@@ -5498,10 +5498,6 @@ button.toast-close-button {
     color: #222
 }
 
-.menu_h1.alone:hover, .menu_h2:hover, .menu_h1.alone.selected, .menu_h2.selected {
-    color: #f7473f
-}
-
 .menu_h1.alone.selected, .new_article.alone.selected, .menu_h2.selected {
     cursor: default
 }

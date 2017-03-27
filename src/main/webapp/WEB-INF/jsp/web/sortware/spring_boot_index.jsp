@@ -8,7 +8,65 @@
     <meta name="description" content="Bootstrap中文网开源项目免费 CDN 服务 - 我们致力于为Bootstrap一样优秀的开源项目提供稳定、快速的免费 CDN 服务">
     <meta name="keywords" content="Spring Boot中文网">
     <meta name="author" content="Bootstrap中文网">
+    <script src="${rootPath}/resources/commons/js/util/pubsub.js"></script>
+    <script>
+        (function ($, win) {
+            $(function () {
+                var settingMaster = null;
+                var Util = $.Util;
+                var url = Util.getUrl() + "/type/";
+                var newsData = null;
+
+                function pageInit() {
+                    settingMaster.init();
+                }
+
+                settingMaster = {
+
+                    $newsName: $("#div_news_name"),
+                    $contentMsg: $("#new_content_msg"),
+
+                    init: function () {
+                        var self = this;
+                        self.initForm();
+                        self.cilcks();
+                    },
+
+                    initForm: function () {
+                        var self = this;
+                        $.ajax({
+                            url: Util.getUrl() + '/user/article/getArticles',
+                            data: {filters: "type=50", page: 1, rows: 50},
+                            dataType: "json",
+                            success: function (data) {
+                                newsData = data.detailModelList;
+                                var html = "";
+                                for (var i = 0; i < newsData.length; i++) {
+                                    debugger
+                                    var jaon = JSON.stringify(newsData[i])
+//                                    html +='<label><a href="#" onclick="javascript:pasteNew('+newsData[i]+')" style="color: #4e9372">'+newsData[i].name+'</a></label><br>'
+                                    html += '<label><a href="#" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "delete:news", jaon) + '">' + newsData[i].name + '</a></label><br>'
+                                }
+                                self.$newsName.append(html);
+                            }
+                        })
+
+                    },
+                    cilcks: function () {
+                        var self = this;
+                        $.subscribe("delete:news", function (event, id) {
+                            debugger
+                        })
+
+                    },
+                };
+                pageInit();
+
+            })
+        })(jQuery, window)
+    </script>
 </head>
+
 <body>
 <div class="site-notice">
     <em>MiniIts.com-迷你科技</em>
@@ -73,21 +131,12 @@
                 <li>QQ群 :<input value="112773621" readonly="readonly" class="inp-br-b"/></li>
                 <li class="f-mt10">QQ群 :<input value="112968486" readonly="readonly" class="inp-br-b"/></li>
             </ul>
-            <label><a>Spring Boot JPA 【整合Spring Data JPA】</a></label><br>
-            <label><a>Spring Boot Redis 【NoSql数据库Redis】</a></label><br>
-            <label><a>Spring Boot MongoDB</a> </label><br>
-            <label><a>Spring Boot MyBatis</a> </label><br>
-            <label><a>Spring Boot Session 【分布式Session管理】</a></label><br>
-            <label><a>Spring Boot Scheduled 【动态定时任务】</a></label><br>
-            <label><a>Spring Boot Asyn 【异步调用】</a></label><br>
-            <label><a>Spring Boot Log 【统一日志管理MongoDB】</a></label><br>
-            <label><a>Spring Boot Security 【安全管理】</a></label><br>
-            <label><a>Spring Boot RabbitMQ 【消息队列】</a></label><br>
-            <label><a>Spring Boot Hibernate Validation【后台表单验证】</a></label><br>
-            <label><a>Spring Boot elasticsearch</a></label><br>
-            <label><a>Spring Boot Thymeleaf</a></label><br>
+            <div id="div_news_name">
+
+            </div>
+
         </div>
-        <div class="div-spring-text f-dr1c8 f-fl f-mt20">
+        <div class="div-spring-text f-dr1c8 f-fl f-mt20" div="new_content_msg">
             <label><h2>Spring Boot</h2></label>
             <ul>
                 <li id="li_spring_framework" style="text-align: left">

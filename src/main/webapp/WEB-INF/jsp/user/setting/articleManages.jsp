@@ -24,6 +24,8 @@
                 var settingMaster = null;
                 var Util = $.Util;
                 var url = Util.getUrl() + "/type/";
+                var typeManageList = null;
+                var newsGrid = null;
 
                 function pageInit() {
                     settingMaster.init();
@@ -32,7 +34,10 @@
                 settingMaster = {
 
                     $typeManageList: $("#inp_type_manage_list"),
+                    $newsGrid: $("#div_news_grid"),
                     $newItem: $("#inp_new_item"),
+                    $searchBtn: $("#search_btn"),
+                    $articleName: $("#inp_article_name"),
 
                     init: function () {
                         var self = this;
@@ -45,13 +50,14 @@
                     typeManageEdtir: function () {
                         var self = this;
 
-                        self.$typeManageList.ligerComboBox({
+                        typeManageList = self.$typeManageList.ligerComboBox({
                             width: 180,
                             height: 34,
                             slide: true,
                             selectBoxWidth: 180,
                             selectBoxHeight: 200,
-                            valueField: 'name',
+                            valueField: 'id',
+                            textField: 'name',
                             treeLeafOnly: false,
                             tree: {
                                 url: url + 'getTypes',
@@ -60,17 +66,15 @@
                                 parentIDFieldName: 'pid',
                                 textFieldName: 'name'
                             },
-                            onSelected: function (treeName) {
-                                this.setText(treeName);
-                            }
                         });
 
                     },
                     initForm: function () {
                         var self = this;
 
-                        $("#adfasdf").ligerGrid($.LigerGridEx.config({
-                            height: '97.5%',
+                        newsGrid = self.$newsGrid.ligerGrid($.LigerGridEx.config({
+                            height: '99%',
+                            width: '100%',
                             url: Util.getUrl() + '/user/article/getArticles',
                             parms: {
                                 filters: ""
@@ -97,10 +101,12 @@
                     cilcks: function () {
                         var self = this;
 
-                        $("#adsf").click(function () {
-                            layer.msg('hello');
+                        self.$searchBtn.click(function () {
+                            var filters = "";
+                            filters += Util.isStrEmpty(typeManageList.getValue()) ? "" : "type=" + typeManageList.getValue() + ";";
+                            filters += Util.isStrEmpty(self.$articleName.val()) ? "" : "name?" + self.$articleName.val();
+                            Util.refreshGrid(newsGrid, newsGrid.options.page, {filters: filters})
                         })
-
                     },
                 };
                 pageInit();
@@ -120,14 +126,14 @@
                     <input type="text" class="form-control inp-sty" id="inp_article_name" placeholder="输入文件名称检索"
                            style="height: 34px;width: 200px">
                     <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" onclick="javascript:uodate('search')">检索</button>
+                    <button class="btn btn-default" type="button" id="search_btn">检索</button>
                 </span>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="adfasdf"></div>
+    <div id="div_news_grid"></div>
 </div>
 </body>
 </html>
