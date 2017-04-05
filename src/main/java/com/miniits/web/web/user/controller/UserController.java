@@ -3,6 +3,7 @@ package com.miniits.web.web.user.controller;
 import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.MD5.MD5Util;
 import com.miniits.commons.utils.web.BaseUtil;
+import com.miniits.web.web.aop.Filters;
 import com.miniits.web.web.user.model.User;
 import com.miniits.web.web.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,7 @@ public class UserController extends BaseUtil {
         return success(user);
     }
 
+    @Filters
     public Envelop login(User user) {
         String password = user.getPassword();
         String MD5Password = md5Util.hashStr(password);

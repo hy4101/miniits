@@ -4,6 +4,7 @@ import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.web.BaseUtil;
 import com.miniits.web.user.type.controller.BlogTypeController;
 import com.miniits.web.user.type.model.BlogType;
+import com.miniits.web.web.aop.Filters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,6 +45,7 @@ public class UITypeController extends BaseUtil {
         return envelop.getDetailModelList();
     }
 
+    @Filters(name = {"q"})
     @RequestMapping("/addType")
     @ResponseBody
     public Object addType(String dataModel) {
