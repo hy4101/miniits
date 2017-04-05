@@ -7,6 +7,7 @@
         var Util = $.Util;
         var url = Util.getUrl() + "/user/article/";
         var winHeight = $(window).height();
+        var newId = $("#inp_new_id");
 
         var editorMaster = null;
         var blogType = null;
@@ -26,6 +27,13 @@
             init: function () {
                 var self = this;
 
+                $.ajax({
+                    url: Util.getUrl() + "/user/article/getArticle",
+                    data: {id: newId},
+                    success: function (data) {
+                        debugger
+                    }
+                })
                 self.initEditor();
                 self.cilcks();
             },
@@ -72,7 +80,7 @@
                     if (Util.isStrEmpty(blogType.getValue()))
                         return alert("请选择分类");
 
-                    if (name.length>50)
+                    if (name.length > 50)
                         return alert("文字标题过长，请控制在50个字符内");
 
                     var model = {

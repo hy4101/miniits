@@ -66,6 +66,7 @@
         </div>
     </div>
 </section>
+<input id="inp_new_id" value="${id}" type="hidden" >
 <link rel="stylesheet" type="text/css" href="${rootPath}/resources/user/editor/index.css"/>
 <script src="${rootPath}/resources/user/editor/index.js"></script>
 </body>

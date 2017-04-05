@@ -32,6 +32,12 @@ public class UIArticleController extends BaseUtil {
         }
     }
 
+    @RequestMapping("/getArticle")
+    public String getArticle(String id){
+        Envelop envelop = articleController.getArticle(id);
+        return toJson(envelop);
+    }
+
     @RequestMapping("/delete")
     @ResponseBody
     public Envelop deleteArticle(String id){

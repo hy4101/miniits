@@ -16,6 +16,7 @@
 <script src="${rootPath}/resources/commons/ligerUI/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
 <script src="${rootPath}/resources/commons/ligerUI/lib/ligerUI/js/plugins/ligerComboBox.js"
         type="text/javascript"></script>
+<script src="${rootPath}/resources/commons/js/util/pubsub.js"></script>
 
 <head>
     <script>
@@ -73,7 +74,7 @@
                         var self = this;
 
                         newsGrid = self.$newsGrid.ligerGrid($.LigerGridEx.config({
-                            height: '99%',
+                            height: '720',
                             width: '100%',
                             url: Util.getUrl() + '/user/article/getArticles',
                             parms: {
@@ -100,6 +101,9 @@
                     },
                     cilcks: function () {
                         var self = this;
+                        $.subscribe('order:select', function (event, id) {
+                            location.href = Util.getUrl() + "/user/editor.html?id="+id;
+                        });
 
                         self.$searchBtn.click(function () {
                             var filters = "";
