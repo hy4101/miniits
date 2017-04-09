@@ -123,4 +123,11 @@ public class Envelop implements Serializable{
     public void setUobj(Object uobj) {
         this.uobj = uobj;
     }
+
+    public Envelop() {
+    }
+
+    public Envelop(boolean successFlg) {
+        this.successFlg = successFlg;
+    }
 }

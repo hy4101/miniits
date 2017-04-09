@@ -1,4 +1,6 @@
-package com.miniits.web.web.blog_document.ui;
+package com.miniits.web;/**
+ * Created by wq on 2017/4/9.
+ */
 
 import com.miniits.commons.utils.Envelop;
 import com.miniits.commons.utils.web.BaseUtil;
@@ -11,23 +13,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Created by wq on 2016/11/20.
+ * @author: wq
+ * @Date:
+ * @Time: <p>
+ * Description:
  */
-
 @Controller
-@RequestMapping("/document")
-public class UIBlogDocumentController extends BaseUtil {
+@RequestMapping("/")
+public class VisitController extends BaseUtil {
 
     @Autowired
     private BlogController articleController;
 
-    @RequestMapping("{id}")
-    public ModelAndView blog(@PathVariable(value = "id")int id, ModelMap modelMap) throws Exception {
-
+    @RequestMapping(value = "{type}/{id}.html")
+    public ModelAndView getArticle(@PathVariable(value = "id") int id,
+                                   @PathVariable(value = "type") String type, ModelMap modelMap) {
         Envelop envelop = articleController.getArticle(id);
-        modelMap.addAttribute("doc",envelop);
-
-        return new ModelAndView("/web/blog_document/index",modelMap);
+        modelMap.put("data", toJson(envelop));
+        return new ModelAndView("/web/sortware/spring_boot_index", modelMap);
     }
-
 }

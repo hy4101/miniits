@@ -75,7 +75,7 @@
 
                         newsGrid = self.$newsGrid.ligerGrid($.LigerGridEx.config({
                             height: '720',
-                            width: '100%',
+                            width: '97%',
                             url: Util.getUrl() + '/user/article/getArticles',
                             parms: {
                                 filters: ""
@@ -91,8 +91,8 @@
                                 {
                                     display: '操作', name: 'operator', width: '20%', render: function (row) {
                                     var html = '<a title="货物跟踪" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "order:select", row.id) + '">查看</a> / ';
-                                    html += '<a title="运单详情" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "order:select", row.id) + '">修改</a> / ';
-                                    html += '<a title="运单详情" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "order:select", row.id) + '">删除</a>';
+                                    html += '<a title="运单详情" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "order:update", row.id) + '">修改</a> / ';
+                                    html += '<a title="运单详情" href="javascript:void(0)" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "order:delete", row.id) + '">删除</a>';
                                     return html;
                                 }
                                 }
@@ -101,8 +101,27 @@
                     },
                     cilcks: function () {
                         var self = this;
-                        $.subscribe('order:select', function (event, id) {
+                        $.subscribe('order:update', function (event, id) {
                             location.href = Util.getUrl() + "/user/editor.html?id="+id;
+                        });
+                        $.subscribe('order:delete', function (event, id) {
+                            debugger
+                            $.ligerDialog.confirm('确认删除该行信息？<br>如果是请点击确认按钮，否则请点击取消。', function (yes) {
+                                if (yes) {
+                                    $.ajax({
+                                        url: Util.getUrl() + '/user/article/delete',
+                                        data: {id: id},
+                                        dataType: 'json',
+                                        success: function (data) {
+                                            /**
+                                             * 刷新表格,传入表格变量名，页码，查询条件
+                                             */
+                                            Util.refreshGrid(newsGrid, newsGrid.options.page, {filters: ""});
+                                        }
+                                    })
+                                }
+                            });
+
                         });
 
                         self.$searchBtn.click(function () {

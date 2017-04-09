@@ -33,7 +33,8 @@ public class UIArticleController extends BaseUtil {
     }
 
     @RequestMapping("/getArticle")
-    public String getArticle(String id){
+    @ResponseBody
+    public String getArticle(int id){
         Envelop envelop = articleController.getArticle(id);
         return toJson(envelop);
     }

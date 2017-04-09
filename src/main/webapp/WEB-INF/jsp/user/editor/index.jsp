@@ -45,8 +45,10 @@
                     <div class="input-group input-group-lg inp-title-sty">
                         <input type="text" class="form-control search clearable" id="div_title"
                                placeholder="标题">
-                        <div class="input-group input-group-lg div-type" >
-                            <input type="text" id="inp_blog_type" class="" style="height: 47px; width: 100%;color: black;text-align: center;" placeholder="请选择类别">
+                        <div class="input-group input-group-lg div-type">
+                            <input type="text" id="inp_blog_type" class=""
+                                   style="height: 47px; width: 100%;color: black;text-align: center;"
+                                   placeholder="请选择类别">
                         </div>
                     </div>
 
@@ -54,7 +56,34 @@
                         <!-- 加载编辑器的容器 -->
                         <script id="sc_miniits_editor" name="content" type="text/plain"></script>
                         <script type="text/javascript">
+                            var blogModel = null;
+                            (function ($, win) {
+                                $(function () {
+                                    var Util = $.Util;
+                                    var newId = '${id}';
+
+                                    if (!Util.isStrEmpty(newId)) {
+                                        $.ajax({
+                                            url: Util.getUrl() + "/user/article/getArticle",
+                                            data: {id: newId},
+                                            async: false,
+                                            success: function (data) {
+                                                blogModel = JSON.parse(data).obj;
+                                                $("#div_title").val(blogModel.name);
+                                                if (!Util.isStrEmpty(blogModel.type)){
+                                                    $("#inp_new_type").val(blogModel.type);
+                                                }
+                                            }
+                                        })
+                                    }
+                                })
+                            })(jQuery, window);
+
                             var ue = UE.getEditor('sc_miniits_editor');
+                            ue.ready(function () {
+                                ue.setContent(blogModel.text);
+                            });
+
                         </script>
                         <div class="f-fr f-mt10 f-mb50">
                             <button type="button" class="btn btn-default f-mr10">存草稿</button>
@@ -66,7 +95,8 @@
         </div>
     </div>
 </section>
-<input id="inp_new_id" value="${id}" type="hidden" >
+<input id="inp_new_type" value="${type}" type="hidden">
+<input id="inp_new_id" value="${id}" type="hidden">
 <link rel="stylesheet" type="text/css" href="${rootPath}/resources/user/editor/index.css"/>
 <script src="${rootPath}/resources/user/editor/index.js"></script>
 </body>

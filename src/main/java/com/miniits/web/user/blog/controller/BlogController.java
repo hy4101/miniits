@@ -43,7 +43,7 @@ public class BlogController extends BaseUtil {
         return success("");
     }
 
-    public Envelop getArticle(String id) {
+    public Envelop getArticle(int id) {
         Blog blog = articleService.retrieve(id);
         User user = userService.retrieve(blog.getUserId());
         return success(blog,user);

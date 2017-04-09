@@ -17,23 +17,23 @@
 <header class="site-header jumbotron">
     <div class="site-nav">
         <shiro:guest>
-            <a href="${rootPath}/dynamic.html" class="a-saveRequestUrl">动态</a>
-            <span>/</span>
-            <a href="${rootPath}/blog/<shiro:principal/>" class="a-saveRequestUrl">博客</a>
-            <span>/</span>
-            <a href="${rootPath}/user/login.html" target="_blank">登入</a>
-            <span>/</span>
-            <a href="${rootPath}/user/register.html">注册</a>
+            <%--<a href="${rootPath}/dynamic.html" class="a-saveRequestUrl">动态</a>--%>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/blog/<shiro:principal/>" class="a-saveRequestUrl">博客</a>--%>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/user/login.html" target="_blank">登入</a>--%>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/user/register.html">注册</a>--%>
         </shiro:guest>
 
         <shiro:authenticated>
             <a href="${rootPath}/user/setting.html" class="a-saveRequestUrl">设置</a>
-            <span>/</span>
-            <a href="${rootPath}/dynamic.html" class="a-saveRequestUrl">动态</a>
-            <span>/</span>
-            <a href="${rootPath}/blog/<shiro:principal/>" class="a-saveRequestUrl">博客</a>
-            <span>/</span>
-            <a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">主页</a>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/dynamic.html" class="a-saveRequestUrl">动态</a>--%>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/blog/<shiro:principal/>" class="a-saveRequestUrl">博客</a>--%>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/user/userAdmin.html" target="_blank" class="a-saveRequestUrl">主页</a>--%>
             <span>/</span>
             <a href="${rootPath}/logout" target="_blank">退出:</a><shiro:principal/>
         </shiro:authenticated>
@@ -78,14 +78,14 @@
 
         <div class="col-sm-6 col-md-4 col-lg-3 f-mt20">
             <div style="height: 358px;" class="f-dr1c8 f-tac">
-                <a href="${rootPath}/spring_boot.html" target="_blank" title="Spring Cloud Config">
+                <a href="${rootPath}/springBoot.html" target="_blank" title="Spring Cloud Config">
                     <img class="lazy" src="${rootPath}/resources/commons/images/index/spring_boot_logo.jpg" width="150"
                          height="150"
                          data-src="img/spring-cloud-config.png" alt="Spring Cloud Config">
                 </a>
                 <div class="caption">
                     <h3>
-                        <a href="${rootPath}/spring_boot.html" target="_blank" title="Spring Cloud Config">
+                        <a href="${rootPath}/springBoot.html" target="_blank" title="Spring Cloud Config">
                             Spring Boot<br>
                             <small>Spring</small>
                         </a>

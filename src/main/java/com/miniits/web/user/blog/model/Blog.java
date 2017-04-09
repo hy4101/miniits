@@ -1,7 +1,5 @@
 package com.miniits.web.user.blog.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -14,10 +12,9 @@ import java.util.Date;
 public class Blog {
 
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid",strategy = "uuid")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id",nullable = false,unique = true,length = 39)
-    private String id;
+    private int id;
 
     @Column(name = "user_id",nullable = false,length = 39)
     private String userId;
@@ -49,11 +46,11 @@ public class Blog {
     @Column(name = "subscription",nullable = true)
     private int subscription;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

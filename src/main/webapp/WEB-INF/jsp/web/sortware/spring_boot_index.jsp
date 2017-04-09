@@ -9,6 +9,7 @@
     <meta name="keywords" content="Spring Boot中文网">
     <meta name="author" content="Bootstrap中文网">
     <script src="${rootPath}/resources/commons/js/util/pubsub.js"></script>
+
     <script>
         (function ($, win) {
             $(function () {
@@ -16,6 +17,9 @@
                 var Util = $.Util;
                 var url = Util.getUrl() + "/type/";
                 var newsData = null;
+                var data = ${data};
+                var id = "";
+                var starMsg = ""
 
                 function pageInit() {
                     settingMaster.init();
@@ -25,15 +29,23 @@
 
                     $newsName: $("#div_news_name"),
                     $contentMsg: $("#new_content_msg"),
+                    $blogName: $("#h_blog_name"),
 
                     init: function () {
                         var self = this;
                         self.initForm();
-                        self.cilcks();
                     },
 
                     initForm: function () {
                         var self = this;
+
+                        if (!Util.isStrEmpty(data.obj)) {
+                            data = data.obj;
+                            id = data.id;
+                            self.$contentMsg.html("");
+                            self.$contentMsg.html(data.text);
+                            self.$blogName.html(data.name);
+                        }
                         $.ajax({
                             url: Util.getUrl() + '/user/article/getArticles',
                             data: {filters: "type=50", page: 1, rows: 50},
@@ -42,22 +54,16 @@
                                 newsData = data.detailModelList;
                                 var html = "";
                                 for (var i = 0; i < newsData.length; i++) {
-                                    debugger
-                                    var jaon = JSON.stringify(newsData[i])
-//                                    html +='<label><a href="#" onclick="javascript:pasteNew('+newsData[i]+')" style="color: #4e9372">'+newsData[i].name+'</a></label><br>'
-                                    html += '<label><a href="#" onclick="javascript:' + Util.format("$.publish('{0}',['{1}'])", "delete:news", jaon) + '">' + newsData[i].name + '</a></label><br>'
+                                    var jaon = newsData[i];
+                                    var coloe = "#000000";
+                                    if (Util.isStrEquals(id, jaon.id)) {
+                                        coloe = "#27AE60"
+                                    }
+                                    html += '<label><a href="' + Util.getUrl() + '/springBoot/' + jaon.id + '.html" style="color: ' + coloe + '">' + jaon.name + '</a></label><br>'
                                 }
                                 self.$newsName.append(html);
                             }
                         })
-
-                    },
-                    cilcks: function () {
-                        var self = this;
-                        $.subscribe("delete:news", function (event, id) {
-                            debugger
-                        })
-
                     },
                 };
                 pageInit();
@@ -65,6 +71,7 @@
             })
         })(jQuery, window)
     </script>
+
 </head>
 
 <body>
@@ -74,25 +81,26 @@
 <header class="site-header jumbotron">
     <div class="site-nav">
         <shiro:guest>
-            <a href="${rootPath}/dynamic.html">动态</a>
-            <span>/</span>
-            <a href="${rootPath}/blog/<shiro:principal/>">博客</a>
-            <span>/</span>
-            <a href="${rootPath}/user/login.html" target="_blank">登入</a>
-            <span>/</span>
-            <a href="${rootPath}/user/register.html">注册</a>
+            <a href="${rootPath}/index.html">主页</a>
+            <%--<a href="${rootPath}/dynamic.html">动态</a>--%>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/blog/<shiro:principal/>">博客</a>--%>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/user/login.html" target="_blank">登入</a>--%>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/user/register.html">注册</a>--%>
         </shiro:guest>
 
         <shiro:authenticated>
             <a href="${rootPath}/user/setting.html">设置</a>
             <span>/</span>
-            <a href="${rootPath}/dynamic.html">动态</a>
-            <span>/</span>
-            <a href="${rootPath}/blog/<shiro:principal/>">博客</a>
-            <span>/</span>
+            <%--<a href="${rootPath}/dynamic.html">动态</a>--%>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/blog/<shiro:principal/>">博客</a>--%>
+            <%--<span>/</span>--%>
             <a href="${rootPath}/user/userAdmin.html" target="_blank">主页</a>
-            <span>/</span>
-            <a href="${rootPath}/logout" target="_blank">退出:</a><shiro:principal/>
+            <%--<span>/</span>--%>
+            <%--<a href="${rootPath}/logout" target="_blank">退出:</a><shiro:principal/>--%>
         </shiro:authenticated>
     </div>
     <div class="container">
@@ -136,51 +144,52 @@
             </div>
 
         </div>
-        <div class="div-spring-text f-dr1c8 f-fl f-mt20" div="new_content_msg">
-            <label><h2>Spring Boot</h2></label>
-            <ul>
-                <li id="li_spring_framework" style="text-align: left">
-                    <h2 style="margin: 1.5em 0px 0.5em; font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; font-size: 18px; text-indent: 1em; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        Spring Boot简介
-                    </h2>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+        <div class="div-spring-text f-dr1c8 f-fl f-mt20">
+            <label><h2 id="h_blog_name">Spring Boot</h2></label>
+            <div id="new_content_msg" style="text-align: left">
+                <ul>
+                    <li id="li_spring_framework" vaa="springBoot.html">
+                        <h2 style="margin: 1.5em 0px 0.5em; font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; font-size: 18px; text-indent: 1em; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            Spring Boot简介
+                        </h2>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
                         <span style="font-size: 18px;">如何轻松的搭建一个spring boot 应用Spring Boot是轻量级的Java EE框架，可快速、<span
                                 style="color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; line-height: 27.2px; text-indent: 16px; background-color: rgb(254, 254, 254);">独立的</span>进行<span
                                 style="color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; line-height: 27.2px; text-indent: 16px; background-color: rgb(254, 254, 254);">产品级别的Spring应用</span>开发，spring boot框架为我们提供了开箱即用的设置，你可以有条不紊的开始编程，省去繁琐的xml配置文件，让你有跟多的时间注重于功能和业务上。</span>
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px; line-height: 1.5em; text-indent: 1em;">Spring Boot优点、理念</span>
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px; line-height: 1.5em; text-indent: 1em;">&nbsp;&nbsp;&nbsp;&nbsp;为所有的Spring、Java开发者提供快速的、简单的应用开发</span>
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px; line-height: 1.5em; text-indent: 1em;">&nbsp;&nbsp;&nbsp;&nbsp;不需要代码生成和XML配置<br/></span>
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px; line-height: 1.5em; text-indent: 1em;">&nbsp;&nbsp;&nbsp;&nbsp;...<br/></span>
-                    </p>
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px; line-height: 1.5em; text-indent: 1em;">Spring Boot优点、理念</span>
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px; line-height: 1.5em; text-indent: 1em;">&nbsp;&nbsp;&nbsp;&nbsp;为所有的Spring、Java开发者提供快速的、简单的应用开发</span>
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px; line-height: 1.5em; text-indent: 1em;">&nbsp;&nbsp;&nbsp;&nbsp;不需要代码生成和XML配置<br/></span>
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px; line-height: 1.5em; text-indent: 1em;">&nbsp;&nbsp;&nbsp;&nbsp;...<br/></span>
+                        </p>
 
-                    <h2 style="margin: 1.5em 0px 0.5em; font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; font-size: 18px; text-indent: 1em; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        Spring Boot 快速入门
-                    </h2>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;">编辑器：</span>IntelliJ&nbsp;IDEA&nbsp;
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;"></span>技术：maven、jdk_1.8
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        Spring Boot 版本&nbsp;<br/>
-                    </p>
-                    <pre style="padding: 9.5px; font-family: Monaco, Menlo, Consolas, Courier New, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 0px; margin-top: 0px; margin-bottom: 0px; line-height: 20px; word-break: break-all; word-wrap: break-word; white-space: pre-wrap; border: 1px solid rgba(0, 0, 0, 0.14902); overflow-x: auto; background-color: rgb(245, 245, 245);">1.4.1.RELEASE</pre>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;"><br/></span>
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;">POM.XML 内容如下</span>
-                    </p>
-                    <pre class="brush:xml;toolbar:false">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+                        <h2 style="margin: 1.5em 0px 0.5em; font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; font-size: 18px; text-indent: 1em; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            Spring Boot 快速入门
+                        </h2>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px;">编辑器：</span>IntelliJ&nbsp;IDEA&nbsp;
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px;"></span>技术：maven、jdk_1.8
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            Spring Boot 版本&nbsp;<br/>
+                        </p>
+                        <pre style="padding: 9.5px; font-family: Monaco, Menlo, Consolas, Courier New, monospace; font-size: 13px; color: rgb(51, 51, 51); border-radius: 0px; margin-top: 0px; margin-bottom: 0px; line-height: 20px; word-break: break-all; word-wrap: break-word; white-space: pre-wrap; border: 1px solid rgba(0, 0, 0, 0.14902); overflow-x: auto; background-color: rgb(245, 245, 245);">1.4.1.RELEASE</pre>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px;"><br/></span>
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px;">POM.XML 内容如下</span>
+                        </p>
+                        <pre class="brush:xml;toolbar:false">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
          xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
 
     &lt;parent&gt;
@@ -220,14 +229,14 @@
         &lt;finalName&gt;spring-boot-introduction-miniits&lt;/finalName&gt;
     &lt;/build&gt;
 &lt;/project&gt;</pre>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;"></span><br/>
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;">首先创建我们的java启动类&nbsp;</span>
-                    </p>
-                    <pre style="font-family: Courier New; font-size: 9pt; background-color: rgb(255, 255, 255);">MiniitsApplicationApp.class</pre>
-                    <pre class="brush:java;toolbar:false">package com.introduction.miniits;
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px;"></span><br/>
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px;">首先创建我们的java启动类&nbsp;</span>
+                        </p>
+                        <pre style="font-family: Courier New; font-size: 9pt; background-color: rgb(255, 255, 255);">MiniitsApplicationApp.class</pre>
+                        <pre class="brush:java;toolbar:false">package com.introduction.miniits;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -249,15 +258,15 @@ public class MiniitsApplicationApp {
         SpringApplication.run(MiniitsApplicationApp.class,args);
     }
 }</pre>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;"></span>一个简单的spring应用就创建完了
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        之后创建一个controller类来测试我们的应用是否成功
-                    </p>
-                    <pre class="brush:java;toolbar:false;"
-                         style="font-family: Courier New; font-size: 9pt; background-color: rgb(255, 255, 255);">MiniitsController.class</pre>
-                    <pre class="brush:java;toolbar:false">package com.introduction.miniits.controller;/**
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px;"></span>一个简单的spring应用就创建完了
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            之后创建一个controller类来测试我们的应用是否成功
+                        </p>
+                        <pre class="brush:java;toolbar:false;"
+                             style="font-family: Courier New; font-size: 9pt; background-color: rgb(255, 255, 255);">MiniitsController.class</pre>
+                        <pre class="brush:java;toolbar:false">package com.introduction.miniits.controller;/**
  * Created by wq on 2017/2/26.
  */
 
@@ -289,19 +298,19 @@ public class MiniitsController {
                 &quot;&lt;/html&gt;&quot;;
     }
 }</pre>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;">启动MniitsApplicationApp后输入访问的网址</span>
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        <span style="font-size: 18px;"><a href="http://localhost:8000/miniits/spring_boot_demo">http://localhost:8000/miniits/spring_boot_demo</a> </span>
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        配置文件解释
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        application.yml
-                    </p>
-                    <pre class="brush:java;toolbar:false">server:
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px;">启动MniitsApplicationApp后输入访问的网址</span>
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            <span style="font-size: 18px;"><a href="http://localhost:8000/miniits/spring_boot_demo">http://localhost:8000/miniits/spring_boot_demo</a> </span>
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            配置文件解释
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            application.yml
+                        </p>
+                        <pre class="brush:java;toolbar:false">server:
   context-path: /miniits
   port: 8000
 
@@ -310,19 +319,21 @@ info:
     name: MiniIts
     description: 迷你科技
     version: 1.0.0</pre>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        context-path：访问路径
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        part：访问端口
-                    </p>
-                    <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
-                        info：spring应用信息
-                    </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            context-path：访问路径
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            part：访问端口
+                        </p>
+                        <p style="margin-top: 0px; margin-bottom: 0.75em; text-indent: 1em; color: rgb(51, 51, 51); font-family: Helvetica Neue, Helvetica, Tahoma, Arial, STXihei, Microsoft YaHei, 微软雅黑, sans-serif; white-space: normal; line-height: 1.5em; background-color: rgb(254, 254, 254);">
+                            info：spring应用信息
+                        </p>
 
 
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
 </div>

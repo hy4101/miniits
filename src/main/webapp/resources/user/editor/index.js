@@ -7,11 +7,8 @@
         var Util = $.Util;
         var url = Util.getUrl() + "/user/article/";
         var winHeight = $(window).height();
-        var newId = $("#inp_new_id");
-
         var editorMaster = null;
         var blogType = null;
-
         function pageInit() {
             editorMaster.init();
         }
@@ -26,14 +23,6 @@
 
             init: function () {
                 var self = this;
-
-                $.ajax({
-                    url: Util.getUrl() + "/user/article/getArticle",
-                    data: {id: newId},
-                    success: function (data) {
-                        debugger
-                    }
-                })
                 self.initEditor();
                 self.cilcks();
             },
@@ -61,6 +50,7 @@
                     }
 
                 });
+                blogType.setValue($("#inp_new_type").val());
 
             },
 
@@ -84,6 +74,7 @@
                         return alert("文字标题过长，请控制在50个字符内");
 
                     var model = {
+                        id:$("#inp_new_id").val(),
                         name: name,
                         text: text,
                         type: blogType.getValue()
