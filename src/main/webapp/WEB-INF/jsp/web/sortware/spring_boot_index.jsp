@@ -19,7 +19,8 @@
                 var newsData = null;
                 var data = ${data};
                 var id = "";
-                var starMsg = ""
+                var starMsg = "";
+                var blogName = "";
 
                 function pageInit() {
                     settingMaster.init();
@@ -30,6 +31,7 @@
                     $newsName: $("#div_news_name"),
                     $contentMsg: $("#new_content_msg"),
                     $blogName: $("#h_blog_name"),
+                    $start: $("#a_start"),
 
                     init: function () {
                         var self = this;
@@ -38,10 +40,11 @@
 
                     initForm: function () {
                         var self = this;
-
                         if (!Util.isStrEmpty(data.obj)) {
                             data = data.obj;
                             id = data.id;
+                            starMsg = self.$contentMsg.html();
+                            blogName = self.$blogName.html();
                             self.$contentMsg.html("");
                             self.$contentMsg.html(data.text);
                             self.$blogName.html(data.name);
@@ -63,15 +66,22 @@
                                 }
                                 self.$newsName.append(html);
                             }
-                        })
+                        });
+                        self.clicks();
                     },
+                    clicks: function () {
+                        var self = this;
+                        self.$start.click(function () {
+                            self.$contentMsg.html(starMsg);
+                            self.$blogName.html(blogName)
+                        })
+                    }
                 };
                 pageInit();
 
             })
         })(jQuery, window)
     </script>
-
 </head>
 
 <body>
@@ -118,22 +128,14 @@
 
         <div class="container-main f-ww">
             <ul class="clearfix">
-                <li><a class="item" onclick="javascript:articleSelect('dynamic')">开始体验</a></li>
+                <li><a class="item" id="a_start">开始体验</a></li>
                 <li><a class="item" onclick="javascript:articleSelect('subscibes')">Spring Boot文档</a></li>
                 <li><a class="item" onclick="javascript:articleSelect('fans')">Spring Boot项目</a></li>
             </ul>
         </div>
 
         <div class="div-spring-menu f-dr1c8 f-fl f-mt20">
-            <label>Spring Boot DEMO</label>
-            <ul>
-                <li>GitHub :<input value="https://github.com" readonly="readonly" class="inp-br-b"/> &nbsp <img
-                        src="${rootPath}/resources/commons/images/copy.png" width="25px" height="25px"></img></li>
-                <li class="f-mt10">码云 :&nbsp&nbsp&nbsp&nbsp<input
-                        value="https://git.oschina.net/haiyuan4101/spring-boot-www.miniits.com.git" readonly="readonly"
-                        class="inp-br-b"/> &nbsp <img src="${rootPath}/resources/commons/images/copy.png" width="25px"
-                                                      height="25px"></li>
-            </ul>
+
             <label>Spring Boot 技术交流</label>
             <ul>
                 <li>QQ群 :<input value="112773621" readonly="readonly" class="inp-br-b"/></li>
@@ -339,8 +341,26 @@ info:
 </div>
 
 <footer class="site-footer f-fl f-mt20">
-    <div class="container">
-        WWW.MINIITS.COM
+    <div class="footer-about col-md-5 col-sm-12" style="margin-left: 50px;text-align: left"><h4 style="text-align: center">关于 BootCDN</h4>
+        <p>BootCDN 是 <a href="http://www.bootcss.com/" target="_blank"
+                        onclick="_hmt.push(['_trackEvent', 'footer', 'click', 'footer-bootcss.com'])">Bootstrap 中文网</a>和<a
+                href="https://www.upyun.com/" target="_blank"
+                onclick="_hmt.push(['_trackEvent', 'footer', 'click', 'footer-upyun.com'])">又拍云</a>共同支持并维护的前端开源项目免费 CDN
+            服务，由<a href="https://www.upyun.com/" target="_blank"
+                   onclick="_hmt.push(['_trackEvent', 'footer', 'click', 'footer-upyun.com'])">又拍云</a>提供全部 CDN 支持，致力于为
+            Bootstrap、jQuery、Angular 一样优秀的前端开源项目提供稳定、快速的免费 CDN 加速服务。BootCDN 所收录的开源项目主要同步于 <a
+                    href="https://github.com/cdnjs/cdnjs" target="_blank"
+                    onclick="_hmt.push(['_trackEvent', 'footer', 'click', 'footer-github.com'])">cdnjs</a> 仓库。</p>
+        <p>自2013年10月31日上线以来已经为上万家网站提供了稳定、可靠的免费 CDN 加速服务。</p>
+        <p>反馈或建议请发送邮件至：cdn@bootcss.com</p></div>
+    <div style="float: right;width: 500px;margin-top: 10px">
+        <label style="width: 100%">请迷你科技喝咖啡！轻松做优质内容</label>
+        <img width="160px" height="200px" style="margin-right: 20px"
+             src="${rootPath}/resources/commons/images/pay/wechatpay.png">
+        <img width="160px" height="200px" src="${rootPath}/resources/commons/images/pay/alipay.jpg">
+    </div>
+    <div style="float: left; width: 100%;margin-top: 20px">
+        © 2013-2017 京ICP备11008151号 京公网安备11010802014853 WWW.MINIITS.COM
     </div>
 </footer>
 <link href="${rootPath}/resources/webapp/sortware/spring_boot.css" rel="stylesheet" type="text/css"/>
