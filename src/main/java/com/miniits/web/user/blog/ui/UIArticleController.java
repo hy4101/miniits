@@ -41,7 +41,7 @@ public class UIArticleController extends BaseUtil {
 
     @RequestMapping("/delete")
     @ResponseBody
-    public Envelop deleteArticle(String id){
+    public Envelop deleteArticle(int id){
         try {
             Envelop envelop = articleController.deleteArticle(id);
             return envelop;

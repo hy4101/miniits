@@ -38,7 +38,7 @@
             this.createAgoCommentHtml = function () {
                 var html = '';
                 html += '<div id="commentItems" class="ui threaded comments" style="margin-bottom:20px;">';
-                html += '	<div class="text" style="font-size:2rem;padding-bottom:10px;border-bottom: 1px solid #DFDFDF;"> 评论文化 </div>';
+                html += '	<div class="text" style="font-size:2rem;padding-bottom:10px;padding-top:10px;border-bottom: 1px solid #DFDFDF; border-top: 1px solid #27ae60;"> 评论 </div>';
                 html += '</div>';
                 $(self).append(html);
 

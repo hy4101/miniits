@@ -68,7 +68,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -87,7 +87,7 @@
                     <h3>
                         <a href="${rootPath}/springBoot.html" target="_blank" title="Spring Cloud Config">
                             Spring Boot<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -106,7 +106,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -164,7 +164,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -182,7 +182,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -200,7 +200,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -224,7 +224,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -244,7 +244,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -262,7 +262,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -281,7 +281,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -299,7 +299,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -318,7 +318,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>
@@ -336,7 +336,7 @@
                     <h3>
                         <a href="spring-cloud-config-zhcn.html" target="_blank" title="Spring Cloud Config">
                             Spring Cloud Config<br>
-                            <small>Spring</small>
+                            <small>&nbsp;</small>
                         </a>
                     </h3>
                     <p>配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。</p>

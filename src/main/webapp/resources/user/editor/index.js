@@ -84,7 +84,7 @@
                         data: {jsonModel: JSON.stringify(model)},
                         dataType: "json",
                         success: function (data) {
-                            win.location.href = $(".a-saveRequestUrl").attr("href");
+                            win.location.href = Util.getUrl()+"/user/setting.html";
                         },
                         error: function (data) {
 

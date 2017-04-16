@@ -10,6 +10,11 @@
     <meta name="author" content="Bootstrap中文网">
     <script src="${rootPath}/resources/commons/js/util/pubsub.js"></script>
 
+
+    <script type="text/javascript" src="${rootPath}/resources/commons/comment/js/zyComment.js"></script>
+    <link rel="stylesheet" href="${rootPath}/resources/commons/comment/css/semantic.css" type="text/css"/>
+    <link rel="stylesheet" href="${rootPath}/resources/commons/comment/css/zyComment.css" type="text/css"/>
+
     <script>
         (function ($, win) {
             $(function () {
@@ -43,6 +48,7 @@
                         if (!Util.isStrEmpty(data.obj)) {
                             data = data.obj;
                             id = data.id;
+                            $("#inp_blog_id").val(id);
                             starMsg = self.$contentMsg.html();
                             blogName = self.$blogName.html();
                             self.$contentMsg.html("");
@@ -79,11 +85,58 @@
                 };
                 pageInit();
 
+                var boxHtml = '';
+                boxHtml += '<form id="replyBox" class="ui reply form" style="margin-bottom: 60px;">';
+                boxHtml += '	<div class="ui  form ">';
+                boxHtml += '		<div class="contentField field" >';
+                boxHtml += '			<textarea id="commentContent" style=" border: 1px solid #98c0ff;"></textarea>';
+                boxHtml += '		</div>';
+                boxHtml += '		<div id="publicComment" class="ui button teal submit labeled icon" style="float: right;">';
+                boxHtml += '			<i class="icon edit"></i> 提交评论';
+                boxHtml += '		</div>';
+                boxHtml += '	</div>';
+                boxHtml += '</form>';
+                window.html = function () {
+                    return boxHtml;
+                };
+                getDiscuss();
+                function getDiscuss() {
+                    $("#articleComment").empty();
+                    $.ajax({
+                        url: Util.getUrl() + "/discuss/getDiscuss",
+                        data: {blogId: id},
+                        dataType: "json",
+                        success: function (data) {
+                            initComment(data);
+                        }
+                    })
+                }
+
+                function initComment(data) {
+                    $("#articleComment").zyComment({
+                        "width": "355",
+                        "height": "33",
+                        "agoComment": data,
+                        "callback": function (comment) {
+                        }
+                    });
+                }
+
+                window.comment = function () {
+                    getDiscuss();
+                };
+
+
             })
         })(jQuery, window)
     </script>
-</head>
 
+    <script type="text/javascript">
+
+
+    </script>
+</head>
+<input id="inp_blog_id" style="display: none">
 <body>
 <div class="site-notice">
     <em>MiniIts.com-迷你科技</em>
@@ -129,7 +182,7 @@
         <div class="container-main f-ww">
             <ul class="clearfix">
                 <li><a class="item" id="a_start">开始体验</a></li>
-                <li><a class="item" onclick="javascript:articleSelect('subscibes')">Spring Boot文档</a></li>
+                <li><a class="item" href="/miniits/springBoot/3.html">Spring Boot文档</a></li>
                 <li><a class="item" onclick="javascript:articleSelect('fans')">Spring Boot项目</a></li>
             </ul>
         </div>
@@ -336,25 +389,25 @@ info:
                 </ul>
             </div>
 
+            <div id="articleComment" class="f-mt30" style="text-align: left"></div>
         </div>
     </div>
 </div>
 
 <footer class="site-footer f-fl f-mt20">
-    <div class="footer-about col-md-5 col-sm-12" style="margin-left: 50px;text-align: left"><h4 style="text-align: center">关于 BootCDN</h4>
-        <p>BootCDN 是 <a href="http://www.bootcss.com/" target="_blank"
-                        onclick="_hmt.push(['_trackEvent', 'footer', 'click', 'footer-bootcss.com'])">Bootstrap 中文网</a>和<a
-                href="https://www.upyun.com/" target="_blank"
-                onclick="_hmt.push(['_trackEvent', 'footer', 'click', 'footer-upyun.com'])">又拍云</a>共同支持并维护的前端开源项目免费 CDN
-            服务，由<a href="https://www.upyun.com/" target="_blank"
-                   onclick="_hmt.push(['_trackEvent', 'footer', 'click', 'footer-upyun.com'])">又拍云</a>提供全部 CDN 支持，致力于为
-            Bootstrap、jQuery、Angular 一样优秀的前端开源项目提供稳定、快速的免费 CDN 加速服务。BootCDN 所收录的开源项目主要同步于 <a
-                    href="https://github.com/cdnjs/cdnjs" target="_blank"
-                    onclick="_hmt.push(['_trackEvent', 'footer', 'click', 'footer-github.com'])">cdnjs</a> 仓库。</p>
-        <p>自2013年10月31日上线以来已经为上万家网站提供了稳定、可靠的免费 CDN 加速服务。</p>
-        <p>反馈或建议请发送邮件至：cdn@bootcss.com</p></div>
+    <div class="footer-about col-md-5 col-sm-12" style="margin-left: 50px;text-align: left"><h4
+            style="text-align: center">关于 迷你科技</h4>
+        <p style="margin-bottom: 0">迷你科技是一家专注于技术并提供相关技术框架文档的平台，平台整合多方资源，做简单易懂的说明。</p>
+        <p style="margin-bottom: 0">平台主要提供了java相关的技术如Spring Spring Boot Spring Cloud Spring Data JPA Hibernate Mybatis</p>
+        <p style="margin-bottom: 0">数据库方面如 Mysql Redis Mongodb</p>
+        <p style="margin-bottom: 0">前端方面如 Jquery Node.js Vue.js Angular.js HTML5 CSS3</p>
+        <p style="margin-bottom: 0">以及各个方面工具的使用教程等等</p>
+        <p style="margin-bottom: 0"><a href="http://www.miniits.com" style="color: #173d5e">www.miniits.com</a>网执着于建立最纯净的技术类网站，有什么好的不好的创意、建议</p>
+        <p style="margin-bottom: 0">请告诉我们</p>
+        <p style="margin-bottom: 0">反馈或建议请发送邮件至：miniits@163.com</p>
+    </div>
     <div style="float: right;width: 500px;margin-top: 10px">
-        <label style="width: 100%">请迷你科技喝咖啡！轻松做优质内容</label>
+        <label style="width: 100%;font-weight: 100">请迷你科技喝咖啡！轻松做优质内容</label>
         <img width="160px" height="200px" style="margin-right: 20px"
              src="${rootPath}/resources/commons/images/pay/wechatpay.png">
         <img width="160px" height="200px" src="${rootPath}/resources/commons/images/pay/alipay.jpg">

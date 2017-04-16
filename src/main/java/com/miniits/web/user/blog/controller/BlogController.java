@@ -38,7 +38,7 @@ public class BlogController extends BaseUtil {
         return envelop;
     }
 
-    public Envelop deleteArticle(String id) throws ParseException {
+    public Envelop deleteArticle(int id) throws ParseException {
         articleService.delete(id);
         return success("");
     }

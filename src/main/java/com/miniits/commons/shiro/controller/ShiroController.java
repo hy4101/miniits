@@ -1,18 +1,13 @@
 package com.miniits.commons.shiro.controller;
 
 import com.miniits.commons.utils.MD5.MD5Util;
-import com.miniits.web.web.demo.shiro.model.TUser;
 import com.miniits.web.web.user.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.Map;
 
 /**
  * Shiro测试Controller
@@ -33,11 +28,11 @@ public class ShiroController {
     @Autowired
     private MD5Util md5Util;
 
-    @RequestMapping(value="/login",method=RequestMethod.GET)
-    public String loginForm(Model model){
-        model.addAttribute("user", new TUser());
-        return "/demo/login";
-    }
+//    @RequestMapping(value="/login",method=RequestMethod.GET)
+//    public String loginForm(Model model){
+//        model.addAttribute("user", new TUser());
+//        return "/demo/login";
+//    }
 
 //    @RequestMapping(value="/login",method=RequestMethod.POST)
 //    public String login(@Valid TUser user,BindingResult bindingResult,RedirectAttributes redirectAttributes){
@@ -99,12 +94,12 @@ public class ShiroController {
         logger.info("------没有权限-------");
         return "/demo/403";
     }
-
-    @RequestMapping("/user")
-    public String getUserList(Map<String, Object> model){
-        model.put("userList", userDao.getList());
-        return "/demo/user";
-    }
+//
+//    @RequestMapping("/user")
+//    public String getUserList(Map<String, Object> model){
+//        model.put("userList", userDao.getList());
+//        return "/demo/user";
+//    }
 
     @RequestMapping("/user/edit/{userid}")
     public String getUserList(@PathVariable int userid){

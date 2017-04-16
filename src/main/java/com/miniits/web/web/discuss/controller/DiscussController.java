@@ -26,19 +26,22 @@ public class DiscussController extends BaseUtil {
     @Autowired
     private UserService userService;
 
-    public Envelop saveDiscuss(Discuss discuss){
+    public Envelop saveDiscuss(Discuss discuss) {
         discuss = discussService.save(discuss);
         return success(discuss);
     }
 
-    public Envelop getDiscuss(String blogId){
+    public Envelop getDiscuss(String blogId) {
 
         List<Discuss> discussList = discussService.findDiscussByBlogId(blogId);
-        List<WDiscuss> wDiscussList = (List<WDiscuss>) convertToModels(discussList,new ArrayList<WDiscuss>(discussList.size()),WDiscuss.class,null);
+        List<WDiscuss> wDiscussList = (List<WDiscuss>) convertToModels(discussList, new ArrayList<WDiscuss>(discussList.size()), WDiscuss.class, null);
 
-        for (WDiscuss wDiscuss:wDiscussList){
-            User user = userService.retrieve(wDiscuss.getUserId());
-            wDiscuss.setUserName(user.getUserName());
+        for (WDiscuss wDiscuss : wDiscussList) {
+            if (wDiscuss.getUserId() != null) {
+                User user = userService.retrieve(wDiscuss.getUserId());
+                wDiscuss.setUserName(user.getUserName());
+            } else
+                wDiscuss.setUserName("游客");
         }
 
         return getResultList(wDiscussList);

@@ -35,8 +35,10 @@ public class UIDiscussController extends BaseUtil {
     @ResponseBody
     public Object newDiscuss(Discuss model, HttpServletRequest request) {
         User user = (User) request.getSession().getAttribute("user");
+        if (null != user) {
+            model.setUserId(user.getId());
+        }
         model.setDiscussDate(new Date());
-        model.setUserId(user.getId());
         Envelop envelop = discussController.saveDiscuss(model);
         return envelop;
     }

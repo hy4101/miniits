@@ -34,7 +34,7 @@
 <section id="s-intro" class="page -intro">
     <div class="container">
         <div class="site-nav">
-            <a href="${rootPath}/blog/<shiro:principal/>" target="_blank" class="a-saveRequestUrl">博客</a>
+            <a href="${rootPath}/user/setting.html" target="_blank" class="a-saveRequestUrl">设置</a>
             <span>/</span>
             <a href="${rootPath}/index.html">首页</a>
         </div>

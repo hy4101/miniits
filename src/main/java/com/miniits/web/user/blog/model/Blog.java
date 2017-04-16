@@ -13,37 +13,37 @@ public class Blog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id",nullable = false,unique = true,length = 39)
+    @Column(name = "id", nullable = false, unique = true, length = 39)
     private int id;
 
-    @Column(name = "user_id",nullable = false,length = 39)
+    @Column(name = "user_id", nullable = false, length = 39)
     private String userId;
 
-    @Column(name = "name",nullable = true,length = 50)
+    @Column(name = "name", nullable = true, length = 50)
     private String name;
 
-    @Column(name = "text",nullable = true,length = 65000)
+    @Column(name = "text", nullable = true, length = 65000)
     private String text;
 
-    @Column(name = "time",nullable = true)
+    @Column(name = "time", nullable = true)
     private Date time;
 
-    @Column(name = "blog_type_id",nullable = true)
+    @Column(name = "blog_type_id", nullable = true)
     private int type;
 
-    @Column(name = "see",nullable = true)
+    @Column(name = "see", nullable = true)
     private int see;
 
-    @Column(name = "revert",nullable = true)
+    @Column(name = "revert", nullable = true)
     private int revert;
 
-    @Column(name = "praise",nullable = true)
+    @Column(name = "praise", nullable = true)
     private int praise;
 
-    @Column(name = "collect",nullable = true)
+    @Column(name = "collect", nullable = true)
     private int collect;
 
-    @Column(name = "subscription",nullable = true)
+    @Column(name = "subscription", nullable = true)
     private int subscription;
 
     public int getId() {

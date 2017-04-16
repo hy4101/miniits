@@ -26,32 +26,15 @@
     </developers>
 
     <properties>
-        <!--<version.commons-bean-utils>1.9.2</version.commons-bean-utils>-->
-        <!--<version.commons-collections>3.2.1</version.commons-collections>-->
-        <!--<version.commons-compress>1.9</version.commons-compress>-->
-        <!--<version.commons-io>2.4</version.commons-io>-->
         <version.commons-lang3>3.2.1</version.commons-lang3>
-        <!--<version.java>1.8</version.java>-->
         <version.jackson>2.6.6</version.jackson>
-        <!--<version.junit>4.12</version.junit>-->
         <version.mysql>5.1.38</version.mysql>
-        <!--<version.pinyin4j>2.5.0</version.pinyin4j>-->
         <version.servlet-api>3.1.0</version.servlet-api>
-        <!--<version.slf4j>1.7.21</version.slf4j>-->
-        <!--<version.spring-framework>4.2.5.RELEASE</version.spring-framework>-->
-        <!--<standard.version>1.1.2</standard.version>-->
         <shiro.version>1.2.2</shiro.version>
 
     </properties>
 
     <dependencies>
-        <!--<dependency>-->
-        <!--<groupId>junit</groupId>-->
-        <!--<artifactId>junit</artifactId>-->
-        <!--<version>3.8.1</version>-->
-        <!--<scope>test</scope>-->
-        <!--</dependency>-->
-
         <!--Spring boot family-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,10 +57,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-test</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
@@ -89,31 +68,6 @@
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>compile</scope>
         </dependency>
-
-        <!--mybatis-->
-        <!--<dependency>-->
-        <!--<groupId>org.mybatis</groupId>-->
-        <!--<artifactId>mybatis</artifactId>-->
-        <!--<version>3.2.8</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.mybatis</groupId>-->
-        <!--<artifactId>mybatis-spring</artifactId>-->
-        <!--<version>1.2.2</version>-->
-        <!--</dependency>-->
-
-
-        <!--beetlsql-->
-        <!--<dependency>-->
-        <!--<groupId>com.ibeetl</groupId>-->
-        <!--<artifactId>beetl</artifactId>-->
-        <!--<version>2.4.1</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>com.ibeetl</groupId>-->
-        <!--<artifactId>beetlsql</artifactId>-->
-        <!--<version>2.3.7</version>-->
-        <!--</dependency>-->
 
         <!--mysql-->
         <dependency>
@@ -145,91 +99,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>${version.commons-lang3}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.data</groupId>-->
-            <!--<artifactId>spring-data-commons</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>commons-beanutils</groupId>-->
-            <!--<artifactId>commons-beanutils</artifactId>-->
-            <!--<version>${version.commons-bean-utils}</version>-->
-            <!--<scope>${dependency.scope}</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>commons-io</groupId>-->
-            <!--<artifactId>commons-io</artifactId>-->
-            <!--<version>${version.commons-io}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>commons-collections</groupId>-->
-            <!--<artifactId>commons-collections</artifactId>-->
-            <!--<version>${version.commons-collections}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.commons</groupId>-->
-            <!--<artifactId>commons-compress</artifactId>-->
-            <!--<version>${version.commons-compress}</version>-->
-        <!--</dependency>-->
-
-        <!--其他-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-context-support</artifactId>-->
-            <!--<version>4.1.6.RELEASE</version>-->
-        <!--</dependency>-->
-
-
-        <!--<dependency>-->
-            <!--<groupId>com.belerweb</groupId>-->
-            <!--<artifactId>pinyin4j</artifactId>-->
-            <!--<version>${version.pinyin4j}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.slf4j</groupId>-->
-            <!--<artifactId>slf4j-api</artifactId>-->
-            <!--<version>${version.slf4j}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>junit</groupId>-->
-            <!--<artifactId>junit</artifactId>-->
-            <!--<version>${version.junit}</version>-->
-        <!--</dependency>-->
-
-
-
-        <!--<dependency>-->
-        <!--<groupId>io.springfox</groupId>-->
-        <!--<artifactId>springfox-swagger2</artifactId>-->
-        <!--<version>${version.swagger}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>io.springfox</groupId>-->
-        <!--<artifactId>springfox-swagger-ui</artifactId>-->
-        <!--<version>${version.swagger-ui}</version>-->
-        <!--</dependency>-->
-
-
-
-
-
-
-        <!--<dependency>-->
-            <!--<groupId>net.iharder</groupId>-->
-            <!--<artifactId>base64</artifactId>-->
-            <!--<version>2.3.8</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.thrift</groupId>-->
-            <!--<artifactId>libthrift</artifactId>-->
-            <!--<version>0.9.1</version>-->
-        <!--</dependency>-->
-
-        <!-- FreeMarker start -->
-        <!--<dependency>-->
-        <!--<groupId>org.freemarker</groupId>-->
-        <!--<artifactId>freemarker</artifactId>-->
-        <!--<version>2.3.20</version>-->
-        <!--</dependency>-->
 
         <!--jstl-->
         <dependency>
@@ -237,18 +106,6 @@
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>org.apache.tiles</groupId>-->
-            <!--<artifactId>tiles-extras</artifactId>-->
-            <!--<version>3.0.5</version>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>com.google.guava</groupId>-->
-                    <!--<artifactId>guava</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
-        <!--</dependency>-->
 
         <!--shiro-->
         <dependency>
@@ -273,40 +130,9 @@
             <version>1.2.2</version>
         </dependency>
 
-        <!--发送邮件jar-->
-        <!--<dependency>-->
-        <!--<groupId>javax.mail</groupId>-->
-        <!--<artifactId>mail</artifactId>-->
-        <!--<version>1.5.0-b01</version>-->
-        <!--</dependency>-->
-
     </dependencies>
-
-    <!--<repositories>-->
-    <!--<repository>-->
-    <!--<id>nexus</id>-->
-    <!--<name>local private nexus</name>-->
-    <!--<url>http://maven.oschina.net/content/groups/public/</url>-->
-    <!--<releases>-->
-    <!--<enabled>true</enabled>-->
-    <!--</releases>-->
-    <!--<snapshots>-->
-    <!--<enabled>false</enabled>-->
-    <!--</snapshots>-->
-    <!--</repository>-->
-    <!--<repository>-->
-    <!--<id>spring-milestones</id>-->
-    <!--<name>Spring Milestones</name>-->
-    <!--<url>https://repo.spring.io/milestone</url>-->
-    <!--<snapshots>-->
-    <!--<enabled>false</enabled>-->
-    <!--</snapshots>-->
-    <!--</repository>-->
-    <!--</repositories>-->
-
     <build>
         <finalName>miniits</finalName>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -315,7 +141,6 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
-                <version>3.1</version>
             </plugin>
         </plugins>
     </build>
